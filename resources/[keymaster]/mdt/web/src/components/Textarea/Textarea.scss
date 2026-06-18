@@ -1,0 +1,84 @@
+//
+// Textarea - BaseStyle Theme
+//
+
+@import '../../styles/_variables.scss';
+
+.textarea {
+  position: relative;
+
+  &__inner {
+    border: 0;
+    outline: 0;
+    width: 100%;
+    min-height: vh(180);
+    resize: none;
+    padding: vh(16);
+    border: vh(1) solid rgba(255, 255, 255, 0.1);
+    border-radius: 0;
+    background: $button-inactive-bg;
+    font-family: 'Gilroy';
+    font-size: vh(13);
+    font-weight: 500;
+    line-height: 1.6;
+    color: $text-secondary;
+    transition: all 0.1s ease-in-out;
+
+    &:focus {
+      border-color: rgba(255, 255, 255, 0.2);
+      background: $button-hover-bg;
+      outline: none;
+    }
+
+    &::placeholder {
+      color: $text-inactive;
+      opacity: 0.5;
+    }
+
+    &::-webkit-scrollbar {
+      width: vh(12);
+    }
+
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: vh(6);
+
+      &:hover {
+        cursor: default;
+        background: rgba(255, 255, 255, 0.15);
+      }
+    }
+  }
+
+  &__save-button {
+    border: 0;
+    outline: 0;
+    position: absolute;
+    right: vh(16);
+    bottom: vh(16);
+    padding: vh(8) vh(20);
+    border-radius: 0;
+    background: $accent-blue-bg;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: vh(12);
+    font-weight: 600;
+    line-height: 1;
+    color: $accent-blue;
+    text-transform: uppercase;
+    letter-spacing: vh(0.3);
+    transition: all 0.1s ease-in-out;
+
+    &:hover {
+      cursor: pointer;
+      background: $accent-blue;
+      border-color: $accent-blue;
+      color: #121212;
+    }
+  }
+}

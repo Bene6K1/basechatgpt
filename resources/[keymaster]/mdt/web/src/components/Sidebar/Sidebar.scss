@@ -1,0 +1,160 @@
+//
+// Sidebar - BaseStyle Theme
+//
+
+@import '../../styles/_variables.scss';
+
+.sidebar {
+  width: 100%;
+  height: 100%;
+  padding: vh(10);
+  display: flex;
+  flex-direction: column;
+
+  &__header {
+    padding: vh(18);
+    display: flex;
+    flex-direction: column;
+    gap: vh(12);
+  }
+
+  &__profile-section {
+    gap: vh(12);
+    margin-bottom: vh(8);
+  }
+
+  &__profile {
+    &-img {
+      min-width: vh(50);
+      max-width: vh(50);
+      height: vh(50);
+      border-radius: 50%;
+      user-select: none;
+      -webkit-user-select: none;
+      pointer-events: none;
+      object-fit: cover;
+    }
+  }
+
+  &__title {
+    font-size: vh(20);
+    font-weight: 700;
+    line-height: vh(26);
+    color: $text-primary;
+  }
+
+  &__label {
+    font-size: vh(11);
+    font-weight: 400;
+    line-height: 1;
+    color: $text-secondary;
+  }
+
+  &__divider {
+    margin: vh(8) 0;
+  }
+
+  &__search {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: vh(35);
+    padding: vh(12);
+    gap: vh(12);
+    background: $button-inactive-bg;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+      background: $button-hover-bg;
+    }
+
+    &-button {
+      border: 0;
+      outline: 0;
+      min-width: vh(20);
+      max-width: vh(20);
+      height: vh(20);
+      background: transparent;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      padding: 0;
+
+      &-icon-img {
+        min-width: vh(16);
+        max-width: vh(16);
+        user-select: none;
+        -webkit-user-select: none;
+        pointer-events: none;
+        opacity: 0.6;
+      }
+    }
+
+    &-input {
+      flex: 1;
+      width: 100%;
+      height: 100%;
+      background: transparent;
+      border: none;
+      outline: none;
+      padding: 0;
+      cursor: pointer;
+      font-size: vh(14);
+      color: $text-inactive;
+
+      &:focus {
+        outline: none;
+        border: none;
+      }
+
+      &::placeholder {
+        color: $text-inactive;
+        opacity: 0.7;
+      }
+    }
+  }
+
+  &__main {
+    flex: 1;
+    gap: vh(12);
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: vh(8);
+
+    &__gap {
+      gap: vh(12);
+    }
+
+    // Override des styles NavLink existants
+    a {
+      text-decoration: none;
+    }
+
+    &-icon-img {
+      min-width: vh(14);
+      max-width: vh(14);
+      user-select: none;
+      -webkit-user-select: none;
+      pointer-events: none;
+      filter: brightness(0) saturate(100%) invert(54%) sepia(0%) saturate(0%)
+              hue-rotate(0deg) brightness(92%) contrast(88%);
+    }
+
+    // Icon en blanc quand actif
+    .theme-nav-item--active .sidebar__list-icon-img {
+      filter: brightness(0) saturate(100%) invert(100%);
+    }
+  }
+
+  &__footer {
+    margin-top: auto;
+    padding-top: vh(16);
+  }
+}

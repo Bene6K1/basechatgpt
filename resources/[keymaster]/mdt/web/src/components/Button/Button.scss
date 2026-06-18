@@ -1,0 +1,91 @@
+//
+// Button - BaseStyle Theme
+//
+
+@import '../../styles/_variables.scss';
+
+.button {
+  border: 0;
+  outline: 0;
+  padding: vh(8) vh(20);
+  border-radius: calc($default-border-radius / 1.5);
+  background-color: $button-inactive-bg;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: vh(8);
+  font-family: 'Gilroy';
+  font-size: vh(14);
+  font-weight: 600;
+  line-height: vh(24);
+  color: $text-secondary;
+  white-space: nowrap;
+  transition: all 0.1s ease-in-out;
+
+  &:hover {
+    cursor: pointer;
+    background-color: $button-hover-bg;
+    color: $text-primary;
+  }
+
+  &--medium {
+    padding: vh(6) vh(15);
+  }
+
+  &--big {
+    padding: vh(10) vh(20);
+    font-size: vh(15);
+    line-height: vh(25);
+  }
+
+  &--rounded {
+    border-radius: vh(999);
+  }
+
+  &--min-width {
+    min-width: vh(130);
+  }
+
+  &--blue {
+    background-color: $accent-blue-bg;
+    color: $accent-blue;
+
+    &:hover {
+      background-color: $accent-blue;
+      color: #121212;
+    }
+  }
+
+  &--purple {
+    border-radius: 0;
+    background: $accent-purple-bg;
+    color: $accent-purple;
+
+    &:hover {
+      background: $accent-purple;
+      color: #121212;
+    }
+
+    i {
+      font-size: vh(14);
+    }
+  }
+
+  &--red {
+    background-color: $accent-red-bg;
+    color: $accent-red;
+
+    &:hover {
+      background-color: $accent-red;
+      color: #121212;
+    }
+  }
+
+  &--icon-only {
+    min-width: vh(36);
+    max-width: vh(36);
+    height: vh(36);
+    padding: vh(5);
+    font-size: vh(18);
+  }
+}

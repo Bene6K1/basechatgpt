@@ -1,0 +1,528 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&display=swap');
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    user-select: none;
+    overflow: hidden;
+}
+
+.garage {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-left: 50px;
+    padding-top: 100px;
+}
+
+.garage-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px 24px;
+    gap: 16px;
+    width: 580px;
+    max-height: 85vh;
+    background: radial-gradient(120.1% 120.1% at 115.34% -20.1%, rgba(255, 255, 255, 0.2) 0%, rgba(0, 0, 0, 0) 100%), rgba(21, 21, 21, 0.75);
+    box-shadow: 0px 0.602187px 2.04744px -1.66667px rgba(0, 0, 0, 0.19), 
+                0px 2.28853px 7.78101px -3.33333px rgba(0, 0, 0, 0.153), 
+                0px 0px 0px 1px #4C4C4C;
+    border-radius: 8px;
+    animation: fadeIn 0.3s ease-out;
+}
+
+/* Header */
+.garage-menu-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px;
+    gap: 100px;
+    width: 100%;
+    height: auto;
+    align-self: stretch;
+}
+
+.garage-menu-header-title {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 4px;
+}
+
+.garage-menu-header-title i {
+    width: 24px;
+    height: 24px;
+    color: #FFFFFF;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.garage-menu-header-title-text {
+    font-family: 'Bebas Neue', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 85%;
+    text-align: center;
+    letter-spacing: -0.02em;
+    color: #FFFFFF;
+}
+
+.garage-menu-header-name {
+    display: none;
+}
+
+.garage-menu-header-button-close {
+    width: 24px;
+    height: 24px;
+    color: #FFFFFF;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    font-size: 20px;
+}
+
+.garage-menu-header-button-close:hover {
+    transform: scale(1.1);
+}
+
+/* Separator Line */
+.garage-menu::after {
+    content: '';
+    width: 100%;
+    height: 1px;
+    border-bottom: 1px solid #5E5E5E;
+    align-self: stretch;
+}
+
+.garage-menu-vehicle-list-name {
+    display: none;
+}
+
+/* Vehicle List Container */
+.garage-menu-vehicle-list {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 0px;
+    gap: 14px;
+    width: 100%;
+    max-height: calc(85vh - 130px);
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.garage-menu-vehicle-list::-webkit-scrollbar {
+    width: 8px;
+}
+
+.garage-menu-vehicle-list::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.garage-menu-vehicle-list::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 2px;
+}
+
+.garage-menu-vehicle-list::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* Vehicle Item */
+.garage-menu-vehicle-list-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px;
+    gap: 14px;
+    width: 100%;
+    min-height: 48px;
+    transition: transform 0.2s ease;
+}
+
+.garage-menu-vehicle-list-item:hover {
+    transform: translateX(2px);
+}
+
+/* Vehicle Info Section */
+.garage-menu-vehicle-list-item > div:first-child {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 2px;
+}
+
+.garage-menu-vehicle-list-item-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 85%;
+    text-align: center;
+    letter-spacing: -0.02em;
+    color: #FFFFFF;
+}
+
+.garage-menu-vehicle-list-item-id {
+    font-family: 'Geist', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing: 0.1px;
+    color: #C6C9CA;
+}
+
+/* Action Buttons */
+.garage-menu-vehicle-list-item-buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    gap: 6px;
+}
+
+.garage-menu-vehicle-list-item-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 6px 10px;
+    gap: 6px;
+    height: 26px;
+    background: linear-gradient(297.02deg, rgba(255, 255, 255, 0) 52.79%, rgba(255, 255, 255, 0.25) 95.95%), 
+                linear-gradient(87.41deg, rgba(87, 98, 101, 0.25) 11.6%, rgba(158, 161, 161, 0.25) 25.31%, 
+                rgba(132, 139, 138, 0.25) 48.06%, rgba(87, 98, 101, 0.25) 55.72%, rgba(87, 98, 101, 0.25) 77.23%, 
+                rgba(117, 122, 123, 0.25) 85.34%, rgba(87, 98, 101, 0.25) 91.31%), rgba(0, 0, 0, 0.75);
+    background-blend-mode: overlay, normal, color;
+    mix-blend-mode: normal;
+    box-shadow: inset 0px 0.720188px 2.88075px rgba(255, 255, 255, 0.25);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.garage-menu-vehicle-list-item-button:hover {
+    transform: scale(1.05);
+}
+
+.garage-menu-vehicle-list-item-button i {
+    width: 12px;
+    height: 12px;
+    color: #FFFFFF;
+    font-size: 12px;
+}
+
+.garage-menu-vehicle-list-item-button-text {
+    font-family: 'Bebas Neue', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: -0.23046px;
+    color: #FFFFFF;
+    text-shadow: 0px 1.44038px 1.44038px rgba(0, 0, 0, 0.03);
+    white-space: nowrap;
+}
+
+/* Get Button */
+.garage-menu-vehicle-list-item-button-get {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 16px 7px;
+    gap: 6px;
+    height: 34px;
+    background: linear-gradient(297.02deg, rgba(255, 255, 255, 0) 52.79%, rgba(255, 255, 255, 0.25) 95.95%), 
+                linear-gradient(87.41deg, rgba(87, 98, 101, 0.25) 11.6%, rgba(158, 161, 161, 0.25) 25.31%, 
+                rgba(132, 139, 138, 0.25) 48.06%, rgba(87, 98, 101, 0.25) 55.72%, rgba(87, 98, 101, 0.25) 77.23%, 
+                rgba(117, 122, 123, 0.25) 85.34%, rgba(87, 98, 101, 0.25) 91.31%), #000000;
+    background-blend-mode: overlay, normal, color;
+    mix-blend-mode: normal;
+    box-shadow: inset 0px 0.720188px 2.88075px rgba(255, 255, 255, 0.25);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.garage-menu-vehicle-list-item-button-get:hover {
+    transform: scale(1.05);
+}
+
+.garage-menu-vehicle-list-item-button-get i {
+    width: 16px;
+    height: 16px;
+    color: #FFFFFF;
+    font-size: 16px;
+}
+
+.garage-menu-vehicle-list-item-button-get-text {
+    font-family: 'Bebas Neue', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 18px;
+    letter-spacing: -0.23046px;
+    color: #FFFFFF;
+    text-shadow: 0px 1.44038px 1.44038px rgba(0, 0, 0, 0.03);
+}
+
+/* Impound Button */
+.garage-menu-vehicle-list-item-button-impound {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 16px 7px;
+    gap: 6px;
+    height: 34px;
+    background: linear-gradient(297.02deg, rgba(255, 255, 255, 0) 52.79%, rgba(255, 255, 255, 0.25) 95.95%), 
+                linear-gradient(87.41deg, rgba(87, 98, 101, 0.25) 11.6%, rgba(158, 161, 161, 0.25) 25.31%, 
+                rgba(132, 139, 138, 0.25) 48.06%, rgba(87, 98, 101, 0.25) 55.72%, rgba(87, 98, 101, 0.25) 77.23%, 
+                rgba(117, 122, 123, 0.25) 85.34%, rgba(87, 98, 101, 0.25) 91.31%), #000000;
+    background-blend-mode: overlay, normal, color;
+    mix-blend-mode: normal;
+    box-shadow: inset 0px 0.720188px 2.88075px rgba(255, 255, 255, 0.25);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.garage-menu-vehicle-list-item-button-impound:hover {
+    transform: scale(1.05);
+}
+
+.garage-menu-vehicle-list-item-button-impound i {
+    width: 16px;
+    height: 16px;
+    color: #C9351E;
+    font-size: 16px;
+}
+
+.garage-menu-vehicle-list-item-button-impound-text {
+    font-family: 'Bebas Neue', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 18px;
+    letter-spacing: -0.23046px;
+    color: #FFFFFF;
+    text-shadow: 0px 1.44038px 1.44038px rgba(0, 0, 0, 0.03);
+}
+
+/* Price Button (500$) */
+.garage-menu-vehicle-list-item-button-get.price-button {
+    background: linear-gradient(297.02deg, rgba(255, 255, 255, 0) 52.79%, rgba(255, 255, 255, 0.25) 95.95%), 
+                linear-gradient(87.41deg, rgba(87, 98, 101, 0.25) 11.6%, rgba(158, 161, 161, 0.25) 25.31%, 
+                rgba(132, 139, 138, 0.25) 48.06%, rgba(87, 98, 101, 0.25) 55.72%, rgba(87, 98, 101, 0.25) 77.23%, 
+                rgba(117, 122, 123, 0.25) 85.34%, rgba(87, 98, 101, 0.25) 91.31%), #000000;
+}
+
+.garage-menu-vehicle-list-item-button-get.price-button i {
+    color: #3BBE39;
+}
+
+/* Hide plate info */
+.vehicle-item-plate {
+    display: none;
+}
+
+/* Vehicle Stats */
+.vehicle-spec {
+    box-sizing: border-box;
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 16px 20px;
+    gap: 12px;
+    position: fixed;
+    width: 420px;
+    left: 660px;
+    top: 100px;
+    background: radial-gradient(120.1% 120.1% at 115.34% -20.1%, rgba(255, 255, 255, 0.2) 0%, rgba(0, 0, 0, 0) 100%), rgba(21, 21, 21, 0.75);
+    box-shadow: 0px 0.602187px 2.04744px -1.66667px rgba(0, 0, 0, 0.19), 
+                0px 2.28853px 7.78101px -3.33333px rgba(0, 0, 0, 0.153), 
+                0px 0px 0px 1px #4C4C4C;
+    border-radius: 8px;
+    animation: fadeIn 0.3s ease-out;
+}
+
+/* Header des stats */
+.vehicle-spec-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px;
+    gap: 78px;
+    width: 100%;
+    align-self: stretch;
+}
+
+.vehicle-spec-title-container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 4px;
+}
+
+.vehicle-spec-title-container i {
+    width: 18px;
+    height: 18px;
+    color: #FFFFFF;
+    font-size: 18px;
+}
+
+.vehicle-spec-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 85%;
+    text-align: center;
+    letter-spacing: -0.02em;
+    color: #FFFFFF;
+}
+
+/* Ligne de séparation */
+.vehicle-spec::after {
+    content: '';
+    width: 100%;
+    height: 1px;
+    border-bottom: 1px solid #5E5E5E;
+    align-self: stretch;
+}
+
+/* Container des stats */
+.vehicle-spec-stats-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 8px;
+    width: 100%;
+}
+
+.vehicle-spec-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px;
+    gap: 8px;
+    width: 100%;
+}
+
+.vehicle-item-title {
+    margin: 0;
+    font-family: 'Bebas Neue', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 18px;
+    color: #FFFFFF;
+    min-width: 90px;
+    flex: none;
+}
+
+.vehicle-spec-percent {
+    margin: 0;
+    position: relative;
+    width: 100%;
+    max-width: 280px;
+    height: 6px;
+    background: linear-gradient(90deg, rgba(90, 90, 90, 0.5) 0%, rgba(46, 46, 46, 0.5) 100%);
+    border-radius: 3px;
+    flex: 1;
+    overflow: hidden;
+}
+
+.vehicle-spec-percent-bar {
+    position: absolute;
+    height: 6px;
+    left: 0px;
+    top: 0px;
+    background: linear-gradient(90deg, 
+        rgba(255, 255, 255, 0.9) 0%, 
+        rgba(255, 255, 255, 0.7) 50%, 
+        rgba(255, 255, 255, 0.5) 100%);
+    border-radius: 3px;
+    transition: width 0.5s ease;
+    box-shadow: 0px 0px 8px rgba(255, 255, 255, 0.3);
+}
+
+/* Icon styles */
+.garage-menu-header-title-garage {
+    color: #00FF55;
+}
+
+.garage-menu-header-title-impound {
+    color: #FFBD43;
+}
+
+/* Responsive */
+@media screen and (max-width: 1700px) {
+    .garage-menu-vehicle-list-item-button-text {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .garage {
+        padding-left: 30px;
+        padding-top: 80px;
+    }
+    
+    .garage-menu {
+        width: 480px;
+    }
+    
+    .vehicle-spec {
+        left: 30px;
+        top: 500px;
+        width: 380px;
+    }
+}

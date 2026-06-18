@@ -1,0 +1,27 @@
+//
+// Label
+//
+
+@import '../../styles/_variables.scss';
+
+.label {
+  padding: vh(5) vh(10);
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: vh(10);
+  font-weight: 700;
+  color: #000000;
+  text-transform: uppercase;
+
+  &--theme-blue {
+    background-color: $accent-blue-bg;
+    color: $accent-blue;
+  }
+
+  &--theme-orange {
+    background-color: $accent-orange-bg;
+    color: $accent-orange;
+  }
+}

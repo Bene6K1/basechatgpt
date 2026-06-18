@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/caab0f2dc7.js" crossorigin="anonymous"></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="garage" id="garage">
+        <div class="garage-menu">
+            <div class="garage-menu-header">
+                <div class="garage-menu-header-title">
+                    <i class="fas fa-car" id="garage-icon"></i>
+                    <div class="garage-menu-header-title-text" id="garage-text">Garage - gestion de véhicule</div>
+                </div>
+                <i class="fas fa-times garage-menu-header-button-close" id="close-menu"></i>
+            </div>
+            <div class="garage-menu-vehicle-list" id="vehicle-list"></div>
+        </div>
+
+        <div class="vehicle-spec" id="vehicle-spec">
+            <div class="vehicle-spec-header">
+                <div class="vehicle-spec-title-container">
+                    <i class="fas fa-car"></i>
+                    <div class="vehicle-spec-title" id="vehicle-spec-name">SULTAN - XCLO3670</div>
+                </div>
+                <i class="fas fa-times" id="close-stats" style="cursor: pointer; font-size: 12px;"></i>
+            </div>
+            <div class="vehicle-spec-stats-container">
+                <div class="vehicle-spec-item">
+                    <div class="vehicle-item-title" id="speed-text">vitesse</div>
+                    <div class="vehicle-spec-percent">
+                        <div class="vehicle-spec-percent-bar" id="speed"></div>
+                    </div>
+                </div>
+                <div class="vehicle-spec-item">
+                    <div class="vehicle-item-title" id="acceleration-text">adhérence</div>
+                    <div class="vehicle-spec-percent">
+                        <div class="vehicle-spec-percent-bar" id="acceleration"></div>
+                    </div>
+                </div>
+                <div class="vehicle-spec-item">
+                    <div class="vehicle-item-title" id="brake-text">puissance</div>
+                    <div class="vehicle-spec-percent">
+                        <div class="vehicle-spec-percent-bar" id="brake"></div>
+                    </div>
+                </div>
+                <div class="vehicle-spec-item">
+                    <div class="vehicle-item-title" id="traction-text">puissance</div>
+                    <div class="vehicle-spec-percent">
+                        <div class="vehicle-spec-percent-bar" id="traction"></div>
+                    </div>
+                </div>
+                <div class="vehicle-spec-item">
+                    <div class="vehicle-item-title" id="handling-text">maniabilité</div>
+                    <div class="vehicle-spec-percent">
+                        <div class="vehicle-spec-percent-bar" id="handling"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <template id="vehicle-template">
+        <div class="garage-menu-vehicle-list-item">
+            <div>
+                <div class="garage-menu-vehicle-list-item-name"></div>
+                <div class="garage-menu-vehicle-list-item-id"></div>
+            </div>
+            <div class="garage-menu-vehicle-list-item-buttons">
+                <div class="garage-menu-vehicle-list-item-button" id="statistic">
+                    <i class="fa-solid fa-chart-simple"></i>
+                    <div class="garage-menu-vehicle-list-item-button-text statistic-button">Stats</div>
+                </div>
+                <div class="garage-menu-vehicle-list-item-button" id="locate">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <div class="garage-menu-vehicle-list-item-button-text locate-button">Localiser</div>
+                </div>
+            </div>
+            <div class="garage-menu-vehicle-list-item-button-get" id="get">
+                <i class="fas fa-car" id="get"></i>
+                <div class="garage-menu-vehicle-list-item-button-get-text get-button" id="get">prendre</div>
+            </div>
+            <div class="garage-menu-vehicle-list-item-button-impound" id="impound" style="display: none;">
+                <i class="fas fa-car" id="impound"></i>
+                <div class="garage-menu-vehicle-list-item-button-impound-text" id="impound">en fourrière</div>
+            </div>
+            <div class="vehicle-item-plate"></div>
+        </div>
+    </template>
+</body> 

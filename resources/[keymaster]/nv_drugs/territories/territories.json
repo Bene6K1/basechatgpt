@@ -1,0 +1,247 @@
+[
+  {
+    "points": [
+      {"y": -1800.0, "x": -1200.0},
+      {"y": -1650.0, "x": -1000.0},
+      {"y": -1382.0, "x": -1221.0},
+      {"y": -920.0, "x": -1400.0},
+      {"y": -1153.0, "x": -1627.0}
+    ],
+    "description": "Une plage iconique inspirée de Santa Monica : Muscle Sands, le skate-park et le marché en bord de mer attirent touristes et artistes en journée. La nuit, la foule s'efface, les commerces ferment et l'endroit gagne en intimité, où seuls quelques feux de camp ou hipsters persistent sur le sable.",
+    "id": "vespucci_plage_sud",
+    "frequentation": "high",
+    "name": "Vespucci Plage Sud"
+  },
+  {
+    "points": [
+      {"y": -915.0, "x": -1423.0},
+      {"y": -827.0, "x": -1572.0},
+      {"y": -420.0, "x": -2048.0},
+      {"y": -537.0, "x": -2144.0},
+      {"y": -1031.0, "x": -1771.0},
+      {"y": -1215.0, "x": -1907.0},
+      {"y": -1325.0, "x": -1792.0}
+    ],
+    "description": "Zone plus raffinée avec marina, canaux et petites boutiques : une ambiance paisible idéale pour se fondre dans le décor. Le quartier, moins exposé à l'agitation touristique, offre un cadre parfait pour des rencontres discrètes ou des regroupements à l'écart.",
+    "id": "vespucci_plage_nord",
+    "frequentation": "normale",
+    "name": "Vespucci Plage Nord"
+  },
+  {
+    "points": [
+      {"y": -2925.72, "x": -1002.0},
+      {"y": -2429.13, "x": -720.0},
+      {"y": -2247.49, "x": -577.85},
+      {"y": -2046.2, "x": -857.88},
+      {"y": -2148.2, "x": -963.88},
+      {"y": -2211.2, "x": -887.88},
+      {"y": -2821.2, "x": -1215.88}
+    ],
+    "description": "Aéroport international de Los Santos, avec de vastes terminaux, pistes sécurisées, zones de fret et traffic constant. Malgré une sécurité renforcée, les hangars périphériques, les routes de service et les points d'accès multiples en font un lieu parfait pour opérer sous couvert.",
+    "id": "aeroport",
+    "frequentation": "high",
+    "name": "Aéroport"
+  },
+  {
+    "points": [
+      {"y": -1714.0, "x": 735.0},
+      {"y": -2489.0, "x": 657.0},
+      {"y": -2484.0, "x": 746.0},
+      {"y": -2548.0, "x": 753.0},
+      {"y": -2567.0, "x": 1052.0},
+      {"y": -2459.0, "x": 1137.0},
+      {"y": -2051.0, "x": 1211.0},
+      {"y": -1724.0, "x": 1070.0},
+      {"y": -1726.0, "x": 920.0}
+    ],
+    "description": "Au cœur des docks industriels, les quais bruissent de l'activité des poids lourds et des entrepôts. Le jour, l'endroit est un ballet organisé de camions et d'ouvriers. La nuit, l'usine se vide, les hangars se ferment, et les ombres prennent le relais, offrant un terrain propice aux manœuvres clandestines.",
+    "id": "wardogs",
+    "frequentation": "low",
+    "name": "Wardogs"
+  },
+  {
+    "points": [
+      {"y": -1931.0, "x": -451.0},
+      {"y": -2009.0, "x": -424.0},
+      {"y": -2065.0, "x": -357.0},
+      {"y": -2117.0, "x": -274.0},
+      {"y": -2121.0, "x": -231.0},
+      {"y": -2085.0, "x": -128.0},
+      {"y": -1924.0, "x": -113.0},
+      {"y": -1823.0, "x": -223.0},
+      {"y": -1838.0, "x": -318.0},
+      {"y": -1829.0, "x": -375.0},
+      {"y": -1864.0, "x": -427.0}
+    ],
+    "description": "Secteur autour de l'Arena de Maze Bank, lieu de tournage pour les auditions de \"Fame or Shame\" ou les courses de l'Arena War. Allées larges, parkings vastes et accès discrets créent une toile de fond idéale pour se mêler à la foule ou disparaître dans l'ombre selon l'affluence.",
+    "id": "mazebank",
+    "frequentation": "normale",
+    "name": "MazeBank"
+  },
+  {
+    "points": [
+      {"y": -1604.0, "x": -26.0},
+      {"y": -1863.0, "x": 277.0},
+      {"y": -1547.0, "x": 544.0},
+      {"y": -1435.0, "x": 544.0},
+      {"y": -1415.0, "x": 446.0},
+      {"y": -1307.0, "x": 309.0},
+      {"y": -1300.0, "x": 222.0}
+    ],
+    "description": "Ce secteur urbain dense mêle garages de quartier, habitations modestes et artères routières. L'activité constante et la circulation lourde y prédominent. La présence policière est aléatoire, ce qui en fait un terrain idéal pour les opérations rapides, les stratagèmes ou les embuscades.",
+    "id": "sud_de_los_santos",
+    "frequentation": "normale",
+    "name": "Sud de Los Santos"
+  },
+  {
+    "points": [
+      {"y": -1136.0, "x": 400.0},
+      {"y": -858.0, "x": 404.0},
+      {"y": -852.0, "x": 289.0},
+      {"y": -702.0, "x": -123.0},
+      {"y": -1142.0, "x": -282.0}
+    ],
+    "description": "Cœur emblématique de Los Santos, dominé par les gratte‑ciel et les sièges de firmes. En journée, le quartier bouillonne d'activité : cadres pressés, touristes, voitures de luxe. Entre les tours se faufilent parkings et accès de service, parfaits pour une surveillance discrète ou des échanges sous le radar.",
+    "id": "centre_ville",
+    "frequentation": "high",
+    "name": "Centre Ville"
+  },
+  {
+    "points": [
+      {"y": -957.0, "x": -857.0},
+      {"y": -1117.0, "x": -768.0},
+      {"y": -1300.0, "x": -642.0},
+      {"y": -1192.0, "x": -550.0},
+      {"y": -1092.0, "x": -532.0},
+      {"y": -956.0, "x": -533.0},
+      {"y": -895.0, "x": -506.0},
+      {"y": -836.0, "x": -500.0},
+      {"y": -833.0, "x": -960.0}
+    ],
+    "description": "Un quartier dense, imprégné de culture coréenne, où les ruelles étroites et les stations-service côtoient supérettes et enseignes locales. Le flux piétonnier dense, les parkings souterrains et les interstices entre les blocs offrent de multiples raccourcis, zones d'ombre et cachettes naturelles.",
+    "id": "little_seoul",
+    "frequentation": "low",
+    "name": "Little Seoul"
+  },
+  {
+    "points": [
+      {"y": 203.0, "x": -1391.0},
+      {"y": 293.0, "x": -1460.0},
+      {"y": 253.0, "x": -1498.0},
+      {"y": 327.0, "x": -1622.0},
+      {"y": 265.0, "x": -1755.0},
+      {"y": 207.0, "x": -1812.0},
+      {"y": 132.0, "x": -1854.0},
+      {"y": -47.0, "x": -1657.0},
+      {"y": -180.0, "x": -1564.0},
+      {"y": -63.0, "x": -1412.0},
+      {"y": 98.0, "x": -1433.0},
+      {"y": 151.0, "x": -1425.0}
+    ],
+    "description": "Campus paisible ponctué d'espaces verts, bibliothèques et résidences pour étudiants. Le calme apparent est trompeur : la circulation piétonne régulière et les multiples accès secondaires transforment le lieu en terrain de choix pour des filatures ou rencontres furtives.",
+    "id": "universite",
+    "frequentation": "normale",
+    "name": "Université"
+  },
+  {
+    "points": [
+      {"y": 180.0, "x": 832.0},
+      {"y": 215.0, "x": 795.0},
+      {"y": 205.0, "x": 756.0},
+      {"y": 275.0, "x": 580.0},
+      {"y": 342.0, "x": 381.0},
+      {"y": 413.0, "x": 118.0},
+      {"y": 344.0, "x": 40.0},
+      {"y": 261.0, "x": 2.0},
+      {"y": 251.0, "x": 33.0},
+      {"y": 36.0, "x": -47.0},
+      {"y": -128.0, "x": 400.0},
+      {"y": 31.0, "x": 496.0},
+      {"y": 54.0, "x": 568.0},
+      {"y": -2.0, "x": 703.0}
+    ],
+    "description": "Zone huppée aux villas cossues et panoramas à couper le souffle : routes en lacets et points de vue stratégiques font de Vinewood un terrain privilégié pour ceux qui surveillent ou souhaitent s'évaporer sans trace.",
+    "id": "vinewood",
+    "frequentation": "high",
+    "name": "Vinewood"
+  },
+  {
+    "points": [
+      {"y": -240.0, "x": 1136.0},
+      {"y": -334.0, "x": 1044.0},
+      {"y": -398.0, "x": 989.0},
+      {"y": -467.0, "x": 853.0},
+      {"y": -509.0, "x": 807.0},
+      {"y": -571.0, "x": 802.0},
+      {"y": -814.0, "x": 1021.0},
+      {"y": -815.0, "x": 1215.0},
+      {"y": -782.0, "x": 1221.0},
+      {"y": -765.0, "x": 1271.0},
+      {"y": -738.0, "x": 1289.0},
+      {"y": -753.0, "x": 1350.0},
+      {"y": -770.0, "x": 1379.0},
+      {"y": -752.0, "x": 1400.0},
+      {"y": -714.0, "x": 1388.0},
+      {"y": -719.0, "x": 1359.0},
+      {"y": -700.0, "x": 1307.0},
+      {"y": -643.0, "x": 1308.0},
+      {"y": -607.0, "x": 1295.0},
+      {"y": -620.0, "x": 1322.0},
+      {"y": -641.0, "x": 1368.0},
+      {"y": -614.0, "x": 1427.0},
+      {"y": -553.0, "x": 1423.0},
+      {"y": -483.0, "x": 1306.0},
+      {"y": -423.0, "x": 1302.0},
+      {"y": -384.0, "x": 1275.0},
+      {"y": -364.0, "x": 1290.0},
+      {"y": -326.0, "x": 1275.0},
+      {"y": -319.0, "x": 1237.0},
+      {"y": -258.0, "x": 1207.0},
+      {"y": -223.0, "x": 1149.0}
+    ],
+    "description": "Un havre de sérénité où lac, arbres et quartiers résidentiels cohabitent. Les coffee-shops et boutiques de proximité assurent une animation de quartier. Le calme ambiant, ponctué par le clapotis de l'eau, fait de ce lieu un terrain de rendez-vous discret ou un campement d'observation paisible.",
+    "id": "mirror_park",
+    "frequentation": "normale",
+    "name": "Mirror Park"
+  },
+  {
+    "points": [
+      {"y": 6008.713867, "x": -379.693634},
+      {"y": 6061.897949, "x": -431.11969},
+      {"y": 6091.731934, "x": -433.138489},
+      {"y": 6123.476074, "x": -412.292633},
+      {"y": 6157.294434, "x": -375.487488},
+      {"y": 6195.460449, "x": -410.695526},
+      {"y": 6241.316406, "x": -409.638916},
+      {"y": 6278.939453, "x": -401.348328},
+      {"y": 6290.786133, "x": -390.600708},
+      {"y": 6344.142578, "x": -322.596283},
+      {"y": 6374.790527, "x": -289.746918},
+      {"y": 6399.966797, "x": -244.329865},
+      {"y": 6411.207031, "x": -227.504379},
+      {"y": 6285.755859, "x": -98.46302}
+    ],
+    "description": "Zone côtière au sud de Paleto Bay, caractérisée par ses plages tranquilles et ses petites maisons de pêcheurs. L'activité principale se concentre autour du port de pêche et des commerces locaux. La nuit, l'endroit devient plus calme, offrant un cadre discret pour des activités moins visibles.",
+    "id": "paleto_sud",
+    "frequentation": "normale",
+    "name": "Paleto Sud"
+  },
+  {
+    "points": [
+      {"y": 6286.383301, "x": -97.918015},
+      {"y": 6411.994629, "x": -223.365662},
+      {"y": 6475.272949, "x": -176.432999},
+      {"y": 6529.569824, "x": -137.348175},
+      {"y": 6577.061035, "x": -86.083527},
+      {"y": 6619.584473, "x": -30.773796},
+      {"y": 6641.32666, "x": 8.278982},
+      {"y": 6646.396484, "x": 30.181343},
+      {"y": 6639.000488, "x": 44.361408},
+      {"y": 6531.812988, "x": 148.941254}
+    ],
+    "description": "Secteur nord de Paleto Bay, dominé par la forêt et les collines qui entourent la ville. Cette zone plus sauvage offre de nombreux chemins forestiers et points de vue isolés. L'activité humaine y est moins dense, ce qui en fait un terrain idéal pour des opérations nécessitant discrétion et éloignement.",
+    "id": "paleto_nord",
+    "frequentation": "low",
+    "name": "Paleto Nord"
+  }
+]

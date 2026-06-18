@@ -1,0 +1,82 @@
+{
+  "NUI": {
+    "hotwire": {
+      "game_name": "HOTWIRE",
+      "game_description": "Hotwire is a game where you have to connect the cables to the vehicle to start the engine."
+    },
+    "quick_keys": {
+      "lock_unlock": "Lock/Unlock your vehicle with this button.",
+      "start_stop": "Start/Stop your vehicle engine with this button.",
+      "trunk": "Open/Close your vehicle trunk with this button.",
+      "windows": "Open/Close your vehicle windows with this button."
+    },
+    "keys_menu": {
+      "toggle_doors_lock": "Toggle Doors Lock",
+      "show_key_actions": "Show Key Actions"
+    }
+  },
+  "LUA": {
+    "success": {
+      "new_key_created": "You have created a new key for %s",
+      "new_lock_created": "You have created a new lock for %s",
+      "vehicle_keys_with_lockpick": "You have acquired the keys to the vehicle",
+      "vehicle_unlocked_with_lockpick": "You have unlocked the vehicle"
+    },
+    "info": {
+      "toggle_locks": "Toggle Locks",
+      "toggle_engine": "Toggle Engine",
+      "vehicle_locked": "The vehicle is locked",
+      "vehicle_unlocked": "The vehicle is unlocked",
+      "search_keys": "Search Keys",
+      "you_have_received_the_key": "You have received the key",
+      "keys_require_locksmith": "Visit the locksmith to obtain your keys."
+    },
+    "error": {
+      "no_keys": "You do not have the keys to this vehicle",
+      "failed_keys": "Failed to find keys",
+      "not_enough_money": "You do not have enough money to create a new key",
+      "not_enough_money_lock": "You do not have enough money to create a new lock",
+      "item_on_cooldown": "You must wait 5 seconds before using the item again",
+      "no_near_vehicle": "The vehicle this key belongs to is not nearby.",
+      "no_vehicles": "You do not have any vehicles to create a new key or lock.",
+      "carjack_failed": "Failed to carjack the vehicle",
+      "failed_lockpick": "Failed to lockpick the vehicle",
+      "lockpick_broken": "The lockpick has been broken",
+      "too_many_uses": "You have used this item too many times",
+      "vehicle_locked_cannot_break_windows": "Vehicle is locked, you cannot break the windows"
+    },
+    "context_menu": {
+      "header": "Locksmith",
+      "create_new_key": "Create New Key",
+      "create_new_key_description": "You can only create a spare key without changing the lock mechanism.",
+      "create_new_lock": "Create New Lock",
+      "create_new_lock_description": "You can create a new lock by changing the lock mechanism. It will not work with old keys.",
+      "select_vehicle": "Select Vehicle",
+      "go_back": "Go Back"
+    },
+    "keys_menu": {
+      "title": "Vehicle Keys",
+      "subtitle": "Quick actions",
+      "vehicle_label": "Vehicle: %s",
+      "lock_unlock": "Lock / Unlock",
+      "lock_unlock_desc": "Toggle the central locking of the vehicle.",
+      "engine": "Engine",
+      "engine_desc": "Start or stop the engine.",
+      "trunk": "Trunk",
+      "trunk_desc": "Open or close the trunk.",
+      "windows": "Windows",
+      "windows_desc": "Roll the windows up or down.",
+      "search_keys": "Search for keys",
+      "search_keys_desc": "Search the interior for a spare key.",
+      "close": "Close"
+    },
+    "textui": {
+      "search_keys_dispatch": "[H] Search Keys",
+      "locksmith": "[%s] Locksmith"
+    },
+    "progress": {
+      "searching_keys": "Searching for keys...",
+      "attempting_carjack": "Attempting to carjack..."
+    }
+  }
+}

@@ -1,0 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
+
+.info {
+  position: absolute;
+  color: white;
+  top: 2.6rem;
+  right: 1.2rem;
+  font-size: 0.9em;
+  font-family: "Outfit", serif;
+  font-weight: normal;
+  text-align: right;
+}

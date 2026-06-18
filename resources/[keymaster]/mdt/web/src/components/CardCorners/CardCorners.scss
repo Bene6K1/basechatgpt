@@ -1,0 +1,103 @@
+@import '../../styles/_variables.scss';
+
+.card-corners {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  opacity: 0.75;
+  transition: opacity 0.1s ease-in-out;
+
+  &__corner {
+    position: absolute;
+    width: vh(10);
+    height: vh(10);
+
+    &--top-left {
+      top: 0;
+      left: 0;
+    }
+
+    &--top-right {
+      top: 0;
+      right: 0;
+    }
+
+    &--bottom-right {
+      bottom: 0;
+      right: 0;
+    }
+
+    &--bottom-left {
+      bottom: 0;
+      left: 0;
+    }
+  }
+
+  &__line {
+    position: absolute;
+
+    &--vertical {
+      width: vh(1.5);
+      height: vh(10);
+    }
+
+    &--horizontal {
+      width: vh(10);
+      height: vh(1.5);
+    }
+  }
+
+  // Positioning des lignes pour chaque coin
+  .card-corners__corner--top-left {
+    .card-corners__line--vertical {
+      top: 0;
+      left: 0;
+    }
+    .card-corners__line--horizontal {
+      top: 0;
+      left: 0;
+    }
+  }
+
+  .card-corners__corner--top-right {
+    .card-corners__line--vertical {
+      top: 0;
+      right: 0;
+    }
+    .card-corners__line--horizontal {
+      top: 0;
+      right: 0;
+    }
+  }
+
+  .card-corners__corner--bottom-right {
+    .card-corners__line--vertical {
+      bottom: 0;
+      right: 0;
+    }
+    .card-corners__line--horizontal {
+      bottom: 0;
+      right: 0;
+    }
+  }
+
+  .card-corners__corner--bottom-left {
+    .card-corners__line--vertical {
+      bottom: 0;
+      left: 0;
+    }
+    .card-corners__line--horizontal {
+      bottom: 0;
+      left: 0;
+    }
+  }
+}
+
+// Hover effect sur les parents
+.card-with-corners:hover .card-corners {
+  opacity: 1;
+  transition: opacity 0.1s ease-in-out;
+}

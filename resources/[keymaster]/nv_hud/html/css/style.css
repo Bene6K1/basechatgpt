@@ -1,0 +1,471 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap");
+
+/* ============================================
+   FONTS - Server Info HUD
+   ============================================ */
+@font-face {
+  font-family: 'Gilroy';
+  src: url('../assets/fonts/Gilroy-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Gilroy';
+  src: url('../assets/fonts/Gilroy-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Gilroy';
+  src: url('../assets/fonts/Gilroy-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Agency FB';
+  src: url('../assets/fonts/AGENCYB.TTF') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* ============================================
+   BASE STYLES
+   ============================================ */
+body, html {
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  display: flex;
+  margin: 0;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+:root {
+  --fade-in-time: 80ms;
+  --fade-out-time: 80ms;
+}
+
+/* ============================================
+   SERVER INFO HUD (Top-Right)
+   ============================================ */
+#hud-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1000;
+}
+
+.hud-frame {
+  position: fixed;
+  width: 13.54vw;
+  height: 27.31vh;
+  right: -0.52vw;
+  top: 0.46vh;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+.hud-bg {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  left: -15.63vw;
+  top: 0;
+  background-size: cover;
+}
+
+.hud-rectangle.frame-bg {
+  position: absolute;
+  width: 12.76vw;
+  height: 7.04vh;
+  left: 0;
+  top: 0;
+  background: none;
+  border-radius: 2.13vw 0.31vw 0.31vw 2.13vw;
+  z-index: 0;
+}
+
+.hud-rectangle.header-bg {
+  position: absolute;
+  width: 12.40vw;
+  height: 6.48vh;
+  left: 0.16vw;
+  top: 0.28vh;
+  background: none;
+  border-radius: 14.06vw 0.21vw 0.21vw 14.06vw;
+  z-index: 2;
+}
+
+.hud-text.player-name {
+  position: absolute;
+  width: 8.33vw;
+  height: 2.59vh;
+  left: 3.85vw;
+  top: 1.67vh;
+  font-family: 'Gilroy';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 0.83vw;
+  line-height: 3.15vh;
+  color: #ffffff;
+  z-index: 3;
+  text-align: left;
+  padding-left: 1.15vw;
+  text-shadow: 0 0.09vh 0.19vh rgba(0, 0, 0, 0.5);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-transform: uppercase;
+}
+
+.hud-text.discord {
+  position: absolute;
+  width: 11.46vw;
+  height: 2.59vh;
+  left: 3.85vw;
+  top: 4.17vh;
+  font-family: 'Gilroy';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 0.57vw;
+  line-height: 1.85vh;
+  color: #FFFFFF;
+  z-index: 3;
+  overflow: hidden;
+}
+
+.hud-text.discord .date-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding-left: 0.21vw;
+  font-family: 'Gilroy';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 0.57vw;
+  line-height: 1.85vh;
+  color: #FFFFFF;
+  opacity: 0;
+  transform: translateY(1.20vh);
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+  pointer-events: none;
+}
+
+.hud-text.discord .date-text.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hud-text.discord .discord-text,
+.hud-text.discord .id-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding-left: 1.15vw;
+  font-family: 'Gilroy';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 0.57vw;
+  line-height: 1.85vh;
+  color: #FFFFFF;
+  opacity: 0;
+  transform: translateY(1.20vh);
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+  pointer-events: none;
+}
+
+.hud-text.discord .discord-text.active,
+.hud-text.discord .id-text.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hud-text.discord .id-text {
+  padding-left: 1.15vw;
+}
+
+.hud-text.discord .date-text {
+  padding-left: 1.15vw;
+}
+
+.hud-image.logo {
+  position: absolute;
+  width: 3.13vw;
+  height: 5.56vh;
+  left: 1.26vw;
+  top: 2.31vh;
+  background: url(../assets/images/image.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  filter: drop-shadow(0 0.46vh 0.46vh rgba(0, 0, 0, 0.25));
+  z-index: 10;
+}
+
+.hud-text.player-count {
+  position: absolute;
+  left: 7.92vw;
+  top: 10.93vh;
+  width: 6.51vw;
+  height: 2.59vh;
+  font-family: 'Agency FB';
+  font-size: 0.99vw;
+  font-weight: 700;
+  color: #c48df8;
+  text-align: center;
+  z-index: 10;
+  pointer-events: none;
+  text-shadow: 0 0.09vh 0.19vh rgba(0, 0, 0, 0.5);
+}
+
+/* ============================================
+   STATUS HUD (Bottom-Left)
+   ============================================ */
+#main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  user-select: none;
+}
+
+#panel {
+  background-color: rgba(15, 15, 15, 0.85);
+  padding: 2%;
+  border-radius: 0.5%;
+  box-shadow: 0 0.2% 0.6% rgba(0, 0, 0, 0.2);
+  display: none;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  width: 15%;
+}
+
+#title {
+  color: white;
+  margin: 0;
+  font-weight: 500;
+  font-size: 1.2vw;
+}
+
+#watermark {
+  color: rgba(170, 170, 170, 0.8);
+  font-size: 0.7vw;
+  font-weight: 300;
+}
+
+#buttons {
+  display: flex;
+  justify-content: space-around;
+  margin: 5% 0;
+}
+
+.color-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.7vw;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 50%;
+  background-color: rgba(40, 40, 40, 0.6);
+  width: 1.2vw;
+  height: 1.2vw;
+}
+
+.color-button:hover {
+  background-color: rgba(60, 60, 60, 0.8);
+}
+
+.color-button i {
+  font-size: 1vw;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+input[type="radio"]:checked + .color-button {
+  background-color: rgba(123, 104, 238, 0.8);
+  box-shadow: 0 0 0.4vw rgba(123, 104, 238, 0.5);
+}
+
+#status {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15vw;
+  position: absolute;
+  bottom: 1.25%;
+  left: 16%;
+  transition: all 0.4s ease;
+}
+
+.status-item {
+  display: block;
+  margin-bottom: 0.08vw;
+  position: relative;
+  overflow: visible;
+}
+
+.status-svg {
+  width: 2.6vw;
+  height: 2.6vw;
+  filter: drop-shadow(0 0.08vw 0.2vw rgba(0, 0, 0, 0.4));
+}
+
+.status-circle {
+  stroke-width: 0.38vw;
+  fill: rgba(10, 10, 10, 0.35);
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%;
+  transition: stroke-dashoffset 0.5s cubic-bezier(0.23, 1, 0.32, 1),
+    stroke 0.4s ease;
+  stroke-linecap: round;
+}
+
+#thirst .status-circle {
+  stroke: url(#thirstGradient);
+}
+
+#hunger .status-circle {
+  stroke: url(#hungerGradient);
+}
+
+.icon-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon-container i {
+  font-size: 1.1vw;
+  color: rgba(255, 255, 255, 0.95);
+  transform-origin: center center;
+}
+
+#thirst .icon-container i {
+  color: rgba(150, 210, 255, 0.95);
+}
+
+#hunger .icon-container i {
+  color: rgba(255, 200, 150, 0.95);
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.08);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.pulse {
+  animation: pulse 0.4s ease;
+}
+
+#voice {
+  opacity: 0;
+  position: relative;
+  pointer-events: none;
+}
+
+#voice.show-voice {
+  animation: quickFadeIn 80ms forwards;
+}
+
+#voice.hide-voice {
+  animation: quickFadeOut 80ms forwards;
+}
+
+@keyframes quickFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes quickFadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.voice-whisper .status-circle {
+  stroke: url(#voiceWhisperGradient) !important;
+}
+
+.voice-normal .status-circle {
+  stroke: url(#voiceNormalGradient) !important;
+}
+
+.voice-shout .status-circle {
+  stroke: url(#voiceShoutGradient) !important;
+}
+
+.voice-type-radio .status-circle {
+  stroke: url(#voiceRadioGradient) !important;
+}
+
+.voice-type-phone .status-circle {
+  stroke: url(#voicePhoneGradient) !important;
+}
+
+.voice-type-radio .icon-container i {
+  color: rgba(140, 255, 140, 0.95) !important;
+}
+
+.voice-type-phone .icon-container i {
+  color: rgba(255, 215, 80, 0.95) !important;
+}
+
+.voice-type-radio.voice-whisper .status-circle {
+  stroke: url(#voiceRadioGradient) !important;
+}
+
+.voice-type-radio.voice-normal .status-circle {
+  stroke: url(#voiceRadioGradient) !important;
+}
+
+.voice-type-radio.voice-shout .status-circle {
+  stroke: url(#voiceRadioGradient) !important;
+}
+
+.voice-type-radio.voice-whisper .icon-container i {
+  color: rgba(152, 251, 152, 0.95) !important;
+}
+
+.voice-type-radio.voice-normal .icon-container i {
+  color: rgba(144, 238, 144, 0.95) !important;
+}
+
+.voice-type-radio.voice-shout .icon-container i {
+  color: rgba(127, 255, 170, 0.95) !important;
+}
+
+#voice .icon-container i {
+  color: rgba(255, 255, 255, 0.95);
+}

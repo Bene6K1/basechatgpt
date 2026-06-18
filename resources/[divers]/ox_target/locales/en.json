@@ -1,0 +1,17 @@
+{
+  "toggle_front_driver_door": "Ouvrir/Fermer porte avant conducteur",
+  "toggle_front_passenger_door": "Ouvrir/Fermer porte avant passager",
+  "toggle_rear_driver_door": "Ouvrir/Fermer porte arrière conducteur",
+  "toggle_rear_passenger_door": "Ouvrir/Fermer porte arrière passager",
+  "toggle_hood": "Ouvrir/Fermer capot",
+  "toggle_trunk": "Ouvrir/Fermer coffre",
+  "debug_box": "(Debug) Boîte",
+  "debug_sphere": "(Debug) Sphère",
+  "debug_police_car": "Voiture de police",
+  "debug_ped": "(Debug) Piéton",
+  "debug_vehicle": "(Debug) Véhicule",
+  "debug_object": "(Debug) Objet",
+  "debug_global": "(Debug) Global",
+  "toggle_targeting": "Activer/Désactiver le ciblage",
+  "go_back": "Retour"
+}

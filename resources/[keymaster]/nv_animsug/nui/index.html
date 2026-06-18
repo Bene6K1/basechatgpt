@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="js/jquery.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="keybind-hint neva-container">
+    <div class="neva-content">
+        <label id="text-prefix">Appuyer</label>
+        <div class="keybind-block neva-keybind">
+            <label id="text-keybind">-</label>
+        </div>
+        <label id="text-suffix">pour se reposer</label>
+    </div>
+</div>
+</body>
+</html>
+<script>
+    $(document).ready(function () {
+        $keybindHint = $('.keybind-hint');
+        $keybindHint.hide();
+        window.addEventListener('message', ({data}) => {
+            if (data.event === 'setStyle') {
+                $keybindHint.css('top', data.top);
+                $keybindHint.css('bottom', data.bottom);
+                $keybindHint.css('left', data.left);
+                $keybindHint.css('right', data.right);
+                $keybindHint.show();
+                const $body = $('body').get(0).style;
+                $body.setProperty('--fontSize', data.fontSize + 'vh');
+                $body.setProperty('--bgColor', data.bgColor);
+                $body.setProperty('--textColor', data.textColor);
+                $body.setProperty('--keybindBgColor', data.keybindBgColor);
+                $body.setProperty('--keybindTextColor', data.keybindTextColor);
+                $body.setProperty('--borderRadius', data.borderRadius + 'vh');
+            }
+            if (data.event === 'hide') {
+                $('body').fadeOut(300);
+            }
+            if (data.event === 'show') {
+                $('body').fadeIn(300);
+                $('#text-prefix').html(data.prefix);
+                $('#text-keybind').html(data.keybind);
+                $('#text-suffix').html(data.suffix);
+            }
+        });
+        fetch(`https://${GetParentResourceName()}/UILoaded`, {
+            method: 'POST',
+        });
+    });
+</script>
+<style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        display: none;
+        font-family: 'Bebas Neue', sans-serif;
+        overflow: hidden;
+    }
+
+    .keybind-hint.neva-container {
+        box-sizing: border-box;
+        
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 8px 12px;
+        gap: 6px;
+        isolation: isolate;
+        
+        position: fixed;
+        min-width: 120px;
+        height: 36px;
+        right: 16px;
+        bottom: 16px;
+        
+        background: radial-gradient(120.1% 120.1% at 115.34% -20.1%, rgba(255, 255, 255, 0.2) 0%, rgba(0, 0, 0, 0) 100%), rgba(21, 21, 21, 0.75);
+        box-shadow: 0px 0.633881px 2.1552px -1.75439px rgba(0, 0, 0, 0.19), 0px 2.40898px 8.19054px -3.50877px rgba(0, 0, 0, 0.153), 0px 0px 0px 1.05263px #4C4C4C;
+        border-radius: 6px;
+    }
+
+    .neva-content {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 0px;
+        gap: 6px;
+        
+        margin: 0;
+        width: 100%;
+        height: auto;
+        
+        flex: none;
+        order: 0;
+        flex-grow: 1;
+        z-index: 0;
+    }
+
+    #text-prefix, #text-suffix {
+        margin: 0;
+        
+        font-family: 'Bebas Neue';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 1;
+        text-align: center;
+        letter-spacing: -0.02em;
+        
+        color: #C6C9CA;
+        
+        flex: none;
+        flex-grow: 0;
+        white-space: nowrap;
+    }
+
+    #text-prefix {
+        order: 0;
+    }
+
+    #text-suffix {
+        order: 2;
+    }
+
+    .keybind-block.neva-keybind {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        
+        padding: 2px 6px;
+        min-width: 20px;
+        height: 20px;
+        
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.05) 100%);
+        border: 1px solid rgba(76, 76, 76, 0.6);
+        border-radius: 4px;
+        
+        flex: none;
+        order: 1;
+        flex-grow: 0;
+        
+        box-shadow: 
+            inset 0px 1px 2px rgba(255, 255, 255, 0.1),
+            0px 2px 4px rgba(0, 0, 0, 0.2);
+        
+        transition: all 0.2s ease;
+    }
+
+    .keybind-block.neva-keybind:hover {
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.08) 100%);
+        transform: translateY(-1px);
+        box-shadow: 
+            inset 0px 1px 2px rgba(255, 255, 255, 0.15),
+            0px 4px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    #text-keybind {
+        width: auto;
+        
+        font-family: 'Bebas Neue';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 1;
+        text-align: center;
+        letter-spacing: -0.02em;
+        
+        color: #FFFFFF;
+        
+        flex: none;
+        order: 0;
+        flex-grow: 0;
+    }
+
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .keybind-hint.neva-container.show {
+        animation: fadeInUp 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    @media (max-width: 768px) {
+        .keybind-hint.neva-container {
+            padding: 6px 10px;
+            gap: 4px;
+            height: 30px;
+        }
+        
+        .neva-content {
+            gap: 4px;
+            height: 12px;
+        }
+        
+        #text-prefix, #text-suffix {
+            font-size: 12px;
+            height: 12px;
+        }
+        
+        .keybind-block.neva-keybind {
+            padding: 2px 4px;
+            min-width: 18px;
+            height: 18px;
+        }
+        
+        #text-keybind {
+            font-size: 12px;
+            height: 12px;
+        }
+    }
+</style>

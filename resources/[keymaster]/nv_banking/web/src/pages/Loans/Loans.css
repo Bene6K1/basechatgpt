@@ -1,0 +1,582 @@
+/* Main Container */
+.loans {
+    padding: calc(0.092592592vh * 18) !important;
+    gap: calc(0.092592592vh * 16);
+    width: calc(0.092592592vh * 981);
+}
+.loans::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: calc(0.092592592vh * 1.5);
+    background: radial-gradient(circle at 90% 10%, rgba(217, 217, 217, .1) 0%, rgba(217, 217, 217, .1) 30%, rgba(217, 217, 217, .1) 100%);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: xor;
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* ==================== HEADER SECTION ==================== */
+.loans-header {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.loans-header-left {
+    gap: calc(0.092592592vh * 12);
+}
+
+.loans-header-iconDiv {
+    width: calc(0.092592592vh * 38);
+    height: calc(0.092592592vh * 38);
+    border: calc(0.092592592vh * 1) solid rgba(250, 250, 250, .2);
+    background: #fafafa1a;
+    color: white;
+    font-size: calc(0.092592592vh * 14);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.loans-header-titles {
+    gap: calc(0.092592592vh * 4);
+}
+
+.loans-header-title {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: calc(0.092592592vh * 18);
+    color: #e5e5e5;
+    line-height: 1;
+}
+
+.loans-header-subtitle {
+    font-family: "Geist", sans-serif;
+    font-size: calc(0.092592592vh * 11);
+    color: #6b6b6b;
+    line-height: 1;
+}
+
+.loans-header-right {
+    gap: calc(0.092592592vh * 12);
+}
+
+.loans-header-balance {
+    gap: calc(0.092592592vh * 2);
+}
+
+.loans-header-balance-label {
+    font-family: "Geist", sans-serif;
+    font-size: calc(0.092592592vh * 10);
+    color: #6b6b6b;
+    text-transform: uppercase;
+}
+
+.loans-header-balance-value {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: calc(0.092592592vh * 16);
+    color: #e5e5e5;
+    line-height: 1;
+}
+
+.loans-header-balance-icon {
+    width: calc(0.092592592vh * 36);
+    height: calc(0.092592592vh * 36);
+    border: calc(0.092592592vh * 1) solid rgba(250, 250, 250, .2);
+    background: #fafafa1a;
+    color: white;
+    font-size: calc(0.092592592vh * 14);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+/* ==================== STATS SECTION ==================== */
+.loans-stats {
+    gap: calc(0.092592592vh * 12);
+}
+
+.loans-stat-card {
+    padding: calc(0.092592592vh * 14) calc(0.092592592vh * 16) !important;
+    gap: calc(0.092592592vh * 8);
+    background: radial-gradient(100% 100% at 50% 0%, #43434331, #0e0f1180);
+}
+.loans-stat-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: calc(0.092592592vh * 1.5);
+    background: radial-gradient(circle at 90% 10%, rgba(217, 217, 217, .1) 0%, rgba(217, 217, 217, .1) 30%, rgba(217, 217, 217, .1) 100%);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: xor;
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.loans-stat-header {
+    gap: calc(0.092592592vh * 10);
+}
+
+.loans-stat-iconDiv {
+    width: calc(0.092592592vh * 28);
+    height: calc(0.092592592vh * 28);
+    border: calc(0.092592592vh * 1) solid rgba(250, 250, 250, .2);
+    background: #fafafa1a;
+    font-size: calc(0.092592592vh * 12);
+}
+
+.loans-stat-label {
+    font-family: "Geist", sans-serif;
+    font-size: calc(0.092592592vh * 10);
+    color: #6b6b6b;
+    text-transform: uppercase;
+}
+
+.loans-stat-value {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: calc(0.092592592vh * 28);
+    line-height: 1;
+}
+
+.loans-stat-status {
+    gap: calc(0.092592592vh * 6);
+}
+
+.loans-status-dot {
+    width: calc(0.092592592vh * 6);
+    height: calc(0.092592592vh * 6);
+    border-radius: 50%;
+}
+
+.loans-stat-status-text {
+    font-family: "Geist", sans-serif;
+    font-size: calc(0.092592592vh * 10);
+    color: #6b6b6b;
+}
+
+.loans-pay-all-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: calc(0.092592592vh * 6);
+    padding: calc(0.092592592vh * 8) calc(0.092592592vh * 12);
+    font-family: "Geist", sans-serif;
+    font-size: calc(0.092592592vh * 10);
+    font-weight: 600;
+    background-color: #c507171a;
+    color: #c50717;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.loans-pay-all-btn:hover {
+    color: #121212;
+    background-color: #c50717;
+}
+
+/* ==================== MAIN CONTENT ==================== */
+.loans-content {
+    gap: calc(0.092592592vh * 16);
+    margin-top: calc(0.092592592vh * 10);
+}
+
+.loans-content-left {
+    gap: calc(0.092592592vh * 16);
+    padding: calc(0.092592592vh * 16) calc(0.092592592vh * 20) !important;
+}
+.loans-content-right {
+    padding: calc(0.092592592vh * 16) calc(0.092592592vh * 20) !important;
+    width: calc(0.092592592vh * 350);
+    gap: calc(0.092592592vh * 12);
+}
+
+/* ==================== SECTION HEADERS ==================== */
+.loans-section-header {
+    gap: calc(0.092592592vh * 10);
+    margin-bottom: calc(0.092592592vh * 12);
+}
+
+.loans-section-iconDiv {
+    width: calc(0.092592592vh * 32);
+    height: calc(0.092592592vh * 32);
+    border: calc(0.092592592vh * 1) solid rgba(250, 250, 250, .2);
+    background: #fafafa1a;
+    color: white;
+    font-size: calc(0.092592592vh * 12);
+    position: relative;
+}
+
+.loans-section-titles {
+    gap: calc(0.092592592vh * 2);
+}
+
+.loans-section-title {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: calc(0.092592592vh * 16);
+    color: #e5e5e5;
+    line-height: 1;
+}
+
+.loans-section-subtitle {
+    font-family: "Geist", sans-serif;
+    font-size: calc(0.092592592vh * 10);
+    color: #6b6b6b;
+    line-height: 1;
+}
+
+/* ==================== ACTIVE LOANS LIST ==================== */
+.loans-active-list {
+    gap: calc(0.092592592vh * 12);
+    padding-right: calc(0.092592592vh * 6);
+}
+
+.loans-active-card {
+    padding: calc(0.092592592vh * 14);
+    gap: calc(0.092592592vh * 12);
+    background: radial-gradient(100% 100% at 50% 0%, #43434331, #0e0f1180);
+}
+
+.loans-active-header {
+    gap: calc(0.092592592vh * 12);
+}
+
+.loans-active-info {
+    gap: calc(0.092592592vh * 12);
+}
+
+.loans-active-logo {
+    width: calc(0.092592592vh * 36);
+    height: calc(0.092592592vh * 36);
+    background: rgba(255, 255, 255, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.loans-active-logo img {
+    width: calc(0.092592592vh * 24);
+    height: calc(0.092592592vh * 24);
+    object-fit: contain;
+}
+
+.loans-active-texts {
+    gap: calc(0.092592592vh * 2);
+}
+
+.loans-active-label {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: calc(0.092592592vh * 14);
+    color: #e5e5e5;
+    line-height: 1;
+}
+
+.loans-active-description {
+    font-family: "Geist", sans-serif;
+    font-size: calc(0.092592592vh * 10);
+    color: #6b6b6b;
+    line-height: 1;
+}
+
+.loans-active-badge {
+    display: flex;
+    align-items: center;
+    gap: calc(0.092592592vh * 4);
+    padding: calc(0.092592592vh * 4) calc(0.092592592vh * 8);
+    background: rgba(219, 173, 24, 0.15);
+    font-family: "Geist", sans-serif;
+    font-size: calc(0.092592592vh * 10);
+    color: #dbad18;
+}
+
+.loans-active-badge i {
+    font-size: calc(0.092592592vh * 10);
+}
+
+.loans-active-grid {
+    gap: calc(0.092592592vh * 12);
+}
+
+.loans-active-grid-item {
+    gap: calc(0.092592592vh * 4);
+}
+
+.loans-active-grid-label {
+    font-family: "Geist", sans-serif;
+    font-size: calc(0.092592592vh * 10);
+    color: #6b6b6b;
+    text-transform: uppercase;
+}
+
+.loans-active-grid-value {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: calc(0.092592592vh * 16);
+    color: #e5e5e5;
+}
+
+.loans-active-grid-subtext {
+    font-family: "Geist", sans-serif;
+    font-size: calc(0.092592592vh * 9);
+    color: #6b6b6b;
+    line-height: 0;
+}
+
+.loans-active-actions {
+    gap: calc(0.092592592vh * 8);
+    margin-top: calc(0.092592592vh * 4);
+}
+
+.loans-action-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: calc(0.092592592vh * 6);
+    padding: calc(0.092592592vh * 10) calc(0.092592592vh * 14);
+    font-family: "Geist", sans-serif;
+    font-size: calc(0.092592592vh * 11);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: none;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.loans-action-btn i {
+    font-size: calc(0.092592592vh * 11);
+}
+
+.loans-action-danger {
+    background-color: #c507171a;
+    color: #c50717;
+}
+
+.loans-action-danger:hover {
+    color: #121212;
+    background-color: #c50717;
+}
+
+.loans-action-success {
+    background-color: #fafafa1a;
+    color: #fafafa;
+}
+
+.loans-action-success:hover {
+    color: #121212;
+    background: #fafafa;
+}
+
+/* ==================== EMPTY STATE ==================== */
+.loans-empty {
+    padding: calc(0.092592592vh * 40);
+    gap: calc(0.092592592vh * 12);
+    flex: 1;
+}
+
+.loans-empty-icon {
+    font-size: calc(0.092592592vh * 36);
+    color: #4b4b4b;
+}
+
+.loans-empty-title {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: calc(0.092592592vh * 14);
+    color: #8b8b8b;
+    text-transform: uppercase;
+}
+
+.loans-empty-text {
+    font-family: "Geist", sans-serif;
+    font-size: calc(0.092592592vh * 11);
+    color: #6b6b6b;
+    text-align: center;
+    max-width: calc(0.092592592vh * 200);
+}
+
+/* ==================== AVAILABLE LOANS LIST ==================== */
+.loans-available-list {
+    gap: calc(0.092592592vh * 10);
+    padding: calc(0.092592592vh * 2);
+    padding-right: calc(0.092592592vh * 6);
+}
+
+.loans-available-card {
+    padding: calc(0.092592592vh * 10) !important;
+    gap: calc(0.092592592vh * 10);
+    background: radial-gradient(100% 100% at 50% 0%, #43434331, #0e0f1180);
+}
+.loans-available-card-active {
+    background: radial-gradient(121.15% 121.15% at 50% 0%, #6b6b6b42, #0e0f1180);
+    border-bottom: calc(0.092592592vh * 2) solid rgba(250, 250, 250, 1);
+}
+
+.loans-available-header {
+    padding: calc(0.092592592vh * 2);
+}
+
+.loans-available-info {
+    gap: calc(0.092592592vh * 10);
+}
+
+.loans-available-logo {
+    width: calc(0.092592592vh * 32);
+    height: calc(0.092592592vh * 32);
+    background: rgba(255, 255, 255, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.loans-available-logo img {
+    width: calc(0.092592592vh * 20);
+    height: calc(0.092592592vh * 20);
+    object-fit: contain;
+}
+
+.loans-available-texts {
+    gap: calc(0.092592592vh * 2);
+}
+
+.loans-available-label {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: calc(0.092592592vh * 14);
+    color: #e5e5e5;
+    line-height: 1;
+}
+
+.loans-available-description {
+    font-family: "Geist", sans-serif;
+    font-size: calc(0.092592592vh * 10);
+    color: #6b6b6b;
+    line-height: 1;
+}
+
+.loans-available-badge {
+    display: flex;
+    align-items: center;
+    gap: calc(0.092592592vh * 4);
+    padding: calc(0.092592592vh * 2) calc(0.092592592vh * 6);
+    background: rgba(219, 173, 24, 0.15);
+    font-family: "Geist", sans-serif;
+    font-size: calc(0.092592592vh * 9);
+    color: #dbad18;
+    margin-left: calc(0.092592592vh * 8);
+}
+
+.loans-available-badge i {
+    font-size: calc(0.092592592vh * 8);
+}
+
+.loans-available-chevron {
+    font-size: calc(0.092592592vh * 12);
+    color: #6b6b6b;
+    transition: transform 0.2s ease;
+}
+
+.loans-available-details-wrapper {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.3s ease-out;
+    overflow: hidden;
+}
+
+.loans-available-details-wrapper.loans-available-details-open {
+    grid-template-rows: 1fr;
+}
+
+.loans-available-details {
+    min-height: 0;
+    gap: calc(0.092592592vh * 12);
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+}
+
+.loans-available-details-open .loans-available-details {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.loans-available-grid {
+    gap: calc(0.092592592vh * 8);
+}
+
+.loans-available-grid-item {
+    gap: calc(0.092592592vh * 4);
+}
+
+.loans-available-grid-label {
+    font-family: "Geist", sans-serif;
+    font-size: calc(0.092592592vh * 9);
+    color: #6b6b6b;
+    text-transform: uppercase;
+}
+
+.loans-available-grid-value {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: calc(0.092592592vh * 14);
+    color: #e5e5e5;
+}
+
+.loans-available-grid-subtext {
+    font-family: "Geist", sans-serif;
+    font-size: calc(0.092592592vh * 9);
+    color: #6b6b6b;
+    line-height: 0;
+}
+
+.loans-apply-btn {
+    margin-top: calc(0.092592592vh * 8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: calc(0.092592592vh * 8);
+    padding: calc(0.092592592vh * 10) calc(0.092592592vh * 16);
+    font-family: "Geist", sans-serif;
+    font-size: calc(0.092592592vh * 11);
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.loans-apply-btn i {
+    font-size: calc(0.092592592vh * 11);
+}
+
+.loans-apply-enabled {
+    background-color: #fafafa1a;
+    color: #fafafa;
+}
+
+.loans-apply-enabled:hover {
+    color: #121212;
+    background: #fafafa;
+}
+
+.loans-apply-disabled {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: #6b6b6b;
+    cursor: not-allowed;
+}
+
+.loans-apply-disabled:hover {
+    transform: none;
+    opacity: 1;
+}

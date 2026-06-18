@@ -1,0 +1,59 @@
+//
+// Layout - BaseStyle Theme
+//
+
+@import '../../styles/_variables.scss';
+
+.layout {
+  position: relative;
+  height: 100%;
+  display: flex;
+  overflow: hidden;
+  gap: vh(20);
+  padding: vh(30);
+  width: vh(1500);
+
+  margin: 0 auto;
+  border-radius: vh(32);
+  background-color: $base-bg;
+  border: vh(5) solid transparent;
+  background-image:
+    linear-gradient($base-bg, $base-bg),
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.7) 0%,
+      rgba(230, 230, 230, 0.65) 10%,
+      #b3b3b3 28%,
+      #858585 50%,
+      #4f4f4f 78%,
+      #707070 100%
+    );
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+
+  &__sidebar {
+    position: relative;
+    width: vh(350);
+    height: 100%;
+  }
+
+  &__main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: vh(16);
+  }
+
+  &__header {
+    position: relative;
+    width: 100%;
+  }
+
+  &__content {
+    height: 100%;
+    padding: vh(18);
+    padding-top: vh(10);
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+}

@@ -1,0 +1,45 @@
+//
+// Input
+//
+
+@import '../../styles/_variables.scss';
+
+.input {
+  border: 0;
+  outline: 0;
+  padding: 7px 14px;
+  border: 1px solid rgb(255, 255, 255, 0.1);
+  border-radius: calc($default-border-radius / 1.5);
+  background-color: rgb(255, 255, 255, 0.05);
+  font-family: 'Gilroy';
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 24px;
+  color: #d0d0d0;
+  transition: all 125ms;
+
+  &:focus {
+    border-color: rgb(255, 255, 255, 0.25);
+  }
+
+  &::-webkit-inner-spin-button,
+  &::-webkit-outer-spin-button  {
+    display: none;
+  }
+
+  &--style-two {
+    padding: 8px 15px;
+    border-color: transparent;
+    background-color: #232428;
+    font-weight: 600;
+    color: #747578;
+
+    &::placeholder {
+      color: #777b82 !important;
+    }
+
+    &:focus {
+      border-color: rgb(255, 255, 255, 0.075);
+    }
+  }
+}

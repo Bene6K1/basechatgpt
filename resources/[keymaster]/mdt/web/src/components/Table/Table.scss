@@ -1,0 +1,121 @@
+//
+// Table - BaseStyle Theme
+//
+
+@import '../../styles/_variables.scss';
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+
+  &__thead {
+    &-tr {
+      border-bottom: vh(1) solid rgba(255, 255, 255, 0.1);
+    }
+
+    &-th {
+      padding: 0 vh(20) vh(20) vh(20);
+      font-size: vh(11);
+      font-weight: 600;
+      line-height: 1.4;
+      color: $text-inactive;
+      text-align: start;
+      text-transform: uppercase;
+      letter-spacing: vh(0.3);
+    }
+  }
+
+  &__tbody {
+    &::before {
+      content: '-';
+      line-height: vh(20);
+      color: transparent;
+    }
+
+    &-tr {
+      position: relative;
+      background: $button-inactive-bg;
+      transition: all 0.1s ease-in-out;
+
+      &:not(:first-child) {
+        transform: translateY(vh(8));
+        // border-top: vh(10) solid transparent;
+      }
+
+      &:hover {
+        background: $button-hover-bg;
+      }
+
+      &.is-editing {
+        background: $button-hover-bg;
+        border-bottom: vh(2) solid white;
+      }
+    }
+
+    &-td {
+      padding: vh(20);
+      font-size: vh(14);
+      font-weight: 600;
+      line-height: 1.4;
+      color: $text-primary;
+      vertical-align: middle;
+
+      &--action-only {
+        padding: 0;
+        display: flex;
+        justify-content: flex-end;
+      }
+
+      &--empty {
+        text-align: center;
+        color: $text-secondary;
+      }
+    }
+  }
+
+  &__action {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: vh(20);
+    padding-right: vh(10);
+
+    &-item {
+      border: 0;
+      outline: 0;
+      padding: vh(12);
+      height: 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: vh(4);
+      font-size: vh(11);
+      font-weight: 600;
+      color: $text-secondary;
+      text-transform: capitalize;
+      user-select: none;
+      -webkit-user-select: none;
+      transition: all 0.1s ease-in-out;
+
+      &:hover {
+        cursor: pointer;
+        background: rgba(255, 255, 255, 0.08);
+        color: $text-primary;
+      }
+
+      &--delete:hover {
+        background: rgba($accent-red, 0.7);
+        color: #fff;
+      }
+
+    }
+
+    &-icon {
+      font-size: vh(18);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}

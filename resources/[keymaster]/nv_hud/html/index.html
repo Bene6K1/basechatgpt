@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=1920, initial-scale=1.0" />
+  <title>NEVA HUD</title>
+  <link rel="stylesheet" href="css/normalize.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@jaames/iro@5"></script>
+</head>
+<body>
+  <!-- Server Info HUD (top-right) -->
+  <div id="hud-container">
+    <div class="hud-frame">
+      <div class="hud-bg"></div>
+      <div class="hud-rectangle frame-bg"></div>
+      <div class="hud-rectangle header-bg"></div>
+      <div class="hud-text player-name" id="server-name">NEVA Ultimate</div>
+      <div class="hud-text discord">
+        <span class="discord-text active" id="discord-text">.GG/NEVA-FIVEM</span>
+        <span class="id-text">VOTRE ID: 0</span>
+        <span class="date-text"></span>
+      </div>
+      <div class="hud-image logo"></div>
+    </div>
+  </div>
+
+  <!-- Status HUD (bottom-left) -->
+  <div id="main">
+    <div id="panel">
+      <div id="buttons">
+        <input id="thirst-color" type="radio" name="color" value="thirst" />
+        <label class="color-button" for="thirst-color">
+          <i class="fas fa-tint"></i>
+        </label>
+
+        <input id="hunger-color" type="radio" name="color" value="hunger" />
+        <label class="color-button" for="hunger-color">
+          <i class="fas fa-utensils"></i>
+        </label>
+
+        <input id="voice-color" type="radio" name="color" value="voice" />
+        <label class="color-button" for="voice-color">
+          <i class="fas fa-microphone"></i>
+        </label>
+      </div>
+      <div id="picker"></div>
+    </div>
+    <div id="status">
+      <div id="voice" class="status-item voice-type-regular" style="display: none">
+        <svg class="status-svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet">
+          <defs>
+            <linearGradient id="voiceWhisperGradient" x1="50%" y1="0%" x2="50%" y2="100%">
+              <stop offset="0%" style="stop-color:rgba(150, 210, 255, 0.85);stop-opacity:1" />
+              <stop offset="50%" style="stop-color:rgba(91, 173, 220, 0.92);stop-opacity:1" />
+              <stop offset="100%" style="stop-color:rgba(50, 140, 200, 0.95);stop-opacity:1" />
+            </linearGradient>
+            <linearGradient id="voiceNormalGradient" x1="50%" y1="0%" x2="50%" y2="100%">
+              <stop offset="0%" style="stop-color:rgba(255, 255, 255, 0.85);stop-opacity:1" />
+              <stop offset="50%" style="stop-color:rgba(220, 220, 220, 0.92);stop-opacity:1" />
+              <stop offset="100%" style="stop-color:rgba(180, 180, 180, 0.95);stop-opacity:1" />
+            </linearGradient>
+            <linearGradient id="voiceShoutGradient" x1="50%" y1="0%" x2="50%" y2="100%">
+              <stop offset="0%" style="stop-color:rgba(255, 150, 120, 0.85);stop-opacity:1" />
+              <stop offset="50%" style="stop-color:rgba(255, 99, 71, 0.92);stop-opacity:1" />
+              <stop offset="100%" style="stop-color:rgba(220, 50, 30, 0.95);stop-opacity:1" />
+            </linearGradient>
+            <linearGradient id="voiceRadioGradient" x1="50%" y1="0%" x2="50%" y2="100%">
+              <stop offset="0%" style="stop-color:rgba(180, 255, 180, 0.85);stop-opacity:1" />
+              <stop offset="50%" style="stop-color:rgba(144, 238, 144, 0.92);stop-opacity:1" />
+              <stop offset="100%" style="stop-color:rgba(100, 200, 100, 0.95);stop-opacity:1" />
+            </linearGradient>
+            <linearGradient id="voicePhoneGradient" x1="50%" y1="0%" x2="50%" y2="100%">
+              <stop offset="0%" style="stop-color:rgba(255, 230, 100, 0.85);stop-opacity:1" />
+              <stop offset="50%" style="stop-color:rgba(255, 204, 0, 0.92);stop-opacity:1" />
+              <stop offset="100%" style="stop-color:rgba(220, 160, 0, 0.95);stop-opacity:1" />
+            </linearGradient>
+          </defs>
+          <circle class="status-circle" cx="50" cy="50" r="42"></circle>
+          <g transform="translate(30, 30) scale(2)">
+            <path d="M10 2.66675C10.663 2.66675 11.2989 2.93014 11.7678 3.39898C12.2366 3.86782 12.5 4.50371 12.5 5.16675V10.1667C12.5 10.8298 12.2366 11.4657 11.7678 11.9345C11.2989 12.4034 10.663 12.6667 10 12.6667C9.33696 12.6667 8.70108 12.4034 8.23224 11.9345C7.7634 11.4657 7.50001 10.8298 7.50001 10.1667V5.16675C7.50001 4.50371 7.7634 3.86782 8.23224 3.39898C8.70108 2.93014 9.33696 2.66675 10 2.66675ZM15.8333 10.1667C15.8333 13.1084 13.6583 15.5334 10.8333 15.9417V18.5001H9.16667V15.9417C6.34167 15.5334 4.16667 13.1084 4.16667 10.1667H5.83334C5.83334 11.2718 6.27233 12.3316 7.05373 13.113C7.83513 13.8944 8.89494 14.3334 10 14.3334C11.1051 14.3334 12.1649 13.8944 12.9463 13.113C13.7277 12.3316 14.1667 11.2718 14.1667 10.1667H15.8333Z" fill="white"/>
+          </g>
+        </svg>
+      </div>
+
+      <div id="thirst" class="status-item">
+        <svg class="status-svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet">
+          <defs>
+            <linearGradient id="thirstGradient" x1="50%" y1="0%" x2="50%" y2="100%">
+              <stop offset="0%" style="stop-color:rgba(120, 200, 240, 0.85);stop-opacity:1" />
+              <stop offset="25%" style="stop-color:rgba(100, 185, 230, 0.87);stop-opacity:1" />
+              <stop offset="50%" style="stop-color:rgba(80, 160, 210, 0.89);stop-opacity:1" />
+              <stop offset="75%" style="stop-color:rgba(60, 140, 195, 0.92);stop-opacity:1" />
+              <stop offset="100%" style="stop-color:rgba(40, 120, 180, 0.95);stop-opacity:1" />
+            </linearGradient>
+          </defs>
+          <circle class="status-circle" cx="50" cy="50" r="42"></circle>
+          <g transform="translate(27.5, 27.5) scale(1.9)">
+            <path d="M12 3L11.125 3.91859C11.125 3.91859 9.63167 5.50425 8.12667 7.56015C6.62167 9.61604 5 12.0765 5 14.4386C5 16.1788 5.7375 17.8477 7.05025 19.0782C8.36301 20.3087 10.1435 21 12 21C13.8565 21 15.637 20.3087 16.9497 19.0782C18.2625 17.8477 19 16.1788 19 14.4386C19 12.0765 17.3783 9.61604 15.8733 7.56015C14.3683 5.50425 12.875 3.91859 12.875 3.91859L12 3ZM12 6.42284C12.5133 6.99149 12.98 7.46173 13.96 8.79587C15.3717 10.7205 16.6667 13.1701 16.6667 14.4386C16.6667 16.8663 14.59 18.8129 12 18.8129C9.41 18.8129 7.33333 16.8663 7.33333 14.4386C7.33333 13.1701 8.62833 10.7205 10.04 8.79587C11.02 7.46173 11.4867 6.99149 12 6.42284Z" fill="#007BFF"/>
+            <path d="M12 3L11.125 3.91859C11.125 3.91859 9.63167 5.50425 8.12667 7.56015C6.62167 9.61604 5 12.0765 5 14.4386C5 16.1788 5.7375 17.8477 7.05025 19.0782C8.36301 20.3087 10.1435 21 12 21C13.8565 21 15.637 20.3087 16.9497 19.0782C18.2625 17.8477 19 16.1788 19 14.4386C19 12.0765 17.3783 9.61604 15.8733 7.56015C14.3683 5.50425 12.875 3.91859 12.875 3.91859L12 3ZM12 6.42284C12.5133 6.99149 12.98 7.46173 13.96 8.79587C15.3717 10.7205 16.6667 13.1701 16.6667 14.4386C16.6667 16.8663 14.59 18.8129 12 18.8129C9.41 18.8129 7.33333 16.8663 7.33333 14.4386C7.33333 13.1701 8.62833 10.7205 10.04 8.79587C11.02 7.46173 11.4867 6.99149 12 6.42284Z" fill="url(#paint0_linear_158_75834)" fill-opacity="0.5" style="mix-blend-mode:overlay"/>
+            <defs>
+              <linearGradient id="paint0_linear_158_75834" x1="15.7289" y1="26.2315" x2="1.24184" y2="18.1103" gradientUnits="userSpaceOnUse">
+                <stop offset="0.5279" stop-color="white" stop-opacity="0"/>
+                <stop offset="0.9595" stop-color="white"/>
+              </linearGradient>
+            </defs>
+          </g>
+        </svg>
+      </div>
+
+      <div id="hunger" class="status-item">
+        <svg class="status-svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet">
+          <defs>
+            <linearGradient id="hungerGradient" x1="50%" y1="0%" x2="50%" y2="100%">
+              <stop offset="0%" style="stop-color:rgba(255, 200, 100, 0.85);stop-opacity:1" />
+              <stop offset="25%" style="stop-color:rgba(255, 180, 70, 0.87);stop-opacity:1" />
+              <stop offset="50%" style="stop-color:rgba(255, 159, 41, 0.89);stop-opacity:1" />
+              <stop offset="75%" style="stop-color:rgba(230, 130, 30, 0.92);stop-opacity:1" />
+              <stop offset="100%" style="stop-color:rgba(200, 100, 20, 0.95);stop-opacity:1" />
+            </linearGradient>
+          </defs>
+          <circle class="status-circle" cx="50" cy="50" r="42"></circle>
+          <g transform="translate(30.5, 30.5) scale(1.9)">
+            <path d="M2 18.2273C2 18.6445 2.34773 19 2.77273 19H12.8182C13.2509 19 13.5909 18.6445 13.5909 18.2273V17.4545H2V18.2273ZM7.79545 8.18182C4.89773 8.18182 2 9.72727 2 12.8182H13.5909C13.5909 9.72727 10.6932 8.18182 7.79545 8.18182ZM4.02455 11.2727C4.88227 10.075 6.70591 9.72727 7.79545 9.72727C8.885 9.72727 10.7086 10.075 11.5664 11.2727H4.02455ZM2 14.3636H13.5909V15.9091H2V14.3636ZM15.1364 5.09091V2H13.5909V5.09091H9.72727L9.905 6.63636H17.2923L16.2105 17.4545H15.1364V19H16.4655C17.1145 19 17.6477 18.4977 17.725 17.8641L19 5.09091H15.1364Z" fill="#FF9F29"/>
+            <path d="M2 18.2273C2 18.6445 2.34773 19 2.77273 19H12.8182C13.2509 19 13.5909 18.6445 13.5909 18.2273V17.4545H2V18.2273ZM7.79545 8.18182C4.89773 8.18182 2 9.72727 2 12.8182H13.5909C13.5909 9.72727 10.6932 8.18182 7.79545 8.18182ZM4.02455 11.2727C4.88227 10.075 6.70591 9.72727 7.79545 9.72727C8.885 9.72727 10.7086 10.075 11.5664 11.2727H4.02455ZM2 14.3636H13.5909V15.9091H2V14.3636ZM15.1364 5.09091V2H13.5909V5.09091H9.72727L9.905 6.63636H17.2923L16.2105 17.4545H15.1364V19H16.4655C17.1145 19 17.6477 18.4977 17.725 17.8641L19 5.09091H15.1364Z" fill="url(#paint0_linear_158_75827)" fill-opacity="0.75" style="mix-blend-mode:overlay"/>
+            <defs>
+              <linearGradient id="paint0_linear_158_75827" x1="15.0279" y1="23.9409" x2="-0.187521" y2="12.9743" gradientUnits="userSpaceOnUse">
+                <stop offset="0.5279" stop-color="white" stop-opacity="0"/>
+                <stop offset="0.9595" stop-color="white"/>
+              </linearGradient>
+            </defs>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/hud.js"></script>
+</body>
+</html>

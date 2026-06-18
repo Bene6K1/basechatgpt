@@ -1,0 +1,22 @@
+# Node modules
+**/node_modules/
+
+# Environment files
+.env
+.env.local
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+
+# Logs
+*.log
+
+# Archives
+*.rar
+*.zip
+*.7z

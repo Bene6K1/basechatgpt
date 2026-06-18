@@ -1,0 +1,47 @@
+@charset "UTF-8";
+/**
+ *
+ * Breakpoints
+ *
+ */
+/**
+ *
+ * Color
+ *
+ */
+.input {
+  border: 0;
+  outline: 0;
+  padding: 7px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6.6666666667px;
+  background-color: rgba(255, 255, 255, 0.05);
+  font-family: "Gilroy";
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 24px;
+  color: #d0d0d0;
+  transition: all 125ms;
+}
+.input:focus {
+  border-color: rgba(255, 255, 255, 0.25);
+}
+.input::-webkit-inner-spin-button, .input::-webkit-outer-spin-button  {
+  display: none;
+}
+.input--style-two {
+  padding: 8px 15px;
+  border-color: transparent;
+  background-color: #232428;
+  font-weight: 600;
+  color: #747578;
+}
+.input--style-two::-moz-placeholder {
+  color: #777b82 !important;
+}
+.input--style-two::placeholder {
+  color: #777b82 !important;
+}
+.input--style-two:focus {
+  border-color: rgba(255, 255, 255, 0.075);
+}/*# sourceMappingURL=Input.css.map */

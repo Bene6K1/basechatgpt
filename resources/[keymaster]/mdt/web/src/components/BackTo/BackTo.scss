@@ -1,0 +1,44 @@
+//
+// Back To - BaseStyle Theme
+//
+
+@import '../../styles/_variables.scss';
+
+.back-to {
+  width: max-content;
+  padding: vh(8) vh(16) vh(8) vh(12);
+  border-radius: 0;
+  background: rgba(255, 255, 255, 0.05);
+  margin-bottom: vh(16);
+  display: flex;
+  align-items: center;
+  gap: vh(8);
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
+  }
+
+  &:hover &__icon,
+  &:hover &__text {
+    transform: translateX(vh(-3));
+  }
+
+  &__icon {
+    font-size: vh(16);
+    color: $text-secondary;
+    display: flex;
+    transition: all 0.2s ease-in-out;
+  }
+
+  &__text {
+    font-size: vh(13);
+    font-weight: 600;
+    line-height: 1;
+    color: $text-secondary;
+    letter-spacing: vh(0.3);
+    transition: all 0.2s ease-in-out;
+  }
+}

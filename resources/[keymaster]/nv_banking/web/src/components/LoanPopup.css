@@ -1,0 +1,312 @@
+/* ==================== POPUP OVERLAY ==================== */
+.loan-popup-overlay {
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+    z-index: 100;
+}
+
+/* ==================== POPUP CONTAINER ==================== */
+.loan-popup {
+    width: calc(0.092592592vh * 450);
+    background: radial-gradient(
+            120.1% 120.1% at 115.34% -20.1%,
+            rgba(255, 255, 255, 0.1) 0%,
+            rgba(0, 0, 0, 0) 100%
+        ),
+        var(--bg-primary);
+    border-radius: calc(0.092592592vh * 12);
+    padding: calc(0.092592592vh * 20);
+    gap: calc(0.092592592vh * 16);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.loan-popup::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: calc(0.092592592vh * 12);
+    padding: 1px;
+    background: radial-gradient(circle at 90% 10%, #7e7e7e 0%, #595959 30%, #000000 100%);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: xor;
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* ==================== POPUP HEADER ==================== */
+.loan-popup-header {
+    gap: calc(0.092592592vh * 12);
+}
+
+.loan-popup-iconDiv {
+    width: calc(0.092592592vh * 38);
+    height: calc(0.092592592vh * 38);
+    border-radius: calc(0.092592592vh * 6);
+    font-size: calc(0.092592592vh * 14);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.loan-popup-iconDiv::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: calc(0.092592592vh * 6);
+    padding: 1px;
+    background: radial-gradient(circle at 90% 10%, #7e7e7e 0%, #595959 30%, #000000 100%);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: xor;
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.loan-popup-titles {
+    gap: calc(0.092592592vh * 4);
+}
+
+.loan-popup-title {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: calc(0.092592592vh * 20);
+    color: #e5e5e5;
+    line-height: 1;
+}
+
+.loan-popup-subtitle {
+    font-family: "Geist", sans-serif;
+    font-size: calc(0.092592592vh * 11);
+    color: #6b6b6b;
+    line-height: 1;
+}
+
+.loan-popup-close {
+    width: calc(0.092592592vh * 32);
+    height: calc(0.092592592vh * 32);
+    border-radius: calc(0.092592592vh * 6);
+    background: rgba(205, 65, 44, 0.15);
+    border: 1px solid rgba(205, 65, 44, 0.3);
+    color: #cd412c;
+    font-size: calc(0.092592592vh * 12);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.loan-popup-close:hover {
+    background: rgba(205, 65, 44, 0.25);
+}
+
+/* ==================== LOAN INFO CARD ==================== */
+.loan-popup-info {
+    padding: calc(0.092592592vh * 14);
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: calc(0.092592592vh * 8);
+    gap: calc(0.092592592vh * 12);
+}
+
+.loan-popup-loan-header {
+    gap: calc(0.092592592vh * 10);
+}
+
+.loan-popup-loan-icon {
+    width: calc(0.092592592vh * 36);
+    height: calc(0.092592592vh * 36);
+    border-radius: calc(0.092592592vh * 6);
+    font-size: calc(0.092592592vh * 14);
+}
+
+.loan-popup-loan-icon img {
+    width: calc(0.092592592vh * 18);
+    height: calc(0.092592592vh * 18);
+    object-fit: contain;
+}
+
+.loan-popup-loan-titles {
+    gap: calc(0.092592592vh * 2);
+}
+
+.loan-popup-loan-name {
+    font-family: "Geist", sans-serif;
+    font-size: calc(0.092592592vh * 13);
+    color: #e5e5e5;
+    font-weight: 500;
+}
+
+.loan-popup-loan-desc {
+    font-family: "Geist", sans-serif;
+    font-size: calc(0.092592592vh * 10);
+    color: #6b6b6b;
+}
+
+.loan-popup-loan-credit {
+    gap: calc(0.092592592vh * 4);
+    padding: calc(0.092592592vh * 4) calc(0.092592592vh * 8);
+    border-radius: calc(0.092592592vh * 4);
+    font-family: "Geist", sans-serif;
+    font-size: calc(0.092592592vh * 10);
+    font-weight: 500;
+}
+
+.loan-popup-loan-credit i {
+    font-size: calc(0.092592592vh * 10);
+}
+
+/* ==================== LOAN STATS ==================== */
+.loan-popup-stats {
+    gap: calc(0.092592592vh * 10);
+}
+
+.loan-popup-stat {
+    flex: 1;
+    padding: calc(0.092592592vh * 10);
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: calc(0.092592592vh * 6);
+    gap: calc(0.092592592vh * 4);
+}
+
+.loan-popup-stat-label {
+    font-family: "Geist", sans-serif;
+    font-size: calc(0.092592592vh * 9);
+    color: #6b6b6b;
+    text-transform: uppercase;
+}
+
+.loan-popup-stat-value {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: calc(0.092592592vh * 18);
+    color: #e5e5e5;
+    line-height: 1;
+}
+
+/* ==================== INPUT SECTION ==================== */
+.loan-popup-input-section {
+    gap: calc(0.092592592vh * 8);
+}
+
+.loan-popup-input-label {
+    font-family: "Geist", sans-serif;
+    font-size: calc(0.092592592vh * 11);
+    color: #6b6b6b;
+}
+
+.loan-popup-input {
+    width: 100%;
+    height: calc(0.092592592vh * 42);
+    padding: 0 calc(0.092592592vh * 14);
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: calc(0.092592592vh * 6);
+    font-family: "Geist", sans-serif;
+    font-size: calc(0.092592592vh * 14);
+    color: #e5e5e5;
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+.loan-popup-input::placeholder {
+    color: #4b4b4b;
+}
+
+.loan-popup-input:focus {
+    border-color: rgba(194, 194, 194, 0.3);
+}
+
+/* ==================== ACTIONS ==================== */
+.loan-popup-actions {
+    gap: calc(0.092592592vh * 10);
+    margin-top: calc(0.092592592vh * 4);
+}
+
+.loan-popup-btn {
+    flex: 1;
+    height: calc(0.092592592vh * 40);
+    border-radius: calc(0.092592592vh * 6);
+    font-family: "Geist", sans-serif;
+    font-size: calc(0.092592592vh * 12);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: none;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    gap: calc(0.092592592vh * 6);
+}
+
+.loan-popup-btn i {
+    font-size: calc(0.092592592vh * 12);
+}
+
+.loan-popup-btn-cancel {
+    background: radial-gradient(
+            120.1% 120.1% at 115.34% -20.1%,
+            rgba(205, 65, 44, 0.3) 0%,
+            rgba(0, 0, 0, 0) 100%
+        ),
+        var(--bg-primary);
+    color: #cd412c;
+}
+
+.loan-popup-btn-cancel::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: calc(0.092592592vh * 6);
+    padding: 1px;
+    background: radial-gradient(circle at 90% 10%, #cd412c 0%, #8b2e1e 30%, #3d2020 100%);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: xor;
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.loan-popup-btn-pay {
+    background: radial-gradient(
+            120.1% 120.1% at 115.34% -20.1%,
+            rgba(67, 161, 65, 0.3) 0%,
+            rgba(0, 0, 0, 0) 100%
+        ),
+        var(--bg-primary);
+    color: #43a141;
+}
+
+.loan-popup-btn-pay::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: calc(0.092592592vh * 6);
+    padding: 1px;
+    background: radial-gradient(circle at 90% 10%, #43a141 0%, #2d7a2b 30%, #1a4a19 100%);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: xor;
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.loan-popup-btn:hover {
+    transform: scale(1.02);
+    opacity: 0.9;
+}

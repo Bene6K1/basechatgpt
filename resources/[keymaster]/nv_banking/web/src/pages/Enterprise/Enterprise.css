@@ -1,0 +1,424 @@
+/* Main Container */
+.enterprise {
+    padding: calc(0.092592592vh * 18) !important;
+    gap: calc(0.092592592vh * 16);
+    width: calc(0.092592592vh * 981);
+}
+.enterprise::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: calc(0.092592592vh * 1.5);
+    background: radial-gradient(circle at 90% 10%, rgba(217, 217, 217, .1) 0%, rgba(217, 217, 217, .1) 30%, rgba(217, 217, 217, .1) 100%);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: xor;
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* ==================== HEADER ==================== */
+.enterprise-header-left {
+    gap: calc(0.092592592vh * 12);
+}
+
+.enterprise-header-iconDiv {
+    width: calc(0.092592592vh * 38);
+    height: calc(0.092592592vh * 38);
+    border: calc(0.092592592vh * 1) solid rgba(250, 250, 250, .2);
+    background: #fafafa1a;
+    color: white;
+    font-size: calc(0.092592592vh * 14);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.enterprise-header-titles {
+    gap: calc(0.092592592vh * 4);
+}
+
+.enterprise-header-title {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: calc(0.092592592vh * 18);
+    color: #e5e5e5;
+    line-height: 1;
+}
+
+.enterprise-header-subtitle {
+    font-family: "Geist", sans-serif;
+    font-size: calc(0.092592592vh * 11);
+    color: #6b6b6b;
+    line-height: 1;
+}
+
+.enterprise-header-right {
+    gap: calc(0.092592592vh * 12);
+}
+
+.enterprise-header-balance {
+    gap: calc(0.092592592vh * 2);
+}
+
+.enterprise-header-balance-label {
+    font-family: "Geist", sans-serif;
+    font-size: calc(0.092592592vh * 10);
+    color: #6b6b6b;
+    text-transform: uppercase;
+}
+
+.enterprise-header-balance-value {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: calc(0.092592592vh * 16);
+    color: #e5e5e5;
+    line-height: 1;
+}
+
+/* ==================== MAIN CONTENT ==================== */
+.enterprise-content {
+    gap: calc(0.092592592vh * 16);
+    margin-top: calc(0.092592592vh * 10);
+}
+
+.enterprise-content-left {
+    width: calc(0.092592592vh * 280);
+    padding: calc(0.092592592vh * 16) calc(0.092592592vh * 16) !important;
+    gap: calc(0.092592592vh * 12);
+}
+
+.enterprise-content-right {
+    gap: calc(0.092592592vh * 12);
+}
+
+/* ==================== SECTION HEADERS ==================== */
+.enterprise-section-header {
+    gap: calc(0.092592592vh * 10);
+    margin-bottom: calc(0.092592592vh * 8);
+}
+
+.enterprise-section-iconDiv {
+    width: calc(0.092592592vh * 32);
+    height: calc(0.092592592vh * 32);
+    border: calc(0.092592592vh * 1) solid rgba(250, 250, 250, .2);
+    background: #fafafa1a;
+    color: white;
+    font-size: calc(0.092592592vh * 12);
+    position: relative;
+}
+
+.enterprise-section-titles {
+    gap: calc(0.092592592vh * 2);
+}
+
+.enterprise-section-title {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: calc(0.092592592vh * 16);
+    color: #e5e5e5;
+    line-height: 1;
+}
+
+.enterprise-section-subtitle {
+    font-family: "Geist", sans-serif;
+    font-size: calc(0.092592592vh * 10);
+    color: #6b6b6b;
+    line-height: 1;
+}
+
+/* ==================== ENTERPRISE LIST ==================== */
+.enterprise-list {
+    gap: calc(0.092592592vh * 8);
+    padding-right: calc(0.092592592vh * 4);
+}
+
+.enterprise-list-item {
+    padding: calc(0.092592592vh * 12);
+    gap: calc(0.092592592vh * 10);
+    background: radial-gradient(100% 100% at 50% 0%, #43434331, #0e0f1180);
+    transition: all 0.15s ease;
+}
+
+.enterprise-list-item:hover {
+    background: radial-gradient(121.15% 121.15% at 50% 0%, #6b6b6b21, #0e0f1146);
+}
+
+.enterprise-list-item-active {
+    background: radial-gradient(121.15% 121.15% at 50% 0%, #6b6b6b42, #0e0f1180);
+    border-bottom: calc(0.092592592vh * 2) solid rgba(250, 250, 250, 1);
+}
+
+.enterprise-list-item-icon {
+    width: calc(0.092592592vh * 32);
+    height: calc(0.092592592vh * 32);
+    border: calc(0.092592592vh * 1) solid rgba(250, 250, 250, .2);
+    background: #fafafa1a;
+    color: white;
+    font-size: calc(0.092592592vh * 12);
+}
+
+.enterprise-list-item-info {
+    gap: calc(0.092592592vh * 2);
+}
+
+.enterprise-list-item-name {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: calc(0.092592592vh * 14);
+    color: #e5e5e5;
+    line-height: 1;
+}
+
+.enterprise-list-item-role {
+    font-family: "Geist", sans-serif;
+    font-size: calc(0.092592592vh * 10);
+    color: #6b6b6b;
+    line-height: 1;
+}
+
+.enterprise-list-item-balance-value {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: calc(0.092592592vh * 14);
+    color: #e5e5e5;
+}
+
+/* ==================== BALANCE CARD ==================== */
+.enterprise-balance-card {
+    padding: calc(0.092592592vh * 16) calc(0.092592592vh * 20) !important;
+}
+
+.enterprise-balance-info {
+    gap: calc(0.092592592vh * 12);
+}
+
+.enterprise-balance-iconDiv {
+    width: calc(0.092592592vh * 38);
+    height: calc(0.092592592vh * 38);
+    border: calc(0.092592592vh * 1) solid rgba(250, 250, 250, .2);
+    background: #fafafa1a;
+    color: white;
+    font-size: calc(0.092592592vh * 14);
+}
+
+.enterprise-balance-titles {
+    gap: calc(0.092592592vh * 4);
+}
+
+.enterprise-balance-title {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: calc(0.092592592vh * 18);
+    color: #e5e5e5;
+    line-height: 1;
+}
+
+.enterprise-balance-subtitle {
+    font-family: "Geist", sans-serif;
+    font-size: calc(0.092592592vh * 11);
+    color: #6b6b6b;
+    line-height: 1;
+}
+
+.enterprise-balance-amount-container {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: calc(0.092592592vh * 12) calc(0.092592592vh * 24);
+}
+
+.enterprise-balance-amount {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: calc(0.092592592vh * 28);
+    color: white;
+    letter-spacing: 1px;
+}
+
+/* ==================== ACTIONS SECTION ==================== */
+.enterprise-actions {
+    padding: calc(0.092592592vh * 16) calc(0.092592592vh * 20) !important;
+    gap: calc(0.092592592vh * 12);
+}
+
+.enterprise-actions-buttons {
+    gap: calc(0.092592592vh * 8);
+    margin-bottom: calc(0.092592592vh * 4);
+}
+
+.enterprise-actions-button {
+    padding: calc(0.092592592vh * 8) calc(0.092592592vh * 12);
+    font-size: calc(0.092592592vh * 14);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    color: #929292;
+    background: radial-gradient(100% 100% at 50% 0%, #43434331, #0e0f1180);
+    border-bottom: none;
+    transition: all 0.2s ease-in-out;
+}
+
+.enterprise-actions-button:hover {
+    background: radial-gradient(121.15% 121.15% at 50% 0%, #6b6b6b21, #0e0f1146);
+}
+
+.enterprise-actions-button-active {
+    color: white;
+    background: radial-gradient(121.15% 121.15% at 50% 0%, #6b6b6b42, #0e0f1180);
+    border-bottom: calc(0.092592592vh * 1) solid rgba(250, 250, 250, 1);
+}
+
+.enterprise-actions-inputrow {
+    gap: calc(0.092592592vh * 10);
+    padding: calc(0.092592592vh * 10);
+}
+
+.enterprise-actions-inputicon {
+    width: calc(0.092592592vh * 24);
+    height: calc(0.092592592vh * 24);
+}
+
+.enterprise-actions-inputicon-icon {
+    font-size: calc(0.092592592vh * 10);
+}
+
+.enterprise-actions-input {
+    font-size: calc(0.092592592vh * 12);
+}
+
+.enterprise-actions-amountrow {
+    gap: calc(0.092592592vh * 8);
+}
+
+.enterprise-actions-confirm {
+    padding: calc(0.092592592vh * 14) calc(0.092592592vh * 16);
+    font-size: calc(0.092592592vh * 11);
+    background-color: #fafafa1a;
+    color: #fafafa;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    cursor: pointer;
+    transition: all .1s ease-in-out;
+}
+
+.enterprise-actions-confirm:hover {
+    color: #121212;
+    background: #fafafa;
+}
+
+/* ==================== TRANSACTIONS ==================== */
+.enterprise-transactions {
+    padding: calc(0.092592592vh * 16) calc(0.092592592vh * 20) !important;
+    gap: calc(0.092592592vh * 12);
+}
+
+.enterprise-search-container {
+    display: flex;
+    align-items: center;
+    gap: calc(0.092592592vh * 8);
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: calc(0.092592592vh * 8) calc(0.092592592vh * 12);
+}
+
+.enterprise-search-icon {
+    font-size: calc(0.092592592vh * 12);
+    color: #6b6b6b;
+}
+
+.enterprise-search-input {
+    background: transparent;
+    border: none;
+    outline: none;
+    font-family: "Geist", sans-serif;
+    font-size: calc(0.092592592vh * 11);
+    color: #e5e5e5;
+    width: calc(0.092592592vh * 120);
+}
+
+.enterprise-search-input::placeholder {
+    color: #6b6b6b;
+}
+
+.enterprise-transactions-list {
+    gap: calc(0.092592592vh * 8);
+    padding-right: calc(0.092592592vh * 4);
+}
+
+.enterprise-transaction-item {
+    padding: calc(0.092592592vh * 10);
+    gap: calc(0.092592592vh * 12);
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.enterprise-transaction-icon {
+    width: calc(0.092592592vh * 28);
+    height: calc(0.092592592vh * 28);
+    font-size: calc(0.092592592vh * 10);
+}
+
+.enterprise-transaction-info {
+    gap: calc(0.092592592vh * 2);
+}
+
+.enterprise-transaction-label {
+    font-family: "Geist", sans-serif;
+    font-size: calc(0.092592592vh * 12);
+    color: #e5e5e5;
+    font-weight: 500;
+    line-height: 1;
+}
+
+.enterprise-transaction-description {
+    font-family: "Geist", sans-serif;
+    font-size: calc(0.092592592vh * 10);
+    color: #6b6b6b;
+    line-height: 1;
+}
+
+.enterprise-transaction-amount {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: calc(0.092592592vh * 14);
+    font-weight: 600;
+}
+
+/* ==================== EMPTY STATES ==================== */
+.enterprise-empty {
+    padding: calc(0.092592592vh * 32);
+    gap: calc(0.092592592vh * 12);
+}
+
+.enterprise-empty-icon {
+    font-size: calc(0.092592592vh * 40);
+    color: #4b4b4b;
+}
+
+.enterprise-empty-title {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: calc(0.092592592vh * 16);
+    color: #8b8b8b;
+    text-transform: uppercase;
+}
+
+.enterprise-empty-text {
+    font-family: "Geist", sans-serif;
+    font-size: calc(0.092592592vh * 11);
+    color: #6b6b6b;
+    text-align: center;
+    max-width: calc(0.092592592vh * 240);
+}
+
+.enterprise-empty-small {
+    padding: calc(0.092592592vh * 24);
+}
+
+.enterprise-empty-icon-small {
+    font-size: calc(0.092592592vh * 24);
+    color: #4b4b4b;
+    margin-bottom: calc(0.092592592vh * 8);
+}
+
+.enterprise-empty-text-small {
+    font-family: "Geist", sans-serif;
+    font-size: calc(0.092592592vh * 11);
+    color: #6b6b6b;
+}

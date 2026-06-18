@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Crew Experience</title>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Sell Drugs Phone UI -->
+  <link rel="stylesheet" href="css/jquery/jquery-ui.min.css">
+  <link rel="stylesheet" href="css/npsSell.css">
+  <link rel="stylesheet" href="css/telephone.css">
+  <link rel="stylesheet" href="css/modal.css">
+</head>
+
+<body>
+  <div id="exp-container">
+    <!-- Bulle du niveau au centre -->
+    <div id="level-bubble" class="text-stroke"></div>
+
+    <!-- Affichage du X / Y XP au-dessus, aligné à droite -->
+    <div id="exp-text" class="text-stroke"></div>
+
+    <!-- Barre d'expérience -->
+    <div id="exp-bar">
+      <div id="exp-fill"></div>
+    </div>
+  </div>
+
+  <div id="territory-tooltip" style="display:none;"></div>
+
+  <div id="color-picker" style="display:none;">
+    <div class="cp-title">Choisir une couleur</div>
+    <div class="cp-row">
+      <input id="cp-color" type="color" value="#50B4FF" />
+      <input id="cp-hex" type="text" maxlength="7" placeholder="#50B4FF" />
+    </div>
+    <button id="cp-ok">Valider</button>
+  </div>
+
+  <!-- Copied from is_selldrugs -->
+  <div class="custom-tooltip"></div>
+
+  <div id="modal">
+    <h2>Title</h2>
+    <p>Are you sure you want to pedal? Are you sure you want to pedal?</p>
+    <div id="modal-buttons-container">
+      <div class="modal-button" id="modal-button-accept">Accept</div>
+      <div class="modal-button" id="modal-button-cancel">Cancel</div>
+    </div>
+  </div>
+
+  <div class="npcSell-background"></div>
+  <div id="npcSell-container">
+
+    <div id="dialog-container">
+      <div id="dialog-interactive-icons">
+        <img src="img/play.png" id="arrow-for-select-item" draggable="false" style="display: none;" />
+        <img id="dialog-interactive-backpack" draggable="false" src="img/backpack.png">
+
+        <img id="dialog-interactive-arrow" draggable="false" src="img/play.png">
+        <div id="dialog-backpack-container">
+          <h2 id="dialog-title">EQUIPMENT</h2>
+        </div>
+      </div>
+
+      <div id="dialog">
+      </div>
+    </div>
+
+    <div id="progress-container">
+      <div class="progress-wrapper" id="progress-respect">
+        <svg class="progress-circle-svg" width="5vw" height="5vw" viewBox="0 0 100 100">
+          <circle class="progress-circle-back" cx="50" cy="50" r="45" />
+          <circle class="progress-circle-bar-respect" cx="50" cy="50" r="45" />
+        </svg>
+        <div class="progress-content">
+          <img class="progress-img" draggable="false" src="img/respect.png">
+        </div>
+      </div>
+
+      <div class="progress-wrapper" id="progress-sales">
+        <svg class="progress-circle-svg" width="5vw" height="5vw" viewBox="0 0 100 100">
+          <circle class="progress-circle-back" cx="50" cy="50" r="45" />
+          <circle class="progress-circle-bar-sales" cx="50" cy="50" r="45" />
+        </svg>
+        <div class="progress-content">
+          <img class="progress-img" draggable="false" src="img/sales.png">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="telephone-container">
+    <img id="telephone-img" draggable="false" src="img/telephone.png">
+
+    <div id="telephone-background">
+      <div id="menu" class="menu-window">
+        <div id="messages-icon" class="menu-icon" data-target="#messages-window">
+          <img src="img/chat.png">
+          <div id="messages-new-amount">0</div>
+        </div>
+        <div id="ogApp-icon" class="menu-icon" data-target="#app-window"> <img src="img/ogApp.png"> </div>
+        <div id="settings-icon" class="menu-icon" data-target="#settings-window"> <img src="img/settings.png"> </div>
+      </div>
+
+      <div id="messages-window" class="menu-window">
+        <div class="tel-app-title" id="tel-app-messages-title">Messages</div>
+
+        <div id="no-messages">no messages</div>
+
+        <div id="messages-container" class="custom-scrollbar"></div>
+      </div>
+
+      <div id="message-window" class="menu-window">
+        <div id="message-nav">
+          <img id="message-back" src="img/back.png">
+          <p>Stranger #0</p>
+          <img id="message-call" src="img/call.png">
+        </div>
+
+        <div id="message-items" class="custom-scrollbar"></div>
+
+        <div id="message-input">
+          <img src="img/send.png">
+        </div>
+      </div>
+
+      <div id="call-window">
+        <img src="img/person.png">
+        <h2>Stranger #0</h2>
+        <p>00:00</p>
+      </div>
+
+      <div id="app-window" class="menu-window">
+        <div class="tel-app-title" id="tel-app-ogapp-title">OG App</div>
+
+        <h2 id="ogApp-respect-title">Respect</h2>
+        <div class="app-progress-container">
+          <div id="app-progress-respect"></div>
+          <p>0 / 0</p>
+        </div>
+
+        <h2 id="ogApp-selling-skill-title">Selling Skill</h2>
+        <div class="app-progress-container">
+          <div id="app-progress-selling"></div>
+          <p>0 / 0</p>
+        </div>
+
+        <h1 id="ogApp-active-subscriptions-title">Active Subscriptions</h1>
+        <div id="app-subcriptions" class="custom-scrollbar"></div>
+      </div>
+
+      <div id="settings-window" class="menu-window">
+        <div class="tel-app-title" id="tel-app-settings-title">Settings</div>
+
+        <div class="setting-container">
+          <h2 id="settings-alerts-title">Alerts</h2>
+          <label class="switch">
+            <input type="checkbox" id="notificationSwitch" checked>
+            <span class="slider round"></span>
+          </label>
+        </div>
+
+        <div class="setting-container">
+          <h2 id="settings-alerts-sound-title">Alerts Sound</h2>
+          <label class="switch">
+            <input type="checkbox" id="soundSwitch" checked>
+            <span class="slider round"></span>
+          </label>
+        </div>
+
+        <div class="setting-container">
+          <h2 id="settings-selling-title">Selling Mode</h2>
+          <label class="switch">
+            <input type="checkbox" id="sellingSwitch">
+            <span class="slider round"></span>
+          </label>
+        </div>
+
+      </div>
+    </div>
+
+    <div id="telephone-button-menu"></div>
+    <div id="telephone-button-back"></div>
+  </div>
+
+  <audio id="callAudio1" src="audio/audioCall1.mp3" preload="auto"></audio>
+  <audio id="callAudio2" src="audio/audioCall2.mp3" preload="auto"></audio>
+  <audio id="callAudio3" src="audio/audioCall3.mp3" preload="auto"></audio>
+  <audio id="notification" src="audio/notification.mp3" preload="auto"></audio>
+
+  <script src="script.js"></script>
+
+  <!-- Sell Drugs JS -->
+  <script src="js/jquery/jquery.min.js"></script>
+  <script src="js/jquery/jquery-ui.min.js"></script>
+  <script src="js/translation.js"></script>
+  <script src="js/notifications.js"></script>
+  <script src="js/modal.js"></script>
+  <script src="js/npcSell.js"></script>
+  <script src="js/mole.js"></script>
+  <script src="js/telephone.js"></script>
+</body>
+
+</html>

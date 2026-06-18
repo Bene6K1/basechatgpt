@@ -1,0 +1,26 @@
+//
+// Mixins
+//
+
+/**
+ *
+ * Responsive
+ *
+ */
+@mixin verySmallSize() {
+  @media (max-width: $breakpoints-md) {
+    @content;
+  }
+}
+
+@mixin smallSize() {
+  @media (max-width: $breakpoints-lg) {
+    @content;
+  }
+}
+
+@mixin mediumSize() {
+  @media (max-width: $breakpoints-xl) {
+    @content;
+  }
+}

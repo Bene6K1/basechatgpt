@@ -1,0 +1,60 @@
+//
+// Icon with Link - BaseStyle Theme
+//
+
+@import '../../styles/_variables.scss';
+
+.icon-with-link {
+  position: relative;
+  border: 0;
+  outline: 0;
+  min-width: vh(40);
+  max-width: vh(40);
+  height: vh(40);
+  border: vh(1) solid rgba(250, 250, 250, .2);
+  background: #fafafa1a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  color: white;
+  cursor: pointer;
+  transition: all 0.1s ease-in-out;
+
+  &:hover {
+    background-color: rgba(250, 250, 250, 0.15);
+  }
+
+  &__img {
+    min-width: vh(16);
+    max-width: vh(16);
+    user-select: none;
+    -webkit-user-select: none;
+    pointer-events: none;
+    filter: grayscale(1) brightness(1.5);
+  }
+
+  &__count {
+    position: absolute;
+    top: vh(-6);
+    right: vh(-6);
+    min-width: vh(18);
+    max-width: auto;
+    height: vh(18);
+    padding: vh(3);
+    border: vh(2) solid $border-light;
+    border-radius: vh(999);
+    background-color: $accent-red-dark;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: vh(10);
+    font-weight: 600;
+    transition: all 0.1s ease-in-out;
+  }
+
+  &:hover &__count {
+    background: $accent-red;
+  }
+}

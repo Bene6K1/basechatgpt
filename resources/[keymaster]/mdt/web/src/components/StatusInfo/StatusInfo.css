@@ -1,0 +1,31 @@
+.status-info {
+  padding: 24px 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.status-info--error .status-info__icon {
+  background-color: rgba(235, 50, 0, 0.1);
+  color: rgb(235, 50, 0);
+}
+.status-info__icon {
+  min-width: 74px;
+  max-width: 74px;
+  height: 74px;
+  margin-bottom: 15px;
+  border-radius: 999px;
+  background-color: rgba(235, 255, 255, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 38px;
+  color: #a6a6a6;
+}
+.status-info__text {
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 25px;
+  color: #b5b5b5;
+}/*# sourceMappingURL=StatusInfo.css.map */

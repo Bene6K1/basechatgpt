@@ -1,0 +1,158 @@
+//
+// Department Detail - BaseStyle Theme
+//
+
+@import '../../styles/_variables.scss';
+
+.department-detail {
+  padding: vh(10);
+
+  &__header {
+    margin-bottom: vh(12);
+    display: flex;
+    align-items: center;
+    gap: vh(8);
+
+    &-left {
+      display: flex;
+      align-items: center;
+      gap: vh(8);
+    }
+
+    &-icon {
+      width: vh(30);
+      height: vh(30);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: vh(11);
+      border: vh(1) solid rgba(250, 250, 250, .2);
+      background: $accent-white-bg;
+      color: $accent-blue;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      transition: all 0.1s ease-in-out;
+
+      &-litle {
+        width: vh(27);
+        height: vh(27);
+      }
+
+      &:hover {
+        background: rgba($accent-blue, 0.3);
+      }
+
+      i {
+        font-size: vh(10);
+      }
+    }
+
+    &-titles {
+      display: flex;
+      flex-direction: column;
+      gap: vh(2);
+    }
+
+    &-title {
+      font-size: vh(14);
+      font-weight: 600;
+      line-height: 1;
+      color: $text-primary;
+    }
+
+    &-subtitle {
+      font-size: vh(11);
+      font-weight: 400;
+      line-height: 1;
+      color: $text-secondary;
+    }
+  }
+
+  &__main {
+    position: relative;
+    padding: vh(16);
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__title {
+    font-size: vh(16);
+    font-weight: 700;
+    line-height: 1.4;
+    margin-left: vh(8);
+    color: $text-primary;
+  }
+
+  &__image-container {
+    position: relative;
+    overflow: hidden;
+  }
+
+  &__img {
+    width: 100%;
+    user-select: none;
+    -webkit-user-select: none;
+    pointer-events: none;
+  }
+
+  &__name {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: vh(50);
+    background-color: rgb(255, 255, 255, 0.1);
+    backdrop-filter: blur(vh(10));
+    border-top: vh(1) solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: vh(16);
+    font-weight: 600;
+    line-height: 1;
+    color: $text-primary;
+  }
+
+  &__hr {
+    width: 100%;
+    height: vh(1);
+    margin: vh(24) 0;
+    background: $divider-color;
+  }
+
+  &__item {
+    height: 100%;
+    min-height: vh(48);
+    border-radius: calc($default-border-radius / 1.5);
+    background-color: $button-inactive-bg;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+
+    &-inner {
+      padding: vh(10) vh(10) vh(10) vh(10);
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__icon {
+    width: vh(28);
+    height: vh(28);
+    background-color: rgb(79, 112, 156, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: vh(24);
+    padding: vh(5);
+    color: $accent-blue;
+  }
+
+  &__text {
+    font-size: vh(14);
+    font-weight: 600;
+    line-height: 1.6;
+    color: $text-secondary;
+  }
+}

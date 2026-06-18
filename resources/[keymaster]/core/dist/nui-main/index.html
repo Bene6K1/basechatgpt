@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NUI Main</title>
+    <link rel="stylesheet" href="../modules/[World]/vehicles/nui/style.css">
+    <link rel="stylesheet" href="../cardealer/css/style.css">
+    <link rel="stylesheet" href="../modules/[Activity]/afk/html/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://kit.fontawesome.com/caab0f2dc7.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="garage" id="garage" style="display: none;">
+        <div class="garage-menu">
+            <div class="garage-menu-header">
+                <div class="garage-menu-header-title">
+                    <i class="fas fa-car" id="garage-icon"></i>
+                    <div class="garage-menu-header-title-text" id="garage-text">Garage - gestion de véhicule</div>
+                </div>
+                <i class="fas fa-times garage-menu-header-button-close" id="close-menu"></i>
+            </div>
+            <div class="garage-menu-vehicle-list" id="vehicle-list"></div>
+        </div>
+
+        <div class="vehicle-spec" id="vehicle-spec">
+            <div class="vehicle-spec-header">
+                <div class="vehicle-spec-title-container">
+                    <i class="fas fa-car"></i>
+                    <div class="vehicle-spec-title" id="vehicle-spec-name">SULTAN - XCLO3670</div>
+                </div>
+                <i class="fas fa-times" id="close-stats" style="cursor: pointer; font-size: 12px;"></i>
+            </div>
+            <div class="vehicle-spec-stats-container">
+                <div class="vehicle-spec-item">
+                    <div class="vehicle-item-title" id="speed-text">vitesse</div>
+                    <div class="vehicle-spec-percent">
+                        <div class="vehicle-spec-percent-bar" id="speed"></div>
+                    </div>
+                </div>
+                <div class="vehicle-spec-item">
+                    <div class="vehicle-item-title" id="acceleration-text">adhérence</div>
+                    <div class="vehicle-spec-percent">
+                        <div class="vehicle-spec-percent-bar" id="acceleration"></div>
+                    </div>
+                </div>
+                <div class="vehicle-spec-item">
+                    <div class="vehicle-item-title" id="brake-text">puissance</div>
+                    <div class="vehicle-spec-percent">
+                        <div class="vehicle-spec-percent-bar" id="brake"></div>
+                    </div>
+                </div>
+                <div class="vehicle-spec-item">
+                    <div class="vehicle-item-title" id="traction-text">puissance</div>
+                    <div class="vehicle-spec-percent">
+                        <div class="vehicle-spec-percent-bar" id="traction"></div>
+                    </div>
+                </div>
+                <div class="vehicle-spec-item">
+                    <div class="vehicle-item-title" id="handling-text">maniabilité</div>
+                    <div class="vehicle-spec-percent">
+                        <div class="vehicle-spec-percent-bar" id="handling"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <template id="vehicle-template">
+        <div class="garage-menu-vehicle-list-item">
+            <div>
+                <div class="garage-menu-vehicle-list-item-name"></div>
+                <div class="garage-menu-vehicle-list-item-id"></div>
+            </div>
+            <div class="garage-menu-vehicle-list-item-buttons">
+                <div class="garage-menu-vehicle-list-item-button" id="statistic">
+                    <i class="fa-solid fa-chart-simple"></i>
+                    <div class="garage-menu-vehicle-list-item-button-text statistic-button">Stats</div>
+                </div>
+                <div class="garage-menu-vehicle-list-item-button" id="locate">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <div class="garage-menu-vehicle-list-item-button-text locate-button">Localiser</div>
+                </div>
+            </div>
+            <div class="garage-menu-vehicle-list-item-button-get" id="get">
+                <i class="fas fa-car" id="get"></i>
+                <div class="garage-menu-vehicle-list-item-button-get-text get-button" id="get">prendre</div>
+            </div>
+            <div class="garage-menu-vehicle-list-item-button-impound" id="impound" style="display: none;">
+                <i class="fas fa-car" id="impound"></i>
+                <div class="garage-menu-vehicle-list-item-button-impound-text" id="impound">en fourrière</div>
+            </div>
+            <div class="vehicle-item-plate"></div>
+        </div>
+    </template>
+
+    <div class="camera-container hidden">
+        <div class="camera-header">
+            <div class="camera-icon">
+                <i class="fas fa-video"></i>
+            </div>
+            <div class="camera-title">VUES</div>
+        </div>
+        <div class="camera-controls">
+            <div class="camera-option active" data-camera="1">
+                <div class="camera-icon-small">
+                    <i class="fas fa-car"></i>
+                </div>
+                <span class="camera-label">Face</span>
+            </div>
+            <div class="camera-option" data-camera="2">
+                <div class="camera-icon-small">
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+                <span class="camera-label">Côté</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="info-container hidden">
+        <div class="info-header">
+            <div class="info-icon">
+                <i class="fas fa-filter"></i>
+            </div>
+            <div class="info-title">FILTRES</div>
+        </div>
+        <div class="info-content">
+            <div class="categories-section">
+                <div class="section-title">Catégories</div>
+                <div class="categories-list">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="rental-ui" class="rental-container hidden">
+        <div class="rental-header">
+            <div class="header-content">
+                <div class="header-image">
+                    <img src="../cardealer/assets/banner.png" alt="Bannière de concess" draggable="false" />
+                </div>
+                <div class="header-text">
+                    <h1>VÉHICULES</h1>
+                    <span class="subtitle">CONCESS</span>
+                </div>
+            </div>
+            <div class="header-actions">
+                <button class="close-btn" id="closeButton">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="rental-content">
+            <div class="vehicles-section">
+                <div class="section-header">
+                    <div class="section-title">Sélection</div>
+                    <div class="vehicles-count" id="vehiclesCount">0 véhicules</div>
+                </div>
+                <div class="vehicles-grid" id="vehiclesGrid"></div>
+            </div>
+
+            <div class="vehicle-details" id="vehicleInfo">
+                <div class="details-header">
+                    <div class="vehicle-name" id="vehicleName">Sélectionnez un véhicule</div>
+                    <div class="vehicle-price" id="vehiclePrice">0$</div>
+                </div>
+                <div class="vehicle-stats">
+                    <div class="stats-title">Performances</div>
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <div class="stat-header">
+                                <div class="stat-icon">
+                                    <i class="fas fa-tachometer-alt"></i>
+                                </div>
+                                <div class="stat-label">Vitesse</div>
+                            </div>
+                            <div class="stat-bar">
+                                <div class="stat-fill" id="speedBar" style="width: 0%"></div>
+                            </div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-header">
+                                <div class="stat-icon">
+                                    <i class="fas fa-hand-paper"></i>
+                                </div>
+                                <div class="stat-label">Frein</div>
+                            </div>
+                            <div class="stat-bar">
+                                <div class="stat-fill" id="brakeBar" style="width: 0%"></div>
+                            </div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-header">
+                                <div class="stat-icon">
+                                    <i class="fas fa-rocket"></i>
+                                </div>
+                                <div class="stat-label">Accélération</div>
+                            </div>
+                            <div class="stat-bar">
+                                <div class="stat-fill" id="accelerationBar" style="width: 0%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="rental-footer">
+            <div class="footer-actions">
+                <button id="informationButton" class="action-btn secondary">
+                    <i class="fas fa-info-circle"></i>
+                    <span>Informations</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="loading-overlay hidden" id="loadingOverlay">
+            <div class="loading-content">
+                <div class="loading-spinner"></div>
+                <p>Préparation de votre véhicule...</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- NEVA RADIO WIDGET -->
+    <div id="radio-widget" class="radio-widget hidden">
+        <div class="radio-container">
+            <div class="radio-cover">
+                <img id="radio-cover-img" src="" alt="Cover">
+                <div class="radio-playing-indicator">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <div class="radio-info">
+                <div class="radio-station">NEVA RADIO</div>
+                <div id="radio-title" class="radio-title">Chargement...</div>
+                <div class="radio-progress">
+                    <div class="radio-time">
+                        <span id="radio-elapsed">0:00</span>
+                        <span id="radio-duration">0:00</span>
+                    </div>
+                    <div class="radio-progress-bar">
+                        <div id="radio-progress-fill" class="radio-progress-fill"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+        @import url("https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&display=swap");
+
+        .radio-widget {
+            position: fixed;
+            bottom: 60px;
+            right: 20px;
+            z-index: 9999;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            transform: translateX(0);
+            opacity: 1;
+        }
+        .radio-widget.hidden {
+            transform: translateX(120%);
+            opacity: 0;
+            pointer-events: none;
+        }
+        .radio-container {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            background: radial-gradient(120.1% 120.1% at 115.34% -20.1%, rgba(255, 255, 255, 0.12) 0%, rgba(0, 0, 0, 0) 100%), rgba(8, 8, 8, 0.95);
+            box-shadow: 0px 0.6px 2px -1.6px rgba(0, 0, 0, 0.19), 0px 2.3px 7.8px -3.3px rgba(0, 0, 0, 0.15);
+            border-radius: 8px;
+            padding: 14px 16px;
+            min-width: 280px;
+            position: relative;
+            z-index: 1;
+        }
+        .radio-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 8px;
+            padding: 1px;
+            background: radial-gradient(circle at 90% 10%, #c2c2c2 0%, #444444 30%, #444444 100%);
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask-composite: xor;
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            z-index: -1;
+            pointer-events: none;
+        }
+        .radio-cover {
+            position: relative;
+            width: 56px;
+            height: 56px;
+            border-radius: 6px;
+            overflow: hidden;
+            flex-shrink: 0;
+            background: radial-gradient(120.1% 120.1% at 115.34% -20.1%, rgba(255, 255, 255, 0.15) 0%, rgba(0, 0, 0, 0) 100%), rgba(25, 25, 25, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .radio-cover img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .radio-playing-indicator {
+            position: absolute;
+            bottom: 4px;
+            right: 4px;
+            display: flex;
+            align-items: flex-end;
+            gap: 2px;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 3px 4px;
+            border-radius: 3px;
+        }
+        .radio-playing-indicator span {
+            width: 2px;
+            background: #ffffff;
+            border-radius: 1px;
+            animation: equalizer 0.8s ease-in-out infinite;
+        }
+        .radio-playing-indicator span:nth-child(1) { height: 6px; animation-delay: 0s; }
+        .radio-playing-indicator span:nth-child(2) { height: 10px; animation-delay: 0.2s; }
+        .radio-playing-indicator span:nth-child(3) { height: 5px; animation-delay: 0.4s; }
+        @keyframes equalizer {
+            0%, 100% { transform: scaleY(1); }
+            50% { transform: scaleY(0.5); }
+        }
+        .radio-info {
+            flex: 1;
+            min-width: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+        .radio-station {
+            font-family: "Bebas Neue", sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #ffffff;
+            line-height: 1;
+        }
+        .radio-title {
+            font-family: "Geist", sans-serif;
+            font-size: 12px;
+            font-weight: 400;
+            color: #c6c9ca;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 180px;
+            line-height: 1.4;
+        }
+        .radio-progress {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            margin-top: 2px;
+        }
+        .radio-time {
+            display: flex;
+            justify-content: space-between;
+            font-family: "Geist", sans-serif;
+            font-size: 10px;
+            color: rgba(255, 255, 255, 0.4);
+            font-weight: 400;
+        }
+        .radio-progress-bar {
+            width: 100%;
+            height: 2px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 1px;
+            overflow: hidden;
+        }
+        .radio-progress-fill {
+            height: 100%;
+            background: #ffffff;
+            border-radius: 1px;
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+    </style>
+
+    <script>
+        // NEVA RADIO
+        (function() {
+            const radioWidget = document.getElementById('radio-widget');
+            const radioCover = document.getElementById('radio-cover-img');
+            const radioTitle = document.getElementById('radio-title');
+            const radioElapsed = document.getElementById('radio-elapsed');
+            const radioDuration = document.getElementById('radio-duration');
+            const radioProgress = document.getElementById('radio-progress-fill');
+
+            let currentElapsed = 0;
+            let currentDuration = 0;
+            let tickInterval = null;
+
+            function formatTime(seconds) {
+                if (!seconds || isNaN(seconds)) return '0:00';
+                const mins = Math.floor(seconds / 60);
+                const secs = Math.floor(seconds % 60);
+                return mins + ':' + secs.toString().padStart(2, '0');
+            }
+
+            function updateDisplay() {
+                radioElapsed.textContent = formatTime(currentElapsed);
+                radioDuration.textContent = formatTime(currentDuration);
+                if (currentDuration > 0) {
+                    radioProgress.style.width = Math.min((currentElapsed / currentDuration) * 100, 100) + '%';
+                }
+            }
+
+            function startTick() {
+                if (tickInterval) clearInterval(tickInterval);
+                tickInterval = setInterval(function() {
+                    if (currentElapsed < currentDuration) {
+                        currentElapsed++;
+                        updateDisplay();
+
+                        // Quand la chanson se termine, demander un refresh
+                        if (currentElapsed >= currentDuration) {
+                            fetch('https://neva_radio/songEnded', { method: 'POST', body: JSON.stringify({}) });
+                        }
+                    }
+                }, 1000);
+            }
+
+            function stopTick() {
+                if (tickInterval) {
+                    clearInterval(tickInterval);
+                    tickInterval = null;
+                }
+            }
+
+            window.addEventListener('message', function(event) {
+                const data = event.data;
+
+                if (data.action === 'nevaradio:show') {
+                    radioWidget.classList.remove('hidden');
+                    if (data.info) {
+                        if (data.info.title) radioTitle.textContent = data.info.title;
+                        if (data.info.cover) radioCover.src = data.info.cover;
+                        currentElapsed = data.info.elapsed || 0;
+                        currentDuration = data.info.duration || 0;
+                        updateDisplay();
+                        startTick();
+                    }
+                }
+                else if (data.action === 'nevaradio:hide') {
+                    radioWidget.classList.add('hidden');
+                    stopTick();
+                }
+                else if (data.action === 'nevaradio:update') {
+                    if (data.title) radioTitle.textContent = data.title;
+                    if (data.cover) radioCover.src = data.cover;
+                    if (data.elapsed !== undefined) currentElapsed = data.elapsed;
+                    if (data.duration !== undefined) currentDuration = data.duration;
+                    updateDisplay();
+                    // Toujours s'assurer que le tick tourne
+                    if (currentDuration > 0) {
+                        startTick();
+                    }
+                }
+            });
+        })();
+    </script>
+
+    <!-- Leaderboard Popup -->
+    <div id="leaderboard-popup" class="leaderboard-popup hidden">
+        <div class="popup-overlay"></div>
+        <div class="popup-content">
+            <div class="popup-header">
+                <h2>&#127942; Classement AFK</h2>
+                <button class="close-btn" id="close-leaderboard">&times;</button>
+            </div>
+            <div class="popup-body">
+                <table class="leaderboard-table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Joueur</th>
+                            <th>Temps</th>
+                            <th>Gains</th>
+                        </tr>
+                    </thead>
+                    <tbody id="leaderboard-table-body">
+                        <!-- Filled by JS -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="../modules/[World]/vehicles/nui/script.js"></script>
+    <script src="../cardealer/js/app.js"></script>
+    <script src="../modules/[Activity]/afk/html/script.js"></script>
+</body>
+</html>
+

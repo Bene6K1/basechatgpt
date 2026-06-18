@@ -1,0 +1,575 @@
+/* Main Container */
+.settings {
+    padding: calc(0.092592592vh * 18) !important;
+    gap: calc(0.092592592vh * 16);
+    width: calc(0.092592592vh * 981);
+}
+.settings::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: calc(0.092592592vh * 1.5);
+    background: radial-gradient(circle at 90% 10%, rgba(217, 217, 217, .1) 0%, rgba(217, 217, 217, .1) 30%, rgba(217, 217, 217, .1) 100%);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: xor;
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* ==================== HEADER SECTION ==================== */
+.settings-header {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.settings-header-left {
+    gap: calc(0.092592592vh * 12);
+}
+
+.settings-header-iconDiv {
+    width: calc(0.092592592vh * 38);
+    height: calc(0.092592592vh * 38);
+    border: calc(0.092592592vh * 1) solid rgba(250, 250, 250, .2);
+    background: #fafafa1a;
+    color: white;
+    font-size: calc(0.092592592vh * 14);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.settings-header-titles {
+    gap: calc(0.092592592vh * 4);
+}
+
+.settings-header-title {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: calc(0.092592592vh * 18);
+    color: #e5e5e5;
+    line-height: 1;
+}
+
+.settings-header-subtitle {
+    font-family: "Geist", sans-serif;
+    font-size: calc(0.092592592vh * 11);
+    color: #6b6b6b;
+    line-height: 1;
+}
+
+.settings-header-right {
+    gap: calc(0.092592592vh * 12);
+}
+
+.settings-header-balance {
+    gap: calc(0.092592592vh * 2);
+}
+
+.settings-header-balance-label {
+    font-family: "Geist", sans-serif;
+    font-size: calc(0.092592592vh * 10);
+    color: #6b6b6b;
+    text-transform: uppercase;
+}
+
+.settings-header-balance-value {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: calc(0.092592592vh * 16);
+    color: #e5e5e5;
+    line-height: 1;
+}
+
+.settings-header-balance-icon {
+    width: calc(0.092592592vh * 36);
+    height: calc(0.092592592vh * 36);
+    border: calc(0.092592592vh * 1) solid rgba(250, 250, 250, .2);
+    background: #fafafa1a;
+    color: white;
+    font-size: calc(0.092592592vh * 14);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+/* ==================== STATS SECTION ==================== */
+.settings-stats {
+    gap: calc(0.092592592vh * 12);
+}
+
+.settings-stat-card {
+    padding: calc(0.092592592vh * 14) calc(0.092592592vh * 16) !important;
+    gap: calc(0.092592592vh * 6);
+    background: radial-gradient(100% 100% at 50% 0%, #43434331, #0e0f1180);
+}
+.settings-stat-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: calc(0.092592592vh * 1.5);
+    background: radial-gradient(circle at 90% 10%, rgba(217, 217, 217, .1) 0%, rgba(217, 217, 217, .1) 30%, rgba(217, 217, 217, .1) 100%);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: xor;
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.settings-stat-header {
+    gap: calc(0.092592592vh * 10);
+}
+
+.settings-stat-iconDiv {
+    width: calc(0.092592592vh * 24);
+    height: calc(0.092592592vh * 24);
+    border: calc(0.092592592vh * 1) solid rgba(250, 250, 250, .2);
+    background: #fafafa1a;
+    font-size: calc(0.092592592vh * 10);
+}
+
+.settings-stat-label {
+    font-family: "Geist", sans-serif;
+    font-size: calc(0.092592592vh * 10);
+    color: #6b6b6b;
+    text-transform: uppercase;
+}
+
+.settings-stat-value {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: calc(0.092592592vh * 22);
+    color: #e5e5e5;
+    line-height: 1;
+}
+
+.settings-stat-description {
+    font-family: "Geist", sans-serif;
+    font-size: calc(0.092592592vh * 9);
+    color: #6b6b6b;
+}
+
+/* ==================== MAIN CONTENT ==================== */
+.settings-content {
+    gap: calc(0.092592592vh * 16);
+    margin-top: calc(0.092592592vh * 10);
+}
+
+.settings-content-left {
+    width: calc(0.092592592vh * 380);
+    gap: calc(0.092592592vh * 16);
+    padding: calc(0.092592592vh * 16) calc(0.092592592vh * 20) !important;
+    overflow-y: auto;
+    height: calc(0.092592592vh * 275);
+}
+
+.settings-content-right {
+    flex: 1;
+    gap: calc(0.092592592vh * 16);
+}
+
+/* ==================== SECTION HEADERS ==================== */
+.settings-section-header {
+    gap: calc(0.092592592vh * 10);
+    margin-bottom: calc(0.092592592vh * 12);
+}
+.settings-section-header2 {
+    gap: calc(0.092592592vh * 10);
+}
+
+.settings-section-iconDiv {
+    width: calc(0.092592592vh * 32);
+    height: calc(0.092592592vh * 32);
+    border: calc(0.092592592vh * 1) solid rgba(250, 250, 250, .2);
+    background: #fafafa1a;
+    color: white;
+    font-size: calc(0.092592592vh * 12);
+    position: relative;
+}
+
+.settings-section-titles {
+    gap: calc(0.092592592vh * 2);
+}
+
+.settings-section-title {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: calc(0.092592592vh * 16);
+    color: #e5e5e5;
+    line-height: 1;
+}
+
+.settings-section-subtitle {
+    font-family: "Geist", sans-serif;
+    font-size: calc(0.092592592vh * 10);
+    color: #6b6b6b;
+    line-height: 1;
+}
+
+/* ==================== CREDIT CARD PREVIEW ==================== */
+.settings-card-preview {
+    display: flex;
+    flex-direction: column;
+}
+
+.settings-card-visual {
+    height: calc(0.092592592vh * 190);
+    padding: calc(0.092592592vh * 16);
+    border-radius: calc(0.092592592vh * 4);
+}
+
+.settings-card-logo {
+    top: calc(0.092592592vh * 16);
+    left: calc(0.092592592vh * 20);
+}
+
+.settings-card-logo span {
+    font-family: "Geist", sans-serif;
+    font-size: calc(0.092592592vh * 16);
+    font-weight: 600;
+}
+
+.settings-card-chip {
+    top: calc(0.092592592vh * 50);
+    left: calc(0.092592592vh * 20);
+    font-size: calc(0.092592592vh * 28);
+    color: #c2c2c2;
+}
+
+.settings-card-number {
+    top: calc(0.092592592vh * 45);
+    left: calc(0.092592592vh * 20);
+    gap: calc(0.092592592vh * 10);
+}
+
+.settings-card-number span {
+    font-family: "Geist Mono", monospace;
+    font-size: calc(0.092592592vh * 18);
+    color: #e5e5e5;
+    letter-spacing: 3px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.settings-card-copy {
+    font-size: calc(0.092592592vh * 12);
+    color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.settings-card-copy:hover {
+    color: #e5e5e5;
+}
+
+.settings-card-bottom {
+    bottom: calc(0.092592592vh * 16);
+    left: calc(0.092592592vh * 20);
+    right: calc(0.092592592vh * 20);
+}
+
+.settings-card-label {
+    font-family: "Geist", sans-serif;
+    font-size: calc(0.092592592vh * 8);
+    color: rgba(255, 255, 255, 0.5);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.settings-card-value {
+    font-family: "Geist", sans-serif;
+    font-size: calc(0.092592592vh * 12);
+    color: #e5e5e5;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+/* ==================== PIN SECTION ==================== */
+.settings-card-section {
+    /* gap: calc(0.092592592vh * 16); */
+    margin-top: calc(0.092592592vh * 8);
+}
+
+.settings-pin-section {
+    gap: calc(0.092592592vh * 12);
+}
+
+.settings-pin-header {
+    gap: calc(0.092592592vh * 4);
+}
+
+.settings-pin-title {
+    margin-top: calc(0.092592592vh * 5);
+    font-family: "Bebas Neue", sans-serif;
+    font-size: calc(0.092592592vh * 14);
+    color: #e5e5e5;
+    line-height: 0;
+}
+
+.settings-pin-subtitle {
+    font-family: "Geist", sans-serif;
+    font-size: calc(0.092592592vh * 10);
+    color: #6b6b6b;
+    line-height: 0;
+}
+
+.settings-pin-input-row {
+    display: flex;
+    align-items: center;
+    gap: calc(0.092592592vh * 8);
+    width: 100%;
+}
+
+.settings-pin-inputs {
+    display: flex;
+    gap: calc(0.092592592vh * 5);
+}
+
+.settings-pin-input {
+    width: calc(0.092592592vh * 38);
+    height: calc(0.092592592vh * 38);
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    text-align: center;
+    font-family: "Geist Mono", monospace;
+    font-size: calc(0.092592592vh * 16);
+    color: #e5e5e5;
+    outline: none;
+    flex-shrink: 0;
+}
+
+.settings-pin-input:focus {
+    border-color: rgba(194, 194, 194, 0.3);
+}
+
+.settings-pin-confirm {
+    width: calc(0.092592592vh * 38);
+    height: calc(0.092592592vh * 38);
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: #6b6b6b;
+    font-size: calc(0.092592592vh * 14);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+}
+
+.settings-pin-confirm-active {
+    background: rgba(67, 161, 65, 0.15);
+    border-color: rgba(67, 161, 65, 0.3);
+    color: #43a141;
+}
+
+.settings-pin-confirm-active:hover {
+    background: rgba(67, 161, 65, 0.25);
+}
+
+.settings-keypad {
+    gap: calc(0.092592592vh * 6);
+}
+
+.settings-keypad-btn {
+    height: calc(0.092592592vh * 38);
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: #e5e5e5;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: calc(0.092592592vh * 16);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.settings-keypad-btn:hover {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 255, 255, 0.12);
+}
+
+.settings-keypad-btn i {
+    font-size: calc(0.092592592vh * 14);
+}
+
+/* ==================== REQUESTS SECTION ==================== */
+.settings-requests {
+    padding: calc(0.092592592vh * 16) calc(0.092592592vh * 20) !important;
+}
+.settings-badge {
+    padding: calc(0.092592592vh * 4) calc(0.092592592vh * 10);
+    background: rgba(219, 173, 24, 0.15);
+    font-family: "Bebas Neue", sans-serif;
+    font-size: calc(0.092592592vh * 12);
+    color: #dbad18;
+}
+
+.settings-requests-list {
+    gap: calc(0.092592592vh * 10);
+    max-height: calc(0.092592592vh * 180);
+    padding-right: calc(0.092592592vh * 4);
+}
+
+.settings-request-card {
+    padding: calc(0.092592592vh * 12);
+    gap: calc(0.092592592vh * 12);
+    background: radial-gradient(100% 100% at 50% 0%, #43434331, #0e0f1180);
+}
+
+.settings-request-header {
+    gap: calc(0.092592592vh * 12);
+}
+
+.settings-request-avatar {
+    width: calc(0.092592592vh * 36);
+    height: calc(0.092592592vh * 36);
+    background: rgba(255, 255, 255, 0.05);
+    color: #6b6b6b;
+    font-size: calc(0.092592592vh * 14);
+}
+
+.settings-request-info {
+    gap: calc(0.092592592vh * 2);
+}
+
+.settings-request-name {
+    font-family: "Geist", sans-serif;
+    font-size: calc(0.092592592vh * 13);
+    color: #e5e5e5;
+    font-weight: 500;
+}
+
+.settings-request-amount {
+    font-family: "Geist", sans-serif;
+    font-size: calc(0.092592592vh * 10);
+    color: #6b6b6b;
+}
+
+.settings-request-actions {
+    gap: calc(0.092592592vh * 8);
+}
+
+.settings-action-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: calc(0.092592592vh * 6);
+    padding: calc(0.092592592vh * 8) calc(0.092592592vh * 12);
+    font-family: "Geist", sans-serif;
+    font-size: calc(0.092592592vh * 10);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: none;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.settings-action-btn i {
+    font-size: calc(0.092592592vh * 10);
+}
+
+.settings-action-success {
+    background-color: #fafafa1a;
+    color: #fafafa;
+}
+
+.settings-action-success:hover {
+    color: #121212;
+    background: #fafafa;
+}
+
+.settings-action-danger {
+    background-color: #c507171a;
+    color: #c50717;
+}
+
+.settings-action-danger:hover {
+    color: #121212;
+    background-color: #c50717;
+}
+
+/* ==================== NOTIFICATIONS SECTION ==================== */
+.settings-notifications {
+    padding: calc(0.092592592vh * 16) calc(0.092592592vh * 20) !important;
+}
+
+.settings-clear-btn {
+    display: flex;
+    align-items: center;
+    gap: calc(0.092592592vh * 6);
+    padding: calc(0.092592592vh * 6) calc(0.092592592vh * 10);
+    background-color: #c507171a;
+    color: #c50717;
+    font-family: "Geist", sans-serif;
+    font-size: calc(0.092592592vh * 10);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.settings-clear-btn:hover {
+    color: #121212;
+    background-color: #c50717;
+}
+
+.settings-clear-btn i {
+    font-size: calc(0.092592592vh * 10);
+}
+
+.settings-notifications-list {
+    gap: calc(0.092592592vh * 8);
+    padding-right: calc(0.092592592vh * 4);
+    max-height: 45%;
+}
+
+.settings-notification-card {
+    padding: calc(0.092592592vh * 10);
+    gap: calc(0.092592592vh * 12);
+    background: radial-gradient(100% 100% at 50% 0%, #43434331, #0e0f1180);
+}
+
+.settings-notification-icon {
+    width: calc(0.092592592vh * 32);
+    height: calc(0.092592592vh * 32);
+    background: #cd412c;
+    box-shadow: 0 0 calc(0.092592592vh * 12) rgba(205, 65, 44, 0.4);
+    color: white;
+    font-size: calc(0.092592592vh * 12);
+    flex-shrink: 0;
+}
+
+.settings-notification-info {
+    gap: calc(0.092592592vh * 2);
+}
+
+.settings-notification-title {
+    font-family: "Geist", sans-serif;
+    font-size: calc(0.092592592vh * 12);
+    color: #e5e5e5;
+    font-weight: 500;
+}
+
+.settings-notification-description {
+    font-family: "Geist", sans-serif;
+    font-size: calc(0.092592592vh * 10);
+    color: #6b6b6b;
+}
+
+/* ==================== EMPTY STATE ==================== */
+.settings-empty {
+    padding: calc(0.092592592vh * 24);
+    gap: calc(0.092592592vh * 8);
+}
+
+.settings-empty-icon {
+    font-size: calc(0.092592592vh * 28);
+    color: #4b4b4b;
+}
+
+.settings-empty-text {
+    font-family: "Geist", sans-serif;
+    font-size: calc(0.092592592vh * 11);
+    color: #6b6b6b;
+    text-align: center;
+}

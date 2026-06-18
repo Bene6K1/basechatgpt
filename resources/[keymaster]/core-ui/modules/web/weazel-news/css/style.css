@@ -1,0 +1,151 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.weazel-notification-container {
+  position: fixed;
+  bottom: 40px;
+  font-family: "Arial", sans-serif;
+  left: 0;
+  transform: translateX(-100%);
+  z-index: 1000;
+  width: 600px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.weazel-notification-container.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(calc(50vw - 50%));
+}
+
+.weazel-notification-container.leaving {
+  transform: translateX(100vw);
+  opacity: 0;
+}
+
+.weazel-notification {
+  position: relative;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transform: perspective(1000px) rotateY(5deg);
+  transition: transform 0.3s ease;
+}
+
+.weazel-notification:hover {
+  transform: perspective(1000px) rotateY(0);
+}
+
+.weazel-live-indicator {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #ff0000;
+  color: white;
+  padding: 5px 15px;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  z-index: 2;
+}
+
+.weazel-live-indicator .weazel-dot {
+  width: 8px;
+  height: 8px;
+  background: white;
+  border-radius: 50%;
+  animation: blink 1s infinite;
+}
+
+.weazel-main-banner {
+  background: linear-gradient(135deg, #ffffff 0%, #f8f8f8 100%);
+  padding: 20px;
+  position: relative;
+}
+
+.weazel-banner-content {
+  position: relative;
+  z-index: 1;
+}
+
+.weazel-banner-stripe {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #ff0000, #cc0000);
+}
+
+.weazel-logo-section {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.weazel-logo {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.weazel-logo-section h1 {
+  font-size: 24px;
+  font-weight: 900;
+  color: #ff0000;
+}
+
+.weazel-logo-section h1 span {
+  color: #000;
+}
+
+.weazel-news-content {
+  padding: 10px 0;
+}
+
+.weazel-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: #000;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+.weazel-description {
+  font-size: 16px;
+  color: #333;
+  line-height: 1.4;
+}
+
+.weazel-bottom-ticker {
+  background: #000;
+  color: white;
+  padding: 8px 15px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

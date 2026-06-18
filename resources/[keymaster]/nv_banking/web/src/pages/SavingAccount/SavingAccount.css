@@ -1,0 +1,680 @@
+/* Main Container */
+.saving-account {
+    padding: calc(0.092592592vh * 18) !important;
+    gap: calc(0.092592592vh * 16);
+    width: calc(0.092592592vh * 981);
+}
+.saving-account::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: calc(0.092592592vh * 1.5);
+    background: radial-gradient(circle at 90% 10%, rgba(217, 217, 217, .1) 0%, rgba(217, 217, 217, .1) 30%, rgba(217, 217, 217, .1) 100%);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: xor;
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.saving-header {
+    padding: calc(0.092592592vh * 16) calc(0.092592592vh * 20);
+    background: radial-gradient(
+            120.1% 120.1% at 115.34% -20.1%,
+            rgba(255, 255, 255, 0.2) 0%,
+            rgba(0, 0, 0, 0) 100%
+        ),
+        var(--bg-primary);
+    border-radius: calc(0.092592592vh * 8);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.saving-header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: calc(0.092592592vh * 8);
+    padding: 1px;
+    background: radial-gradient(circle at 90% 10%, #7e7e7e 0%, #595959 30%, #000000 100%);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: xor;
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.saving-header-left {
+    gap: calc(0.092592592vh * 12);
+}
+
+.saving-header-iconDiv {
+    width: calc(0.092592592vh * 38);
+    height: calc(0.092592592vh * 38);
+    border: calc(0.092592592vh * 1) solid rgba(250, 250, 250, .2);
+    background: #fafafa1a;
+    color: white;
+    font-size: calc(0.092592592vh * 14);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.saving-header-titles {
+    gap: calc(0.092592592vh * 4);
+}
+
+.saving-header-title {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: calc(0.092592592vh * 18);
+    color: #e5e5e5;
+    line-height: 1;
+}
+
+.saving-header-subtitle {
+    font-family: "Geist", sans-serif;
+    font-size: calc(0.092592592vh * 11);
+    color: #6b6b6b;
+    line-height: 1;
+}
+
+.saving-header-right {
+    gap: calc(0.092592592vh * 12);
+}
+
+.saving-header-balance {
+    gap: calc(0.092592592vh * 2);
+}
+
+.saving-header-balance-label {
+    font-family: "Geist", sans-serif;
+    font-size: calc(0.092592592vh * 10);
+    color: #6b6b6b;
+    text-transform: uppercase;
+}
+
+.saving-header-balance-value {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: calc(0.092592592vh * 16);
+    color: #e5e5e5;
+    line-height: 1;
+}
+
+.saving-header-balance-icon {
+    width: calc(0.092592592vh * 36);
+    height: calc(0.092592592vh * 36);
+    border-radius: calc(0.092592592vh * 6);
+    background: radial-gradient(
+            120.1% 120.1% at 115.34% -20.1%,
+            rgba(255, 255, 255, 0.2) 0%,
+            rgba(0, 0, 0, 0) 100%
+        ),
+        var(--bg-secondary);
+    color: #c2c2c2;
+    font-size: calc(0.092592592vh * 14);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.saving-header-balance-icon::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: calc(0.092592592vh * 6);
+    padding: 1px;
+    background: radial-gradient(circle at 90% 10%, #7e7e7e 0%, #595959 30%, #000000 100%);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: xor;
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* ==================== TOTAL SAVINGS SECTION ==================== */
+.saving-total {
+    padding: calc(0.092592592vh * 16) calc(0.092592592vh * 20) !important;
+    gap: calc(0.092592592vh * 12);
+}
+.saving-total::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: calc(0.092592592vh * 1.5);
+    background: radial-gradient(circle at 90% 10%, rgba(217, 217, 217, .1) 0%, rgba(217, 217, 217, .1) 30%, rgba(217, 217, 217, .1) 100%);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: xor;
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.saving-total-header {
+    gap: calc(0.092592592vh * 12);
+}
+
+.saving-total-iconDiv {
+    width: calc(0.092592592vh * 32);
+    height: calc(0.092592592vh * 32);
+    border: calc(0.092592592vh * 1) solid rgba(250, 250, 250, .2);
+    background: #fafafa1a;
+    color: white;
+    font-size: calc(0.092592592vh * 12);
+}
+
+.saving-total-titles {
+    gap: calc(0.092592592vh * 4);
+}
+
+.saving-total-title {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: calc(0.092592592vh * 16);
+    color: #e5e5e5;
+    line-height: 1;
+}
+
+.saving-total-subtitle {
+    font-family: "Geist", sans-serif;
+    font-size: calc(0.092592592vh * 10);
+    color: #6b6b6b;
+    line-height: 1;
+}
+
+.saving-total-amount-container {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: calc(0.092592592vh * 20) calc(0.092592592vh * 24);
+    text-align: center;
+}
+
+.saving-total-amount {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: calc(0.092592592vh * 36);
+    color: white;
+    letter-spacing: 1px;
+}
+
+/* ==================== MAIN CONTENT ==================== */
+.saving-content {
+    gap: calc(0.092592592vh * 16);
+    margin-top: calc(0.092592592vh * 26);
+}
+
+.saving-content-left {
+    gap: calc(0.092592592vh * 16);
+    padding: calc(0.092592592vh * 16) calc(0.092592592vh * 20) !important;
+}
+
+.saving-content-right {
+    padding: calc(0.092592592vh * 16) calc(0.092592592vh * 20) !important;
+    width: calc(0.092592592vh * 320);
+    gap: calc(0.092592592vh * 12);
+}
+
+/* ==================== SECTION HEADERS ==================== */
+.saving-section-header {
+    gap: calc(0.092592592vh * 10);
+    margin-bottom: calc(0.092592592vh * 12);
+}
+
+.saving-section-iconDiv {
+    width: calc(0.092592592vh * 32);
+    height: calc(0.092592592vh * 32);
+    border: calc(0.092592592vh * 1) solid rgba(250, 250, 250, .2);
+    background: #fafafa1a;
+    color: white;
+    font-size: calc(0.092592592vh * 12);
+    position: relative;
+}
+
+.saving-section-titles {
+    gap: calc(0.092592592vh * 2);
+}
+
+.saving-section-title {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: calc(0.092592592vh * 16);
+    color: #e5e5e5;
+    line-height: 1;
+}
+
+.saving-section-subtitle {
+    font-family: "Geist", sans-serif;
+    font-size: calc(0.092592592vh * 10);
+    color: #6b6b6b;
+    line-height: 1;
+}
+
+/* ==================== INVESTMENTS TABLE ==================== */
+.saving-investments {
+    flex-shrink: 0;
+}
+
+.saving-investments-table-wrapper {
+    max-height: calc(0.092592592vh * 200);
+    overflow-y: auto;
+    padding-right: calc(0.092592592vh * 4);
+}
+
+.saving-investments-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 calc(0.092592592vh * 6);
+}
+
+.saving-investments-table thead {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.saving-investments-table th {
+    padding: calc(0.092592592vh * 10) calc(0.092592592vh * 14);
+    text-align: left;
+    font-family: "Geist", sans-serif;
+    font-size: calc(0.092592592vh * 10);
+    font-weight: 600;
+    color: #d4d4d4;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    background: rgba(194, 194, 194, 0.05);
+}
+
+.saving-investments-table th:last-child {
+    text-align: center;
+}
+
+.saving-investments-table tbody tr {
+    background: radial-gradient(100% 100% at 50% 0%, #43434331, #0e0f1180);
+    transition: all 0.15s ease;
+}
+
+.saving-investments-table td {
+    padding: calc(0.092592592vh * 12) calc(0.092592592vh * 14);
+    border-bottom: calc(0.092592592vh * 1) solid rgba(255, 255, 255, 0.5);
+    font-size: calc(0.092592592vh * 12);
+    vertical-align: middle;
+}
+
+.saving-investments-table td:last-child {
+    text-align: center;
+}
+
+.investment-cell {
+    gap: calc(0.092592592vh * 10);
+}
+
+.investment-cell-percent {
+    padding: calc(0.092592592vh * 4) calc(0.092592592vh * 8);
+    font-family: "Bebas Neue", sans-serif;
+    font-size: calc(0.092592592vh * 12);
+    font-weight: 600;
+}
+
+.investment-cell-label {
+    font-family: "Geist", sans-serif;
+    font-size: calc(0.092592592vh * 12);
+    color: #e5e5e5;
+    font-weight: 500;
+}
+
+.investment-gains {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: calc(0.092592592vh * 14);
+    font-weight: 600;
+}
+
+.investment-time {
+    gap: calc(0.092592592vh * 4);
+}
+
+.investment-time-text {
+    font-family: "Geist", sans-serif;
+    font-size: calc(0.092592592vh * 11);
+    color: #8b8b8b;
+}
+
+.investment-time-bar {
+    width: calc(0.092592592vh * 80);
+    height: calc(0.092592592vh * 4);
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: calc(0.092592592vh * 2);
+    overflow: hidden;
+}
+
+.investment-time-bar-fill {
+    height: 100%;
+    border-radius: calc(0.092592592vh * 2);
+    transition: width 0.5s ease;
+}
+
+.investment-amount {
+    font-family: "Geist", sans-serif;
+    font-size: calc(0.092592592vh * 12);
+    color: #e5e5e5;
+    font-weight: 500;
+}
+
+.investment-delete-btn {
+    width: calc(0.092592592vh * 28);
+    height: calc(0.092592592vh * 28);
+    background-color: #c507171a;
+    color: #c50717;
+    font-size: calc(0.092592592vh * 10);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-left: calc(0.092592592vh * 12);
+}
+
+.investment-delete-btn:hover {
+    color: #121212;
+    background-color: #c50717;
+}
+
+/* ==================== TRANSACTIONS TABLE ==================== */
+.saving-transactions {
+    min-height: calc(0.092592592vh * 150);
+}
+
+.saving-transactions-table-wrapper {
+    overflow-y: auto;
+    padding-right: calc(0.092592592vh * 4);
+}
+
+.saving-transactions-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 calc(0.092592592vh * 6);
+}
+
+.saving-transactions-table thead {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.saving-transactions-table th {
+    padding: calc(0.092592592vh * 10) calc(0.092592592vh * 14);
+    text-align: left;
+    font-family: "Geist", sans-serif;
+    font-size: calc(0.092592592vh * 10);
+    font-weight: 600;
+    color: #d4d4d4;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    background: rgba(194, 194, 194, 0.1);
+}
+
+.saving-transactions-table th:first-child {
+    border-radius: calc(0.092592592vh * 6) 0 0 calc(0.092592592vh * 6);
+}
+
+.saving-transactions-table th:last-child {
+    border-radius: 0 calc(0.092592592vh * 6) calc(0.092592592vh * 6) 0;
+    text-align: right;
+}
+
+.saving-transactions-table tbody tr {
+    background: radial-gradient(
+            120.1% 120.1% at 115.34% -20.1%,
+            rgba(255, 255, 255, 0.2) 0%,
+            rgba(0, 0, 0, 0) 100%
+        ),
+        var(--bg-primary);
+    transition: all 0.15s ease;
+}
+
+.saving-transactions-table tbody tr.transaction-positive td {
+    border-color: rgba(67, 161, 65, 0.3);
+}
+
+.saving-transactions-table tbody tr.transaction-positive td:first-child {
+    border-left-color: rgba(67, 161, 65, 0.3);
+}
+
+.saving-transactions-table tbody tr.transaction-positive td:last-child {
+    border-right-color: rgba(67, 161, 65, 0.3);
+}
+
+.saving-transactions-table tbody tr.transaction-negative td {
+    border-color: rgba(205, 65, 44, 0.3);
+}
+
+.saving-transactions-table tbody tr.transaction-negative td:first-child {
+    border-left-color: rgba(205, 65, 44, 0.3);
+}
+
+.saving-transactions-table tbody tr.transaction-negative td:last-child {
+    border-right-color: rgba(205, 65, 44, 0.3);
+}
+
+.saving-transactions-table td {
+    padding: calc(0.092592592vh * 12) calc(0.092592592vh * 14);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: calc(0.092592592vh * 12);
+    vertical-align: middle;
+}
+
+.saving-transactions-table td:first-child {
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: calc(0.092592592vh * 6) 0 0 calc(0.092592592vh * 6);
+}
+
+.saving-transactions-table td:last-child {
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0 calc(0.092592592vh * 6) calc(0.092592592vh * 6) 0;
+    text-align: right;
+}
+
+.transaction-cell {
+    gap: calc(0.092592592vh * 10);
+}
+
+.transaction-cell-icon {
+    width: calc(0.092592592vh * 28);
+    height: calc(0.092592592vh * 28);
+    flex-shrink: 0;
+}
+
+.transaction-cell-label {
+    font-family: "Geist", sans-serif;
+    font-size: calc(0.092592592vh * 12);
+    color: #e5e5e5;
+    font-weight: 500;
+}
+
+.transaction-date,
+.transaction-time {
+    font-family: "Geist", sans-serif;
+    font-size: calc(0.092592592vh * 12);
+    color: #8b8b8b;
+}
+
+.transaction-amount {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: calc(0.092592592vh * 14);
+    font-weight: 600;
+}
+
+/* ==================== EMPTY STATES ==================== */
+.saving-empty {
+    margin-top: calc(0.092592592vh * 80);
+    padding: calc(0.092592592vh * 32);
+    gap: calc(0.092592592vh * 12);
+    border-radius: calc(0.092592592vh * 8);
+}
+
+.saving-empty-small {
+    padding: calc(0.092592592vh * 24);
+    flex: 1;
+}
+
+.saving-empty-icon {
+    font-size: calc(0.092592592vh * 36);
+    color: #4b4b4b;
+}
+
+.saving-empty-title {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: calc(0.092592592vh * 14);
+    color: #8b8b8b;
+    text-transform: uppercase;
+}
+
+.saving-empty-text {
+    font-family: "Geist", sans-serif;
+    font-size: calc(0.092592592vh * 11);
+    color: #6b6b6b;
+    text-align: center;
+    max-width: calc(0.092592592vh * 200);
+}
+
+/* ==================== PLANS LIST ==================== */
+.saving-plans-list {
+    gap: calc(0.092592592vh * 10);
+    padding: calc(0.092592592vh * 2);
+    padding-right: calc(0.092592592vh * 6);
+}
+
+.saving-plan-card {
+    padding: calc(0.092592592vh * 10) !important;
+    gap: calc(0.092592592vh * 10);
+    background: radial-gradient(100% 100% at 50% 0%, #43434331, #0e0f1180);
+}
+.saving-plan-card-active {
+    background: radial-gradient(121.15% 121.15% at 50% 0%, #6b6b6b42, #0e0f1180);
+    border-bottom: calc(0.092592592vh * 2) solid rgba(250, 250, 250, 1);
+}
+
+.saving-plan-header {
+    padding: calc(0.092592592vh * 2);
+}
+
+.saving-plan-info {
+    gap: calc(0.092592592vh * 10);
+}
+
+.saving-plan-percent {
+    padding: calc(0.092592592vh * 6) calc(0.092592592vh * 10);
+    font-family: "Bebas Neue", sans-serif;
+    font-size: calc(0.092592592vh * 14);
+    font-weight: 600;
+}
+
+.saving-plan-texts {
+    gap: calc(0.092592592vh * 2);
+}
+
+.saving-plan-label {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: calc(0.092592592vh * 14);
+    color: #e5e5e5;
+    line-height: 1;
+}
+
+.saving-plan-description {
+    font-family: "Geist", sans-serif;
+    font-size: calc(0.092592592vh * 10);
+    color: #6b6b6b;
+    line-height: 1;
+}
+
+.saving-plan-chevron {
+    font-size: calc(0.092592592vh * 12);
+    color: #6b6b6b;
+    transition: transform 0.2s ease;
+}
+
+.saving-plan-details-wrapper {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.3s ease-out;
+    overflow: hidden;
+}
+
+.saving-plan-details-wrapper.saving-plan-details-open {
+    grid-template-rows: 1fr;
+}
+
+.saving-plan-details {
+    min-height: 0;
+    gap: calc(0.092592592vh * 12);
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+}
+
+.saving-plan-details-open .saving-plan-details {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.saving-plan-grid {
+    gap: calc(0.092592592vh * 12);
+}
+
+.saving-plan-grid-label {
+    font-family: "Geist", sans-serif;
+    font-size: calc(0.092592592vh * 10);
+    color: #6b6b6b;
+    text-transform: uppercase;
+}
+
+.saving-plan-grid-value {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: calc(0.092592592vh * 14);
+    color: #e5e5e5;
+}
+
+.saving-plan-grid-subtext {
+    font-family: "Geist", sans-serif;
+    font-size: calc(0.092592592vh * 10);
+    color: #6b6b6b;
+    line-height: 0.5;
+}
+
+.saving-plan-buy-btn {
+    margin-top: calc(0.092592592vh * 8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: calc(0.092592592vh * 8);
+    padding: calc(0.092592592vh * 10) calc(0.092592592vh * 16);
+    font-family: "Geist", sans-serif;
+    font-size: calc(0.092592592vh * 11);
+    font-weight: 600;
+    background-color: #fafafa1a;
+    color: #fafafa;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.saving-plan-buy-btn:hover {
+    color: #121212;
+    background: #fafafa;
+}
+
+.saving-plan-buy-btn i {
+    font-size: calc(0.092592592vh * 11);
+}

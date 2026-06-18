@@ -1,0 +1,61 @@
+//
+// Badge
+//
+
+@import '../../styles/_variables.scss';
+
+.badge {
+  height: vh(26);
+  padding: vh(2) vh(10);
+  background-color: rgb(255, 255, 255, 0.025);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: vh(12);
+  font-weight: 900;
+  line-height: vh(22);
+  color: #fff;
+  text-shadow: 0px 0px vh(18) #fff;
+
+  &--green {
+    color: white;
+    // text-shadow: 0px 0px vh(18) rgb(47, 252, 215, 0.5);
+  }
+
+  &--light-green {
+    color: white;
+    // text-shadow: 0px 0px vh(18) rgb(47, 252, 215, 0.5);
+  }
+
+  &--size-long {
+    padding: vh(2) vh(15);
+  }
+  &--size-square {
+    padding: vh(20) vh(15);
+  }
+
+  &__circle {
+    min-width: vh(10);
+    max-width: vh(10);
+    height: vh(10);
+    border-radius: 50%;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &--big {
+      min-width: vh(20);
+      max-width: vh(20);
+      height: vh(20);
+    }
+
+    &--red {
+      background-color: $accent-red;
+    }
+
+    &--red-opacity {
+      background-color: $accent-red-dark;
+    }
+  }
+}

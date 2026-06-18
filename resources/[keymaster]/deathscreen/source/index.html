@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      rel="stylesheet"
+    />
+    <title>Deathscreen</title>
+
+    <style id="dynamic-styles"></style>
+  </head>
+  <body>
+    <svg height="0" width="0" xmlns="http://www.w3.org/2000/svg" style="position: absolute;">
+      <defs>
+        <filter id="f1" x="0" y="0" xmlns="http://www.w3.org/2000/svg">
+          <feGaussianBlur in="SourceGraphic" stdDeviation="5" />
+        </filter>
+      </defs>
+    </svg>
+    <div class="deathscreen-container hide" id="deathscreen_container">
+      <div class="deathscreen-bg-fade"></div>
+      <div class="deathscreen-red-gradient"></div>
+
+      <div
+        id="deathscreen_emsAreIncoming"
+        class="deathscreen-ambulance-notification"
+      >
+        <div class="notification-background"></div>
+        <p>
+          <span class="green">Les secours</span> ont été contactés. Veuillez
+          patienter.
+        </p>
+      </div>
+      <div class="content">
+        <div class="deathscreen-skull">
+          <img src="skull.svg" alt="Skull" />
+        </div>
+        <div class="content-text">
+          <p class="deathscreen-text">VOUS ÊTES INCONSCIENT</p>
+          <!-- <p class="deatnscreen-desc">
+            Vous êtes actuellement en état d'inconscience. En attendant
+            l'arrivée des secours, vous pouvez appeler un médecin ou patienter
+            jusqu'à l'unité X.
+          </p> -->
+        </div>
+        <div class="deathscreen-timer">
+          <div class="deathscreen-timer-number">
+            <p
+              class="deathscreen-timer-number-text"
+              id="deathscreen_minutes_tens"
+            >
+              0
+            </p>
+          </div>
+
+          <div class="deathscreen-timer-number">
+            <p
+              class="deathscreen-timer-number-text"
+              id="deathscreen_minutes_units"
+            >
+              0
+            </p>
+          </div>
+
+          <p class="deathscreen-timer-separator">:</p>
+
+          <div class="deathscreen-timer-number">
+            <p
+              class="deathscreen-timer-number-text"
+              id="deathscreen_seconds_tens"
+            >
+              0
+            </p>
+          </div>
+
+          <div class="deathscreen-timer-number">
+            <p
+              class="deathscreen-timer-number-text"
+              id="deathscreen_seconds_units"
+            >
+              0
+            </p>
+          </div>
+        </div>
+        <div class="deathscreen-buttons-container">
+          <div class="deathscreen-buttons-row">
+            <div class="deathscreen-action" id="deathscreen_call">
+              <div class="action-background"></div>
+              <p class="deathscreen-action-text">Appeler les secours</p>
+              <p class="deathscreen-action-letter">E</p>
+            </div>
+            <div class="deathscreen-action" id="deathscreen_respawn">
+              <div class="action-background"></div>
+              <p class="deathscreen-action-text">Unité X</p>
+              <p class="deathscreen-action-letter">X</p>
+            </div>
+          </div>
+          <div
+            class="deathscreen-action"
+            id="deathscreen_staff"
+            style="display: none;"
+          >
+            <div class="action-background"></div>
+            <p class="deathscreen-action-text">Staff Revive</p>
+            <p class="deathscreen-action-letter">S</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

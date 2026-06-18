@@ -1,0 +1,45 @@
+//
+// Avatar
+//
+
+.avatar {
+  position: relative;
+
+  &__img {
+    min-width: vh(40);
+    max-width: vh(40);
+    height: vh(40);
+    border-radius: 50%;
+    background-color: rgb(255, 255, 255, 0.1);
+    object-fit: cover;
+    user-select: none;
+    -webkit-user-select: none;
+    pointer-events: none;
+  }
+
+  &__circle {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: vh(-7);
+    min-width: vh(15);
+    max-width: vh(15);
+    margin: 0 auto;
+    height: vh(15);
+    border: vh(3) solid #232428;
+    border-radius: 50%;
+    background-color: #fff;
+
+    &--blue {
+      background-color: #52acff;
+    }
+
+    &--pink {
+      background-color: #ef7be3;
+    }
+
+    &--yellow {
+      background-color: #fbe947;
+    }
+  }
+}

@@ -1,0 +1,116 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.ui-info-body {
+  /* background-image: url("https://media.discordapp.net/attachments/1234188481509589036/1339062134201516073/Capture_decran_2025-02-12_001434.png?ex=67ad5a4b&is=67ac08cb&hm=c1dc0dc6f3f251dd93de728b3cecaccd724c1867e1fe031086fc1ea5fe24aa52&=&format=webp&quality=lossless&width=1043&height=566"); */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  font-family: "Inter", serif;
+  margin: 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 125vh;
+  padding-right: 30px;
+  overflow: hidden;
+}
+
+.ui-info-container {
+  background-color: transparent;
+  width: 22rem;
+  border-radius: 0.4rem;
+  display: none; /* Hide the UI by default */
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out; /* Add transition for fade effect */
+}
+
+.ui-info-container.show {
+  display: block;
+  opacity: 1;
+}
+
+.ui-info-container.hide {
+  opacity: 0;
+}
+
+.ui-info-inner-container {
+  border: 2px solid rgba(70, 70, 70, 0.6);
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 0.4rem;
+  padding: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  text-align: center;
+}
+
+.ui-info-main-header {
+  font-size: 1.2rem;
+  font-weight: 700;
+  background: #fff;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+  padding-top: 0.6rem;
+  padding: 0.6rem 0 0 0.6rem;
+}
+
+.ui-info-info-line {
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem;
+  border-radius: 0.4rem;
+  gap: 1rem;
+}
+
+.ui-info-label {
+  font-size: 0.9rem;
+  color: #ffffff;
+  text-align: left;
+}
+
+.ui-info-value {
+  font-size: 0.8rem;
+  color: #ccc;
+  text-align: right;
+}
+
+.ui-info-progress-bar {
+  background-color: rgba(241, 243, 245, 0.2);
+  width: 100%;
+  height: 1rem;
+  border-radius: 0.4rem;
+  position: relative;
+}
+
+.ui-info-progress {
+  background: linear-gradient(
+    to right,
+    rgba(79, 181, 233, 0.95),
+    rgba(152, 193, 255, 1)
+  );
+  height: 100%;
+  border-radius: 0.4rem;
+  width: 0;
+  transition: width 0.5s ease-in-out;
+}
+
+.ui-info-progress-bar::after {
+  mix-blend-mode: difference;
+  content: attr(data-progress) "%";
+  position: absolute;
+  right: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: inherit;
+  font-size: 0.6rem;
+  font-weight: bold;
+}

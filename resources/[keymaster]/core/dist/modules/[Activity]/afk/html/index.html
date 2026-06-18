@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEVA - AFK System</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Overlay AFK -->
+    <div id="afk-overlay" class="afk-overlay hidden">
+        <div class="overlay-header">
+            <div class="afk-badge">
+                <span class="pulse"></span>
+                <span class="badge-text">AFK</span>
+            </div>
+            <div id="vip-badge" class="vip-badge hidden">
+                <span class="vip-icon">&#9733;</span>
+                <span>VIP</span>
+            </div>
+        </div>
+
+        <div class="overlay-content">
+            <!-- Timer -->
+            <div class="stat-box" id="timer-box">
+                <div class="stat-icon">&#9200;</div>
+                <div class="stat-info">
+                    <span class="stat-label">Temps AFK</span>
+                    <span class="stat-value" id="afk-timer">00:00</span>
+                </div>
+            </div>
+
+            <!-- Earnings -->
+            <div class="stat-box" id="earnings-box">
+                <div class="stat-icon">&#36;</div>
+                <div class="stat-info">
+                    <span class="stat-label">Gains</span>
+                    <span class="stat-value earnings" id="afk-earnings">$0</span>
+                </div>
+            </div>
+
+            <!-- Multiplier -->
+            <div class="stat-box" id="multiplier-box">
+                <div class="stat-icon">&#10006;</div>
+                <div class="stat-info">
+                    <span class="stat-label">Multiplicateur</span>
+                    <span class="stat-value multiplier" id="afk-multiplier">x1.0</span>
+                </div>
+            </div>
+
+            <!-- Next Reward -->
+            <div class="stat-box" id="next-reward-box">
+                <div class="stat-icon">&#8634;</div>
+                <div class="stat-info">
+                    <span class="stat-label">Prochaine recompense</span>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="reward-progress"></div>
+                    </div>
+                    <span class="stat-value small" id="next-reward">60s</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mini Leaderboard -->
+        <div class="mini-leaderboard" id="mini-leaderboard">
+            <div class="leaderboard-header">
+                <span class="leaderboard-title">&#127942; Top AFK</span>
+            </div>
+            <div class="leaderboard-list" id="leaderboard-list">
+                <!-- Filled by JS -->
+            </div>
+        </div>
+
+        <!-- Exit Info -->
+        <div class="exit-info" id="exit-info">
+            <span>Appuyez sur <kbd id="exit-key">E</kbd> pour quitter</span>
+        </div>
+    </div>
+
+    <!-- Leaderboard Popup -->
+    <div id="leaderboard-popup" class="leaderboard-popup hidden">
+        <div class="popup-overlay"></div>
+        <div class="popup-content">
+            <div class="popup-header">
+                <h2>&#127942; Classement AFK</h2>
+                <button class="close-btn" id="close-leaderboard">&times;</button>
+            </div>
+            <div class="popup-body">
+                <table class="leaderboard-table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Joueur</th>
+                            <th>Temps</th>
+                            <th>Gains</th>
+                        </tr>
+                    </thead>
+                    <tbody id="leaderboard-table-body">
+                        <!-- Filled by JS -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+//
+// Fines with Actions - BaseStyle Theme
+//
+
+@import '../../styles/_variables.scss';
+
+.fines-with-actions {
+  &__header {
+    margin-bottom: vh(12);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: vh(12);
+  }
+
+  &__title {
+    display: flex;
+    align-items: center;
+    gap: vh(8);
+    font-size: vh(14);
+    font-weight: 700;
+    line-height: 1.2;
+    color: $text-primary;
+
+    i {
+      font-size: vh(14);
+      color: $accent-blue;
+    }
+  }
+
+  &__item {
+    padding: vh(12);
+    background: $button-inactive-bg;
+    display: flex;
+    align-items: center;
+    transition: all 0.1s ease-in-out;
+
+    &--link:hover {
+      cursor: pointer;
+      background: $button-hover-bg;
+    }
+
+    &:not(:first-child) {
+      margin-top: vh(8);
+    }
+  }
+
+  &__text {
+    font-size: vh(14);
+    font-weight: 600;
+    line-height: 1.4;
+    color: $text-secondary;
+  }
+
+  &__action {
+    display: flex;
+    align-items: center;
+    gap: vh(6);
+
+    &-item {
+      min-width: vh(28);
+      max-width: vh(28);
+      height: vh(28);
+      border: vh(1) solid rgba(255, 255, 255, 0.1);
+      background: rgba(255, 255, 255, 0.05);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: vh(12);
+      color: $text-secondary;
+      transition: all 0.1s ease-in-out;
+
+      &--edit {
+        font-size: vh(13);
+      }
+
+      &:hover {
+        cursor: pointer;
+        background: rgba(255, 255, 255, 0.1);
+        border-color: rgba(255, 255, 255, 0.2);
+        color: $text-primary;
+      }
+    }
+  }
+
+  &__delete {
+    font-size: vh(14);
+    color: $text-secondary;
+    transition: all 0.1s ease-in-out;
+
+    &:hover {
+      cursor: pointer;
+      color: $accent-red;
+    }
+  }
+}

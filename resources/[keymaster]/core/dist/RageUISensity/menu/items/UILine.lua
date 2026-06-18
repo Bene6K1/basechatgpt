@@ -1,0 +1,52 @@
+local SettingsButton = {
+    Rectangle = { Y = 0, Width = 431, Height = 38 },
+    Text = { X = 8, Y = 3, Scale = 0.33 },
+}
+
+function RageUI.Line()
+    local CurrentMenu = RageUI.CurrentMenu
+    if CurrentMenu ~= nil then
+        if CurrentMenu() then
+            local Option = RageUI.Options + 1
+            if CurrentMenu.Pagination.Minimum <= Option and CurrentMenu.Pagination.Maximum >= Option then
+                RenderRectangle(CurrentMenu.X + (CurrentMenu.WidthOffset * 2.5 ~= 0 and CurrentMenu.WidthOffset * 2.5 or 200)-150+8, CurrentMenu.Y + RageUI.ItemOffset + 15, 300, 3, 255,255,255,150)
+                RageUI.ItemOffset = RageUI.ItemOffset + SettingsButton.Rectangle.Height
+                if (CurrentMenu.Index == Option) then
+                    if (RageUI.LastControl) then
+                        CurrentMenu.Index = Option - 1
+                        if (CurrentMenu.Index < 1) then
+                            CurrentMenu.Index = RageUI.CurrentMenu.Options
+                        end
+                    else
+                        CurrentMenu.Index = Option + 1
+                    end
+                end
+            end
+            RageUI.Options = RageUI.Options + 1
+        end
+    end
+end
+
+function RageUI.WLine(R, G, B, O)
+    local CurrentMenu = RageUI.CurrentMenu
+    if CurrentMenu ~= nil then
+        if CurrentMenu() then
+            local Option = RageUI.Options + 1
+            if CurrentMenu.Pagination.Minimum <= Option and CurrentMenu.Pagination.Maximum >= Option then
+                RenderRectangle(CurrentMenu.X + (CurrentMenu.WidthOffset * 2.5 ~= 0 and CurrentMenu.WidthOffset * 2.5 or 200)-150+8, CurrentMenu.Y + RageUI.ItemOffset + 15, 300, 3, R or 255, G or 255, B or 255, O or 150)
+                RageUI.ItemOffset = RageUI.ItemOffset + SettingsButton.Rectangle.Height
+                if (CurrentMenu.Index == Option) then
+                    if (RageUI.LastControl) then
+                        CurrentMenu.Index = Option - 1
+                        if (CurrentMenu.Index < 1) then
+                            CurrentMenu.Index = RageUI.CurrentMenu.Options
+                        end
+                    else
+                        CurrentMenu.Index = Option + 1
+                    end
+                end
+            end
+            RageUI.Options = RageUI.Options + 1
+        end
+    end
+end

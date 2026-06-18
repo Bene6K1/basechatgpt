@@ -1,0 +1,5 @@
+RegisterServerEvent("layoz:receivePermissions")
+AddEventHandler("layoz:receivePermissions", function()
+    local hasPermissions = IsPlayerAceAllowed(source, Config.AcePerm)
+    TriggerClientEvent("layoz:receivePermissions", source, hasPermissions)
+end)

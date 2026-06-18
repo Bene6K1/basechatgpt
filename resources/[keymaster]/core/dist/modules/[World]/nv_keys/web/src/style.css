@@ -1,0 +1,31 @@
+@import "tailwindcss";
+
+@layer utilities {
+  @font-face {
+    font-family: 'Montserrat-Bold';
+    src: url('/fonts/Montserrat-Bold.ttf') format('truetype');
+  }
+
+  @font-face {
+    font-family: 'Montserrat-Regular';
+    src: url('/fonts/Montserrat-Regular.ttf') format('truetype');
+  }
+
+  @font-face {
+    font-family: 'Purista-Medium';
+    src: url('/fonts/Purista-Medium.otf') format('opentype');
+  }
+}
+
+*,
+*::before,
+*::after {
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}

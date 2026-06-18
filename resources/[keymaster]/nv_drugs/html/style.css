@@ -1,0 +1,305 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&family=Montserrat:wght@400;600&display=swap');
+
+/* Supprime les marges et rends le fond du body transparent pour éviter l'écran noir */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  /* important: fond transparent pour éviter le "black screen" */
+  height: 100%;
+  width: 100%;
+}
+
+/* Phone & NPC UI Fonts */
+#telephone-container,
+#npcSell-container,
+#modal,
+.custom-tooltip {
+  font-family: 'Inter', sans-serif !important;
+}
+
+/* Variables globales pour le style des territoires (utilisées par script.js) */
+:root {
+  /* Couleur par défaut = libre (gris) */
+  --territory-fill-r: 120;
+  --territory-fill-g: 120;
+  --territory-fill-b: 120;
+  --territory-fill-a: 0.35;
+  --territory-stroke-r: 255;
+  --territory-stroke-g: 255;
+  --territory-stroke-b: 255;
+  --territory-stroke-a: 0.9;
+  --territory-stroke-width: 2;
+}
+
+#territory-tooltip {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  width: 340px;
+  padding: 12px 14px;
+  background: rgba(15, 15, 15, 0.9);
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 3px;
+  z-index: 10000;
+}
+
+#territory-tooltip .title {
+  font-weight: 700;
+  font-size: 16px;
+  margin-bottom: 6px;
+}
+
+#territory-tooltip .photo {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-bottom: 8px;
+  background: #222;
+}
+
+#territory-tooltip .desc {
+  font-weight: 400;
+  font-size: 13px;
+  text-align: justify;
+  line-height: 1.35;
+}
+
+#territory-tooltip .crew-leader {
+  margin-top: 8px;
+  font-size: 13px;
+  padding: 6px 8px;
+  background: rgba(255, 255, 255, 0.05);
+  border-left: 3px solid rgba(255, 170, 0, 0.7);
+  border-radius: 2px;
+  font-style: italic;
+}
+
+/* Lignes info supplémentaires */
+#territory-tooltip .meta {
+  margin-top: 8px;
+  font-size: 13px;
+}
+
+#territory-tooltip .meta .row {
+  margin-top: 4px;
+}
+
+#territory-tooltip .badge {
+  display: inline-block;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-weight: 600;
+  margin-left: 6px;
+}
+
+#territory-tooltip .badge.low {
+  background: rgba(255, 170, 0, 0.2);
+  color: #FFAA00;
+  border: 1px solid rgba(255, 170, 0, 0.5);
+}
+
+#territory-tooltip .badge.normal {
+  background: rgba(0, 170, 80, 0.2);
+  color: #00CC66;
+  border: 1px solid rgba(0, 170, 80, 0.5);
+}
+
+#territory-tooltip .badge.high {
+  background: rgba(200, 40, 40, 0.2);
+  color: #FF4444;
+  border: 1px solid rgba(200, 40, 40, 0.5);
+}
+
+/* ================= Color Picker ================= */
+#color-picker {
+  position: absolute;
+  right: 18px;
+  top: 18px;
+  width: 260px;
+  padding: 12px 14px;
+  background: rgba(15, 15, 15, 0.9);
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 3px;
+  z-index: 10000;
+}
+
+#color-picker .cp-title {
+  font-weight: 700;
+  font-size: 15px;
+  margin-bottom: 8px;
+}
+
+#color-picker .cp-row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+#cp-color {
+  flex: 0 0 46px;
+  width: 46px;
+  height: 46px;
+  border: none;
+  padding: 0;
+  background: transparent;
+}
+
+#cp-hex {
+  flex: 1;
+  height: 38px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  background: rgba(0, 0, 0, 0.2);
+  color: #fff;
+  border-radius: 3px;
+  padding: 0 10px;
+  font-size: 14px;
+}
+
+#cp-ok {
+  width: 100%;
+  height: 36px;
+  border: 1px solid rgba(0, 128, 64, 0.6);
+  background: rgba(0, 128, 64, 0.2);
+  color: #cde8d8;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+#cp-ok:hover {
+  background: rgba(0, 128, 64, 0.3);
+}
+
+/* Quand contrôlé, le client bascule ces variables via un message JS optionnel (si on veut le faire NUI-side) */
+
+/* Conteneur principal (centré au milieu de l'écran) */
+#exp-container {
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 450px;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  display: none;
+  /* masqué par défaut, on l'affiche avec l'event 'show' */
+  color: #fff;
+  z-index: 9999;
+  /* s'assure de passer par-dessus d'autres éléments */
+  padding: 10px;
+  transition: all 0.3s ease;
+}
+
+/* Bulle du niveau */
+#level-bubble {
+  width: 35px;
+  height: 35px;
+  margin: 0 auto 5px auto;
+  border: 2px solid rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  background: linear-gradient(135deg, #881405c9, #961d0dbb);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 17px;
+  font-weight: 600;
+  color: #fff;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+  position: relative;
+  overflow: hidden;
+}
+
+#level-bubble::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -50%;
+  width: 200%;
+  height: 30%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transform: rotate(25deg);
+}
+
+/* Le texte X / Y XP, aligné à droite sur toute la largeur */
+#exp-text {
+  width: 100%;
+  text-align: right;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7);
+  letter-spacing: 0.5px;
+}
+
+/* Barre d'XP avec look moderne */
+#exp-bar {
+  position: relative;
+  width: 100%;
+  height: 10px;
+  background-color: rgba(20, 20, 20, 0.6);
+  border: 2px solid rgba(255, 255, 255, 0.7);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3), inset 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+/* Remplissage avec effet dégradé */
+#exp-fill {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  background: linear-gradient(90deg, #881405c9, #7909058a);
+  width: 0%;
+  /* sera animé via JS */
+  transition: width 0.5s cubic-bezier(0.17, 0.67, 0.41, 0.99);
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(201, 50, 0, 0.5);
+}
+
+#exp-fill::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 50%;
+  background: linear-gradient(rgba(255, 255, 255, 0.2), transparent);
+}
+
+/* Légère ombre sur le texte pour un effet "contour" (meilleure lisibilité) */
+.text-stroke {
+  text-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.8),
+    0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Unread Badge */
+.unread-badge {
+  position: absolute;
+  right: 1.5vh;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0.8vh;
+  height: 0.8vh;
+  background-color: #ff3b3b;
+  border-radius: 50%;
+  display: none;
+  /* Hidden by default */
+  box-shadow: 0 0 5px rgba(255, 59, 59, 0.5);
+  z-index: 10;
+}
+
+.message {
+  position: relative;
+  /* Ensure badge positioning */
+}

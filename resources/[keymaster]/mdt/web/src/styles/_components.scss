@@ -1,0 +1,25 @@
+//
+// Components
+//
+
+.form {
+  display: flex;
+  flex-direction: column;
+
+  &__group {
+    display: flex;
+    flex-direction: column;
+
+    &:not(:first-child) {
+      margin-top: 15px;
+    }
+  }
+
+  &__label {
+    margin-bottom: 5px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 24px;
+    color: #78787a;
+  }
+}

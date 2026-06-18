@@ -1,0 +1,77 @@
+//
+// Ranks - BaseStyle Theme
+//
+
+@import '../../styles/_variables.scss';
+
+.ranks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: vh(6);
+
+  &__item {
+    padding: vh(4) vh(10);
+    min-height: vh(23);
+    max-height: vh(23);
+    border-radius: 0;
+    background: $accent-blue-bg;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: vh(6);
+    font-size: vh(11);
+    font-weight: 600;
+    line-height: 1;
+    color: $accent-blue;
+    text-transform: uppercase;
+    letter-spacing: vh(0.3);
+    transition: all 0.1s ease-in-out;
+
+    &--action {
+      min-width: vh(28);
+      max-width: vh(28);
+      height: vh(28);
+      padding: 0;
+      background: rgba(255, 255, 255, 0.05);
+      border: vh(1) solid rgba(255, 255, 255, 0.1);
+      font-size: vh(12);
+      color: $text-secondary;
+
+      &:hover {
+        cursor: pointer;
+        background: rgba(255, 255, 255, 0.1);
+        border-color: rgba(255, 255, 255, 0.2);
+        color: $text-primary;
+      }
+
+      &-edit {
+        font-size: vh(13);
+      }
+
+      &-active {
+        background: rgba(255, 255, 255, 0.2);
+        border-color: rgba(255, 255, 255, 0.3);
+        color: $text-primary;
+      }
+    }
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: vh(6);
+  }
+
+  &__delete {
+    font-size: vh(11);
+    display: flex;
+    align-items: center;
+    color: $accent-blue;
+    transition: all 0.1s ease-in-out;
+
+    &:hover {
+      cursor: pointer;
+      color: $accent-red;
+    }
+  }
+}

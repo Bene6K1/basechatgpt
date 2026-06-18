@@ -1,0 +1,55 @@
+//
+// Header - BaseStyle Theme
+//
+
+@import '../../styles/_variables.scss';
+
+.header {
+  width: 100%;
+  padding: vh(20);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: vh(15);
+
+  &__left-side {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__right-side {
+    display: flex;
+    align-items: center;
+    gap: vh(12);
+  }
+
+  &__title {
+    font-size: vh(24);
+    font-weight: 700;
+    line-height: vh(32);
+    color: $text-primary;
+  }
+
+  &__text {
+    font-size: vh(12);
+    font-weight: 400;
+    line-height: 1.4;
+    color: $text-secondary;
+  }
+
+  &__line {
+    width: vh(1);
+    height: vh(25);
+    background-color: $divider-color;
+  }
+
+  &__icon {
+    &-img {
+      min-width: vh(13);
+      max-width: vh(13);
+      user-select: none;
+      -webkit-user-select: none;
+      pointer-events: none;
+    }
+  }
+}

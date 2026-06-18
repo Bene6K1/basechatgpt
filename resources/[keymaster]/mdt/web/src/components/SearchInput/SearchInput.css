@@ -1,0 +1,55 @@
+/**
+ *
+ * Breakpoints
+ *
+ */
+/**
+ *
+ * Color
+ *
+ */
+.search-input {
+  position: relative;
+  width: 100%;
+}
+.search-input__inner {
+  border: 0;
+  outline: 0;
+  width: 100%;
+  height: 40px;
+  padding: 7px 38px;
+  border: 1px solid transparent;
+  border-radius: 6.6666666667px;
+  background-color: #232428;
+  font-family: "Gilroy";
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 24px;
+  color: #737680;
+  transition: all 125ms;
+}
+.search-input__inner:focus {
+  border-color: #2f3035;
+}
+.search-input__icon {
+  position: absolute;
+  top: -2px;
+  bottom: 0;
+  left: 15px;
+  height: -moz-max-content;
+  height: max-content;
+  margin: auto;
+}
+.search-input__icon--align-right {
+  top: -40px;
+  left: auto;
+  right: 10px;
+}
+.search-input__icon-img {
+  min-width: 16px;
+  max-width: 16px;
+  -moz-user-select: none;
+       user-select: none;
+  -webkit-user-select: none;
+  pointer-events: none;
+}/*# sourceMappingURL=SearchInput.css.map */

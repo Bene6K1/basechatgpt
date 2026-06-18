@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="chat-container">
+      <div class="chat-box">
+        <div class="chat-header">
+          <div class="contact-info">
+            <div class="contact-avatar">
+              <div class="status-indicator"></div>
+            </div>
+            <div class="contact-details">
+              <div class="contact-name">LARRY - GOFAST</div>
+              <div class="contact-status">Discute avec le gérant pour avoir une mission</div>
+            </div>
+          </div>
+          <div class="header-actions">
+            <button class="action-btn minimize-btn" title="Réduire">
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+          </div>
+        </div>
+        <div class="chat-content">
+          <div class="chat-messages" id="chat-messages"></div>
+          <div class="chat-options" id="chat-options"></div>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,10 @@
+RegisterNetEvent("ethPauseMenu:disconnect")
+AddEventHandler("ethPauseMenu:disconnect", function()
+    DropPlayer(source, Config.Locales[Config.Locale]["drop-player-message"])
+end)
+
+RegisterNetEvent("ethPauseMenu:getMoney")
+AddEventHandler("ethPauseMenu:getMoney", function()
+    local playerMoney = getAccountMoney(source)
+    TriggerClientEvent("ethPauseMenu:updateMoney", source, playerMoney)
+end)

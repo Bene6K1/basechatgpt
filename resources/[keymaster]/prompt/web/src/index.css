@@ -1,0 +1,320 @@
+@import "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap";
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Geist+Mono:wght@300;400;500;600;700;800&display=swap');
+
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Inter, sans-serif;
+}
+
+:root {
+  --black: rgba(10, 10, 10, 0.9);
+  --red: rgba(195, 49, 49, 1);
+  --blue: rgba(80, 136, 244, 1);
+  --white: rgba(255, 255, 255, 1);
+  --white-70: rgba(255, 255, 255, 0.7);
+  --white-50: rgba(255, 255, 255, 0.5);
+  --white-30: rgba(255, 255, 255, 0.3);
+  --white-0: rgba(255, 255, 255, 0);
+  --green: rgba(61, 222, 152, 1);
+  --grey: rgba(10, 10, 10, 0.35);
+  --degrade-radial-sombre: linear-gradient(
+    180deg,
+    rgba(10, 10, 10, 0.02) 0%,
+    rgba(10, 10, 10, 0.08) 100%
+  );
+  --degrade-radial-clair: linear-gradient(
+    180deg,
+    rgba(152, 191, 228, 0.2) 0%,
+    rgba(154, 191, 224, 0.04) 100%
+  );
+  --degrade-radial: radial-gradient(
+    50% 50% at 50% 50%,
+    rgba(26, 36, 53, 0.48) 0%,
+    rgba(26, 36, 53, 0.36) 100%
+  );
+  --degrade-radial-noir: radial-gradient(
+    50% 50% at 50% 50%,
+    rgba(10, 10, 10, 0.64) 0%,
+    rgba(10, 10, 10, 0.48) 100%
+  );
+  --degrade-radial-bleu: radial-gradient(
+    50% 50% at 50% 50%,
+    rgba(49, 70, 106, 0.64) 0%,
+    rgba(39, 64, 104, 0.48) 100%
+  );
+  --degrade-radial-rouge: radial-gradient(
+    50% 50% at 50% 50%,
+    rgba(106, 49, 49, 0.64) 0%,
+    rgba(104, 39, 39, 0.48) 100%
+  );
+}
+
+.nui-wrapper {
+  text-align: center;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+pre {
+  counter-reset: line-numbering;
+  background: #2c3e50;
+  padding: 12px 0 14px;
+  color: #ecf0f1;
+  line-height: 140%;
+}
+
+.popup-thing {
+  background: #282c34;
+  border-radius: 10px;
+  width: 500px;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+
+/* Prompt Container */
+.prompt-container {
+  font-family: Inter, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  color: rgba(255, 255, 255, 0.9);
+  opacity: 0;
+  transform: scale(0.95);
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+.prompt-container.fade-out {
+  animation: fadeOut 0.3s ease-in forwards;
+}
+
+.prompt-container .prompt-contain {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(10, 10, 10, 0.65);
+  padding: 20px 35px;
+  border-radius: 8px;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 13px;
+  gap: 12px;
+  border: solid 1px rgba(40, 40, 40, 0.5);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  min-width: 380px;
+  max-width: 480px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+.prompt-container .prompt-contain .desc {
+  text-align: center;
+  width: 100%;
+  margin-bottom: 8px;
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.prompt-container .prompt-contain h1 {
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.95),
+    rgba(235, 235, 235, 0.85)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: 18px;
+  margin-bottom: 6px;
+  font-weight: 800;
+  letter-spacing: -0.3px;
+}
+
+.prompt-container .prompt-contain b {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.prompt-container .prompt-contain .buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 8px;
+  width: 100%;
+}
+
+.prompt-container .prompt-contain .buttons .btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  color: #fff;
+  font-size: 12px;
+  gap: 6px;
+  padding: 9px 24px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  background: linear-gradient(
+    145deg,
+    rgba(10, 10, 10, 0.5),
+    rgba(20, 20, 20, 0.7)
+  );
+  transition: all 0.25s ease;
+  position: relative;
+  overflow: hidden;
+  flex: 1;
+  min-width: 120px;
+}
+
+.prompt-container .prompt-contain .buttons .btn:hover {
+  transform: translateY(-2px);
+}
+
+.prompt-container .prompt-contain .buttons .btn:after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.prompt-container .prompt-contain .buttons .btn:hover:after {
+  opacity: 0.3;
+}
+
+.prompt-container .prompt-contain .buttons .btn .key-icon {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.12);
+  border: solid 1px rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+  padding: 3px 8px;
+  font-size: 11px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.95);
+  letter-spacing: 0.3px;
+}
+
+.prompt-container .prompt-contain .buttons .refuse {
+  background: #fa5252;
+  opacity: 0.9;
+  border: 1px solid #f03e3e;
+}
+
+.prompt-container .prompt-contain .buttons .refuse:hover {
+  background: #e03131;
+  opacity: 1;
+  border: 1px solid #c92a2a;
+}
+
+.prompt-container .prompt-contain .buttons .accept {
+  background: #40c057;
+  opacity: 0.9;
+  border: 1px solid #37b24d;
+}
+
+.prompt-container .prompt-contain .buttons .accept:hover {
+  background: #37b24d;
+  opacity: 1;
+  border: 1px solid #2b8a3e;
+}
+
+/* Color Classes for Text Formatting */
+.w,
+.s {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.u {
+  color: rgba(0, 0, 0, 0.9);
+}
+
+.r {
+  color: rgba(224, 50, 50, 0.9);
+}
+
+.g {
+  color: rgba(114, 204, 114, 0.9);
+}
+
+.b,
+.f {
+  color: rgba(32, 196, 251, 0.9);
+}
+
+.y {
+  color: rgba(240, 200, 80, 0.9);
+}
+
+.c,
+.t {
+  color: rgba(140, 140, 140, 0.9);
+}
+
+.o {
+  color: rgba(255, 133, 85, 0.9);
+}
+
+.p {
+  color: rgba(159, 0, 170, 0.9);
+}
+
+.q {
+  color: rgba(203, 54, 148, 0.9);
+}
+
+.m {
+  color: rgba(100, 100, 100, 0.9);
+}
+
+.l {
+  color: rgba(0, 0, 0, 0.9);
+}
+
+.d {
+  color: rgba(47, 92, 115, 0.9);
+}
+
+.h {
+  font-weight: 600;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+}

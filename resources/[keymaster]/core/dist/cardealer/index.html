@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>concess</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="camera-container hidden">
+        <div class="camera-header">
+            <div class="camera-icon">
+                <i class="fas fa-video"></i>
+            </div>
+            <div class="camera-title">VUES</div>
+        </div>
+        <div class="camera-controls">
+            <div class="camera-option active" data-camera="1">
+                <div class="camera-icon-small">
+                    <i class="fas fa-car"></i>
+                </div>
+                <span class="camera-label">Face</span>
+            </div>
+            <div class="camera-option" data-camera="2">
+                <div class="camera-icon-small">
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+                <span class="camera-label">Côté</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="info-container hidden">
+        <div class="info-header">
+            <div class="info-icon">
+                <i class="fas fa-filter"></i>
+            </div>
+            <div class="info-title">FILTRES</div>
+        </div>
+        <div class="info-content">
+            <div class="categories-section">
+                <div class="section-title">Catégories</div>
+                <div class="categories-list">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="rental-ui" class="rental-container hidden">
+        <div class="rental-header">
+            <div class="header-content">
+                <div class="header-image">
+                    <img src="assets/banner.png" alt="Bannière de concess" draggable="false" />
+                </div>
+                <div class="header-text">
+                    <h1>VÉHICULES</h1>
+                    <span class="subtitle">CONCESS</span>
+                </div>
+            </div>
+            <div class="header-actions">
+                <button class="close-btn" id="closeButton">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="rental-content">
+            <div class="vehicles-section">
+                <div class="section-header">
+                    <div class="section-title">Sélection</div>
+                    <div class="vehicles-count" id="vehiclesCount">0 véhicules</div>
+                </div>
+                <div class="vehicles-grid" id="vehiclesGrid"></div>
+            </div>
+
+            <div class="vehicle-details" id="vehicleInfo">
+                <div class="details-header">
+                    <div class="vehicle-name" id="vehicleName">Sélectionnez un véhicule</div>
+                    <div class="vehicle-price" id="vehiclePrice">0$</div>
+                </div>
+                <div class="vehicle-stats">
+                    <div class="stats-title">Performances</div>
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <div class="stat-header">
+                                <div class="stat-icon">
+                                    <i class="fas fa-tachometer-alt"></i>
+                                </div>
+                                <div class="stat-label">Vitesse</div>
+                            </div>
+                            <div class="stat-bar">
+                                <div class="stat-fill" id="speedBar" style="width: 0%"></div>
+                            </div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-header">
+                                <div class="stat-icon">
+                                    <i class="fas fa-hand-paper"></i>
+                                </div>
+                                <div class="stat-label">Frein</div>
+                            </div>
+                            <div class="stat-bar">
+                                <div class="stat-fill" id="brakeBar" style="width: 0%"></div>
+                            </div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-header">
+                                <div class="stat-icon">
+                                    <i class="fas fa-rocket"></i>
+                                </div>
+                                <div class="stat-label">Accélération</div>
+                            </div>
+                            <div class="stat-bar">
+                                <div class="stat-fill" id="accelerationBar" style="width: 0%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="rental-footer">
+            <div class="footer-actions">
+                <button id="informationButton" class="action-btn secondary">
+                    <i class="fas fa-info-circle"></i>
+                    <span>Informations</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="loading-overlay hidden" id="loadingOverlay">
+            <div class="loading-content">
+                <div class="loading-spinner"></div>
+                <p>Préparation de votre véhicule...</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+    <script>
+    </script>
+</body>
+</html>

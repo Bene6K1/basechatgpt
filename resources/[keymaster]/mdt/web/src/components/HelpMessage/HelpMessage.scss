@@ -1,0 +1,19 @@
+//
+// Help Message
+//
+
+.help-message {
+  margin-top: 5px;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 22px;
+  color: #fff;
+
+  &--error {
+    color: rgb(235, 50, 0);
+  }
+
+  &--success {
+    color: rgb(96, 153, 102);
+  }
+}

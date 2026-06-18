@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NEVA UI</title>
+    <link rel="stylesheet" href="ui-info/web/css/style.css" />
+    <link rel="stylesheet" href="weazel-news/web/css/style.css" />
+  </head>
+  <body>
+    <ul style="display: none">
+      <li>
+        <button id="caisse" onclick="location.href='ui-info/web/index.html'">
+          UI Info
+        </button>
+      </li>
+      <li>
+        <button
+          id="panier"
+          onclick="location.href='weazel-news/web/index.html'"
+        >
+          Weazel News
+        </button>
+      </li>
+    </ul>
+    <div id="ui-info" style="display: none">
+      <div class="container">
+        <div class="inner-container">
+          <header class="main-header">Information jail</header>
+          <div class="info-line">
+            <span class="label">Temps restant :</span>
+            <span class="value">5 minute(s)</span>
+          </div>
+          <div class="info-line">
+            <span class="label">Raison :</span>
+            <span class="value">Troll en ville @Néo</span>
+          </div>
+          <div class="info-line">
+            <div class="progress-bar" data-progress="100">
+              <div class="progress"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="weazel-news" style="display: none">
+      <div class="notification-container">
+        <div class="notification">
+          <div class="live-indicator">
+            <span class="dot"></span>
+            LIVE
+          </div>
+          <div class="main-banner">
+            <div class="banner-content">
+              <div class="logo-section">
+                <h1>WEAZEL<span>NEWS</span></h1>
+              </div>
+              <div class="news-content">
+                <h2 class="title">BREAKING NEWS</h2>
+                <p class="description">
+                  Important news story details will appear here...
+                </p>
+              </div>
+            </div>
+            <div class="banner-stripe"></div>
+          </div>
+          <div class="bottom-ticker">
+            <span class="ticker-text">Actualités récentes</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>

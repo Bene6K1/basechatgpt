@@ -1,0 +1,82 @@
+{
+  "NUI": {
+    "hotwire": {
+      "game_name": "DÉMARRAGE",
+      "game_description": "Reliez les bons câbles pour mettre le moteur en route."
+    },
+    "quick_keys": {
+      "lock_unlock": "Verrouillez ou déverrouillez votre véhicule avec ce bouton.",
+      "start_stop": "Démarrez ou éteignez le moteur de votre véhicule avec ce bouton.",
+      "trunk": "Ouvrez ou fermez le coffre de votre véhicule avec ce bouton.",
+      "windows": "Montez ou descendez les vitres de votre véhicule avec ce bouton."
+    },
+    "keys_menu": {
+      "toggle_doors_lock": "Basculer le verrouillage",
+      "show_key_actions": "Afficher les actions rapides"
+    }
+  },
+  "LUA": {
+    "success": {
+      "new_key_created": "Vous avez créé une nouvelle clé pour %s",
+      "new_lock_created": "Vous avez changé la serrure de %s",
+      "vehicle_keys_with_lockpick": "Vous avez récupéré les clés du véhicule",
+      "vehicle_unlocked_with_lockpick": "Vous avez déverrouillé le véhicule"
+    },
+    "info": {
+      "toggle_locks": "Verrouiller/Déverrouiller",
+      "toggle_engine": "Démarrer/Éteindre le moteur",
+      "vehicle_locked": "Véhicule verrouillé",
+      "vehicle_unlocked": "Véhicule déverrouillé",
+      "search_keys": "Chercher les clés",
+      "you_have_received_the_key": "Vous avez reçu la clé",
+      "keys_require_locksmith": "Rendez-vous chez le serrurier pour obtenir vos clés."
+    },
+    "error": {
+      "no_keys": "Vous n'avez pas les clés de ce véhicule",
+      "failed_keys": "Impossible de trouver les clés",
+      "not_enough_money": "Vous n'avez pas assez d'argent",
+      "not_enough_money_lock": "Vous n'avez pas assez d'argent pour changer la serrure",
+      "item_on_cooldown": "Veuillez patienter 5 secondes avant de réutiliser cet objet",
+      "no_near_vehicle": "Le véhicule correspondant à cette clé est trop loin",
+      "no_vehicles": "Vous n'avez aucun véhicule enregistré",
+      "carjack_failed": "Le carjacking a échoué",
+      "failed_lockpick": "Le crochetage a échoué",
+      "lockpick_broken": "Le crochet s'est cassé",
+      "too_many_uses": "Vous avez utilisé cet objet trop souvent",
+      "vehicle_locked_cannot_break_windows": "Le véhicule est verrouillé, vous ne pouvez pas casser les vitres"
+    },
+    "context_menu": {
+      "header": "Serrurier",
+      "create_new_key": "Créer une nouvelle clé",
+      "create_new_key_description": "Créez un double sans remplacer la serrure.",
+      "create_new_lock": "Changer la serrure",
+      "create_new_lock_description": "Remplace la serrure et rend les anciennes clés inutiles.",
+      "select_vehicle": "Choisir un véhicule",
+      "go_back": "Retour"
+    },
+    "keys_menu": {
+      "title": "Clés de véhicule",
+      "subtitle": "Actions rapides",
+      "vehicle_label": "Véhicule : %s",
+      "lock_unlock": "Verrouiller / Déverrouiller",
+      "lock_unlock_desc": "Active ou désactive le verrouillage centralisé.",
+      "engine": "Moteur",
+      "engine_desc": "Démarre ou coupe le moteur.",
+      "trunk": "Coffre",
+      "trunk_desc": "Ouvre ou ferme le coffre.",
+      "windows": "Vitres",
+      "windows_desc": "Monte ou descend toutes les vitres.",
+      "search_keys": "Chercher les clés",
+      "search_keys_desc": "Fouille l'habitacle pour tenter de retrouver un double.",
+      "close": "Fermer"
+    },
+    "textui": {
+      "search_keys_dispatch": "[H] Chercher les clés",
+      "locksmith": "[%s] Serrurier"
+    },
+    "progress": {
+      "searching_keys": "Recherche de clés...",
+      "attempting_carjack": "Tentative de carjacking..."
+    }
+  }
+}

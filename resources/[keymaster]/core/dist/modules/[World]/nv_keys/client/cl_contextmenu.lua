@@ -1,0 +1,3 @@
+-- Ce fichier n'est plus utilisé.
+-- Les menus RageUI sont désormais gérés directement dans cl_functions.lua
+-- avec RageUI.CreateMenu / CreateSubMenu comme dans le core (BCSO, etc.)

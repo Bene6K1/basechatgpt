@@ -1,0 +1,658 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+:root {
+    --bg-primary: rgba(10, 10, 10, 0.85);
+    --bg-secondary: rgba(12, 12, 12, 0.9);
+    --bg-tertiary: rgba(15, 15, 15, 0.75);
+    --border-primary: #4c4c4c;
+    --border-secondary: #5e5e5e;
+    --text-primary: #ffffff;
+    --text-secondary: #c6c9ca;
+    --success: #3bbe39;
+    --error: #cd412c;
+    --warning: #dbad18;
+}
+
+.theme-container {
+    background: radial-gradient(
+            120.1% 120.1% at 115.34% -20.1%,
+            rgba(255, 255, 255, 0.2) 0%,
+            rgba(0, 0, 0, 0) 100%
+        ),
+        var(--bg-primary);
+    box-shadow: 0px 0.602187px 2.04744px -1.66667px rgba(0, 0, 0, 0.19),
+        0px 2.28853px 7.78101px -3.33333px rgba(0, 0, 0, 0.153);
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.theme-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 8px;
+    padding: 1px;
+    background: radial-gradient(circle at 90% 10%, #c2c2c2 0%, #444444 30%, #444444 100%);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: xor;
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.theme-divider {
+    width: 100%;
+    height: 1px;
+    background: var(--border-secondary);
+    border: none;
+}
+
+.theme-title {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    color: var(--text-primary);
+    line-height: 1.1;
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.theme-text {
+    font-family: "Geist", sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.1px;
+    color: var(--text-primary);
+    line-height: 1.5;
+}
+
+.theme-text-secondary {
+    font-family: "Geist", sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.1px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+.theme-text-secondary-nofont {
+    color: var(--text-secondary);
+}
+
+.theme-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 14px 20px;
+    background: linear-gradient(4.13deg, rgba(59, 59, 59, 0.5) 3.36%, rgba(109, 109, 109, 0.5) 175.74%);
+    border: 0.5px solid #7F7F7F;
+    border-radius: 4px;
+    font-family: "Geist", sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    color: var(--text-primary);
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0px 0.602187px 2.04744px -1.66667px rgba(0, 0, 0, 0.19),
+        0px 2.28853px 7.78101px -3.33333px rgba(0, 0, 0, 0.153);
+    position: relative;
+    overflow: hidden;
+    user-select: none;
+}
+
+.theme-button:hover {
+    transform: translateY(-1px);
+    background: linear-gradient(4.13deg, rgba(69, 69, 69, 0.6) 3.36%, rgba(119, 119, 119, 0.6) 175.74%);
+    border-color: #8F8F8F;
+}
+
+.theme-button:active {
+    transform: translateY(0) scale(0.98);
+}
+
+.theme-button:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+    filter: grayscale(60%);
+}
+
+.theme-button:disabled:hover {
+    transform: none;
+}
+
+.theme-button-success {
+    background: linear-gradient(4.13deg, #3B3B3B 3.36%, #6D6D6D 175.74%), linear-gradient(3.24deg, #3BBE39 2.68%, #FFFFFF 229.48%);
+    border: none;
+}
+
+.theme-button-success:hover {
+    background: linear-gradient(4.13deg, #4B4B4B 3.36%, #7D7D7D 175.74%), linear-gradient(3.24deg, #4BCE49 2.68%, #FFFFFF 229.48%);
+    border: none;
+}
+
+.theme-button-danger {
+    background: linear-gradient(4.13deg, rgba(59, 59, 59, 0.5) 3.36%, rgba(109, 109, 109, 0.5) 175.74%);
+    border: 0.5px solid #CD412C;
+}
+
+.theme-button-danger:hover {
+    background: linear-gradient(4.13deg, rgba(69, 59, 59, 0.6) 3.36%, rgba(119, 109, 109, 0.6) 175.74%);
+    border-color: #DD513C;
+}
+
+.theme-input {
+    width: 100%;
+    padding: 16px 20px;
+    background: radial-gradient(
+            120.1% 120.1% at 115.34% -20.1%,
+            rgba(255, 255, 255, 0.15) 0%,
+            rgba(0, 0, 0, 0) 100%
+        ),
+        var(--bg-secondary);
+    box-shadow: 0px 0.602187px 2.04744px -1.66667px rgba(0, 0, 0, 0.19),
+        0px 2.28853px 7.78101px -3.33333px rgba(0, 0, 0, 0.153),
+        0px 0px 0px 1px var(--border-primary);
+    border-radius: 8px;
+    border: none;
+    color: var(--text-primary);
+    font-family: "Geist", sans-serif;
+    font-size: 13px;
+    outline: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.theme-input.nopadding {
+    padding: 0;
+}
+
+.theme-input.border {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.theme-input:focus {
+    background: radial-gradient(
+            120.1% 120.1% at 115.34% -20.1%,
+            rgba(255, 255, 255, 0.25) 0%,
+            rgba(0, 0, 0, 0) 100%
+        ),
+        var(--bg-secondary);
+    box-shadow: 0px 0.602187px 2.04744px -1.66667px rgba(0, 0, 0, 0.19),
+        0px 2.28853px 7.78101px -3.33333px rgba(0, 0, 0, 0.153),
+        0px 0px 0px 1.5px rgba(127, 127, 127, 0.8);
+}
+
+.theme-input::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.theme-profile-icon {
+    width: 64px;
+    height: 64px;
+    background: radial-gradient(
+            120.1% 120.1% at 115.34% -20.1%,
+            rgba(255, 255, 255, 0.1) 0%,
+            rgba(0, 0, 0, 0) 100%
+        ),
+        rgba(25, 25, 25, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.theme-card {
+    background: radial-gradient(
+            120.1% 120.1% at 115.34% -20.1%,
+            rgba(255, 255, 255, 0.12) 0%,
+            rgba(0, 0, 0, 0) 100%
+        ),
+        rgba(8, 8, 8, 0.9);
+    box-shadow: 0px 0.602187px 2.04744px -1.66667px rgba(0, 0, 0, 0.19),
+        0px 2.28853px 7.78101px -3.33333px rgba(0, 0, 0, 0.153);
+    border-radius: 8px;
+    padding: 24px 20px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    z-index: 1;
+}
+
+.theme-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 8px;
+    padding: 1px;
+    background: radial-gradient(circle at 90% 10%, #c2c2c2 0%, #444444 30%, #444444 100%);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: xor;
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.theme-card:hover {
+    background: radial-gradient(
+            120.1% 120.1% at 115.34% -20.1%,
+            rgba(255, 255, 255, 0.18) 0%,
+            rgba(0, 0, 0, 0) 100%
+        ),
+        rgba(15, 15, 15, 0.95);
+}
+
+.theme-scrollbar::-webkit-scrollbar {
+    width: 8px;
+}
+
+.theme-scrollbar::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+}
+
+.theme-scrollbar::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.theme-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.25);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.theme-status-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    position: relative;
+}
+
+.theme-status-dot::before {
+    content: "";
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    opacity: 0.5;
+}
+
+.theme-status-dot::after {
+    content: "";
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    left: 1px;
+    top: 1px;
+    border-radius: 50%;
+}
+
+.theme-status-success::before {
+    background: var(--success);
+}
+
+.theme-status-success::after {
+    background: var(--success);
+}
+
+.theme-status-error::before {
+    background: var(--error);
+}
+
+.theme-status-error::after {
+    background: var(--error);
+}
+
+.theme-status-warning::before {
+    background: var(--warning);
+}
+
+.theme-status-warning::after {
+    background: var(--warning);
+}
+
+.theme-menu-item {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 8px 12px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid transparent;
+}
+
+.theme-menu-item:hover {
+    color: var(--text-primary);
+}
+
+.theme-menu-item.active {
+    color: var(--text-primary);
+    border-bottom-color: var(--text-primary);
+}
+
+.theme-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px 8px;
+    gap: 4px;
+    background: linear-gradient(4.13deg, rgba(59, 59, 59, 0.5) 3.36%, rgba(109, 109, 109, 0.5) 175.74%);
+    border: 0.5px solid #7F7F7F;
+    border-radius: 4px;
+    font-family: "Geist", sans-serif;
+    font-size: 10px;
+    font-weight: 400;
+    color: var(--text-primary);
+    box-shadow: 0px 0.602187px 2.04744px -1.66667px rgba(0, 0, 0, 0.19),
+        0px 2.28853px 7.78101px -3.33333px rgba(0, 0, 0, 0.153);
+}
+
+.theme-badge-success {
+    color: var(--success);
+    border-color: rgba(59, 190, 57, 0.3);
+}
+
+.theme-badge-error {
+    color: var(--error);
+    border-color: rgba(205, 65, 44, 0.3);
+}
+
+.theme-badge-warning {
+    color: var(--warning);
+    border-color: rgba(219, 173, 24, 0.3);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.theme-animate-in {
+    animation: fadeIn 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.theme-animate-slide {
+    animation: slideIn 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Bouton de fermeture style shop */
+.theme-close-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 16px;
+    font-family: "Bebas Neue", sans-serif;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    padding: 8px 14px;
+    background: radial-gradient(
+            120.1% 120.1% at 115.34% -20.1%,
+            rgba(205, 65, 44, 0.15) 0%,
+            rgba(0, 0, 0, 0) 100%
+        ),
+        rgba(25, 25, 25, 0.6);
+    border: 1px solid rgba(255, 80, 80, 0.2);
+    border-radius: 8px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.theme-close-btn:hover {
+    background: radial-gradient(
+            120.1% 120.1% at 115.34% -20.1%,
+            rgba(205, 65, 44, 0.25) 0%,
+            rgba(0, 0, 0, 0) 100%
+        ),
+        rgba(35, 25, 25, 0.7);
+    border-color: rgba(255, 80, 80, 0.4);
+    box-shadow: 0px 2px 12px rgba(205, 65, 44, 0.1);
+}
+
+.theme-close-btn:active {
+    transform: translateY(0) scale(0.98);
+}
+
+/* Améliorations pour les conteneurs et grilles */
+.theme-container {
+    padding: 32px;
+}
+
+.theme-section-spacing {
+    gap: 20px;
+}
+
+.theme-grid-actions {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 12px;
+}
+
+.theme-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.theme-button-group {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.theme-list-item {
+    padding: 16px 20px;
+    border-radius: 8px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.theme-list-item:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+/* Padding responsif pour les écrans moyens */
+@media (max-width: 1280px) {
+    .theme-container {
+        padding: 28px;
+    }
+
+    .theme-card {
+        padding: 24px;
+    }
+
+    .theme-button {
+        padding: 12px 18px;
+    }
+}
+
+/* Padding pour les petits écrans */
+@media (max-width: 768px) {
+    .theme-container {
+        padding: 20px;
+    }
+
+    .theme-card {
+        padding: 18px 16px;
+    }
+
+    .theme-button {
+        padding: 10px 16px;
+    }
+
+    .theme-input {
+        padding: 14px 16px;
+    }
+}
+
+/* Amélioration cards de transaction - plus compact et épuré */
+.theme-transaction-card {
+    padding: 16px 18px !important;
+    margin-bottom: 10px;
+}
+
+.theme-transaction-card:last-child {
+    margin-bottom: 0;
+}
+
+/* Style pour les prêts - utiliser les couleurs du thème */
+.theme-loan-icon-box {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    background: radial-gradient(
+            120.1% 120.1% at 115.34% -20.1%,
+            rgba(255, 255, 255, 0.15) 0%,
+            rgba(0, 0, 0, 0) 100%
+        ),
+        rgba(25, 25, 25, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.theme-loan-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 8px;
+    background: radial-gradient(
+            120.1% 120.1% at 115.34% -20.1%,
+            rgba(219, 173, 24, 0.2) 0%,
+            rgba(0, 0, 0, 0) 100%
+        ),
+        rgba(40, 35, 20, 0.8);
+    border: 1px solid rgba(219, 173, 24, 0.3);
+    border-radius: 4px;
+    font-family: "Geist", sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    color: #dbad18;
+}
+
+.theme-loan-badge i {
+    font-size: 9px;
+}
+
+/* Meilleur espacement pour les grilles d'actions */
+.theme-action-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.theme-action-button-col {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+/* Cards plus compactes pour transactions latérales */
+.theme-sidebar-card {
+    padding: 12px 14px !important;
+    margin-bottom: 8px;
+}
+
+.theme-sidebar-card:last-child {
+    margin-bottom: 0;
+}
+
+/* Effet vert sur le solde général */
+.theme-balance-amount {
+    color: #3bbe39;
+    text-shadow: 0px 0px 20px rgba(59, 190, 57, 0.4), 0px 2px 4px rgba(0, 0, 0, 0.3);
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+/* Boîtes de pourcentage pour compte épargne - style cohérent avec le thème */
+.theme-saving-percent-box {
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(
+            120.1% 120.1% at 115.34% -20.1%,
+            rgba(255, 255, 255, 0.15) 0%,
+            rgba(0, 0, 0, 0) 100%
+        ),
+        rgba(25, 25, 25, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.theme-saving-percent-box span {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: var(--text-primary);
+    line-height: 1;
+}
+
+.theme-saving-percent-box-small {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(
+            120.1% 120.1% at 115.34% -20.1%,
+            rgba(255, 255, 255, 0.15) 0%,
+            rgba(0, 0, 0, 0) 100%
+        ),
+        rgba(25, 25, 25, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.theme-saving-percent-box-small span {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--text-primary);
+    line-height: 1;
+}

@@ -1,0 +1,283 @@
+//
+// Base Theme Utilities - BaseStyle Design System
+//
+
+@import './_variables.scss';
+
+/**
+ * 1. CONTENEURS DE BASE
+ */
+
+.card-with-corners {
+  position: relative;
+  // background: $base-bg;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: vh(1.5);
+    background: radial-gradient(
+      circle at 90% 10%,
+      rgba(217, 217, 217, .1) 0%,
+      rgba(217, 217, 217, .1) 30%,
+      rgba(217, 217, 217, .1) 100%
+    );
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: xor;
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    pointer-events: none;
+  }
+
+  // Modificateur pour désactiver la bordure (seulement les corners)
+  &--no-border {
+    &::before {
+      content: none;
+    }
+  }
+}
+
+/**
+ * 2. TYPOGRAPHIE
+ */
+
+.theme-title {
+  color: $text-primary;
+  font-weight: 600;
+  font-size: vh(20);
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: vh(1);
+}
+
+.theme-text {
+  color: $text-primary;
+  font-size: vh(14);
+  font-weight: 500;
+}
+
+.theme-text-secondary {
+  color: $text-secondary;
+  font-size: vh(12);
+  font-weight: 400;
+}
+
+/**
+ * 3. INPUTS & FORMS
+ */
+
+.theme-input {
+  background: rgba(255, 255, 255, 0.03);
+  border: vh(1) solid rgba(255, 255, 255, 0.08);
+  color: $text-primary;
+  padding: vh(10);
+  font-family: 'Geist', 'Gilroy', sans-serif;
+  font-size: vh(13);
+  outline: none;
+  transition: all 0.2s ease-in-out;
+
+  &:focus {
+    border-color: rgba(255, 255, 255, 0.15);
+  }
+
+  &::placeholder {
+    color: $text-label;
+  }
+
+  &.nopadding {
+    padding: 0;
+  }
+}
+
+/**
+ * 4. BOUTONS
+ */
+
+.theme-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: vh(8);
+  padding: vh(12) vh(16);
+  background-color: $accent-white-bg;
+  color: $accent-white;
+  border: none;
+  font-size: vh(13);
+  font-weight: 600;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.1s ease-in-out;
+  position: relative;
+  overflow: hidden;
+
+  &:hover:not(:disabled) {
+    color: #121212;
+    background: $accent-white;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  i {
+    font-size: vh(14);
+  }
+}
+
+.theme-button-danger {
+  background-color: $accent-red-bg;
+  color: $accent-red;
+  border: vh(1) solid $accent-red-dark;
+
+  &:hover:not(:disabled) {
+    color: #121212;
+    background: $accent-red;
+  }
+}
+
+/**
+ * 5. NAVIGATION ITEMS (Sidebar style)
+ */
+
+.theme-nav-item {
+  display: flex;
+  align-items: center;
+  gap: vh(12);
+  padding: vh(16) vh(12);
+  min-height: vh(50);
+  max-height: vh(50);
+  color: $text-inactive;
+  background: $button-inactive-bg;
+  border-bottom: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    background: $button-hover-bg;
+  }
+
+  &--active {
+    color: $text-primary;
+    background: $button-active-bg;
+    border-bottom: vh(1) solid $border-active;
+  }
+
+  &__icon {
+    width: vh(30);
+    height: vh(30);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: vh(16);
+  }
+
+  &__text {
+    font-size: vh(15);
+    font-weight: 500;
+    line-height: 1;
+  }
+}
+
+/**
+ * 6. DIVIDERS
+ */
+
+.theme-divider {
+  height: vh(0.5);
+  background: $divider-color;
+  width: 100%;
+}
+
+/**
+ * 7. SCROLLBAR
+ */
+
+.theme-scrollbar {
+  &::-webkit-scrollbar {
+    width: vh(4);
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: vh(2);
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+  }
+}
+
+/**
+ * 8. ANIMATIONS
+ */
+
+.theme-animate-in {
+  animation: themeSlideIn 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes themeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(vh(20));
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/**
+ * 9. ICON CONTAINERS
+ */
+
+.theme-icon-container {
+  width: vh(30);
+  height: vh(30);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: vh(1) solid rgba(250, 250, 250, .2);
+  background: $accent-white-bg;
+  color: $text-primary;
+
+  &--large {
+    width: vh(34);
+    height: vh(34);
+  }
+
+  i {
+    font-size: vh(10);
+  }
+}
+
+/**
+ * 10. SECTION HEADERS (Dashboard style)
+ */
+
+.settings-section-titles {
+  display: flex;
+  flex-direction: column;
+  gap: vh(2);
+}
+
+.settings-section-title {
+  color: $text-primary;
+  font-size: vh(14);
+  font-weight: 600;
+  line-height: 1;
+}
+
+.settings-section-subtitle {
+  color: $text-secondary;
+  font-size: vh(11);
+  line-height: 1;
+}

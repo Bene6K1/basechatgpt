@@ -1,0 +1,125 @@
+//
+// Utilities
+//
+
+.text-regular {
+  font-weight: 400 !important;
+}
+
+.text-medium {
+  font-weight: 500 !important;
+}
+
+.text-semibold {
+  font-weight: 600 !important;
+}
+
+.text-bold {
+  font-weight: 700 !important;
+}
+
+.text-extrabold {
+  font-weight: 900 !important;
+}
+
+.text-white {
+  color: #fff !important;
+}
+
+.text-light-gray {
+  color: $color-light-gray !important;
+}
+
+.text-dark-gray {
+  color: $color-dark-gray !important;
+}
+
+.text-right {
+  text-align: right !important;
+}
+
+.text-nowrap {
+  white-space: nowrap;
+}
+
+.position-relative {
+  position: relative;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.h-100 {
+  height: 100%;
+}
+
+.section-title {
+  font-size: vh(20);
+  font-weight: 600;
+  line-height: 1;
+  color: $text-primary;
+
+  &--medium {
+    font-size: vh(16);
+  }
+}
+
+.section-text {
+  font-size: vh(14);
+  font-weight: 400;
+  line-height: 1.4;
+  color: $text-secondary;
+
+  &--small {
+    font-size: vh(12);
+  }
+}
+
+.section-line {
+  width: vh(4);
+  height: vh(20);
+  margin-right: vh(8);
+  background: $accent-white;
+
+  &--yellow {
+    background: $accent-orange;
+  }
+
+  &--red {
+    background: $accent-red;
+  }
+
+  &--blue {
+    background: $accent-blue;
+  }
+}
+
+.section-square {
+  width: vh(18);
+  height: vh(8);
+  margin-right: vh(10);
+  background-color: $accent-white;
+
+  &--blue {
+    background-color: $accent-blue;
+  }
+}
+
+.section-space {
+  &-top {
+    margin-top: $section-space;
+  }
+
+  &-bottom {
+    margin-bottom: $section-space;
+  }
+}
+
+.mr-15 {
+  margin-right: vh(15);
+}
+
+.mb-15 {
+  margin-bottom: vh(15);
+}

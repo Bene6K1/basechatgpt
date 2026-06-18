@@ -1,0 +1,606 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600;700;800&display=swap");
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+}
+
+body {
+  font-family: "Manrope", sans-serif;
+  color: #fff;
+}
+
+button,
+[onclick] {
+  cursor: pointer !important;
+  pointer-events: auto !important;
+}
+
+.deathscreen-red-gradient {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    circle at center,
+    rgba(200, 0, 0, 0.05) 0%,
+    rgba(180, 0, 0, 0.15) 40%,
+    rgba(160, 0, 0, 0.3) 80%,
+    rgba(140, 0, 0, 0.4) 100%
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+.deathscreen-bg-fade {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(10, 10, 10, 0.5);
+  z-index: 0;
+}
+
+.deathscreen-bg-img {
+  position: absolute;
+  bottom: 0;
+  left: 40%;
+  transform: translate(-50%, 0%);
+  animation: deathscreen_fade 0.5s ease;
+  user-select: none;
+  opacity: 0.5;
+  z-index: 2;
+}
+
+.content,
+.deathscreen-actions,
+.deathscreen-ambulance-notification {
+  position: relative;
+  z-index: 3;
+}
+
+.deathscreen-container {
+  animation: deathscreen_fade 0.5s ease;
+}
+
+.deathscreen-container.hide {
+  display: none;
+}
+
+.gameview-blur {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.deathscreen-timer p {
+  font-family: "Manrope", sans-serif;
+  font-size: 80px;
+  font-weight: 900;
+  color: #dddddd;
+}
+
+.deathscreen-timer p.animate-out {
+  animation: deathscreen_slitdeout 0.3s forwards;
+}
+
+.deathscreen-timer p.animate-in {
+  animation: deathscreen_slitdein 0.3s forwards;
+}
+
+.deathscreen-timer-number {
+  position: relative;
+  display: flex;
+  width: 70px;
+  height: 90px;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  z-index: 1;
+}
+
+.deathscreen-timer-number-text {
+  font-size: 80px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.deathscreen-timer-separator {
+  font-size: 80px;
+  font-weight: 600;
+  color: #4fb5e9;
+}
+
+.deathscreen-ambulance-text {
+  display: none;
+  position: absolute;
+
+  top: 40%;
+  left: 50%;
+
+  transform: translate(-50%, 0%);
+
+  color: #fff;
+  text-align: center;
+  font-family: "Manrope", sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 2.5px;
+
+  animation: deathscreen_ambulanceTextFade 1s ease-in-out;
+}
+
+.deathscreen-ambulance-notification {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: hsla(240, 5%, 4%, 0.705);
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #fff;
+  text-align: center;
+  display: none;
+  overflow: hidden;
+  position: relative;
+}
+
+.deathscreen-ambulance-notification .notification-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 0.15vh;
+  background: radial-gradient(circle at 90% 10%, rgba(217, 217, 217, .1) 0%, rgba(217, 217, 217, .1) 30%, rgba(217, 217, 217, .1) 100%);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: xor;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  pointer-events: none;
+}
+
+.deathscreen-ambulance-notification .notification-corners {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.deathscreen-ambulance-notification .corner {
+  position: absolute;
+  width: 0.6vh;
+  height: 0.6vh;
+  border-color: #D9D9D9;
+  border-style: solid;
+  border-width: 0;
+}
+
+.deathscreen-ambulance-notification .corner.top-left {
+  top: 0;
+  left: 0;
+  border-top-width: 0.2vh;
+  border-left-width: 0.2vh;
+}
+
+.deathscreen-ambulance-notification .corner.top-right {
+  top: 0;
+  right: 0;
+  border-top-width: 0.2vh;
+  border-right-width: 0.2vh;
+}
+
+.deathscreen-ambulance-notification .corner.bottom-right {
+  bottom: 0;
+  right: 0;
+  border-bottom-width: 0.2vh;
+  border-right-width: 0.2vh;
+}
+
+.deathscreen-ambulance-notification .corner.bottom-left {
+  bottom: 0;
+  left: 0;
+  border-bottom-width: 0.2vh;
+  border-left-width: 0.2vh;
+}
+
+.deathscreen-ambulance-notification p {
+  margin: 0;
+  position: relative;
+  z-index: 2;
+}
+
+@keyframes deathscreen_ambulanceTextFade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.green {
+  color: #96f283;
+}
+
+.blue {
+  color: #4fb5e9;
+}
+
+.content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.6rem;
+  width: 100%;
+}
+
+.content-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+}
+
+.deathscreen-skull {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+}
+
+.deathscreen-skull img {
+  width: auto;
+  height: 150px;
+  object-fit: contain;
+  filter: grayscale(100%) brightness(2) opacity(0.7);
+}
+
+.deathscreen-timer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.deathscreen-text {
+  font-size: 48px;
+  font-weight: 800;
+  color: #fff;
+  text-align: center;
+  letter-spacing: 2px;
+}
+
+.deatnscreen-desc {
+  width: 80%;
+  max-width: 600px;
+  font-size: 16px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  line-height: 1.5;
+}
+
+.deathscreen-buttons-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  width: 80%;
+  max-width: 600px;
+  margin-top: 1rem;
+}
+
+.deathscreen-buttons-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+}
+
+.deathscreen-buttons-container > .deathscreen-action {
+  align-self: center;
+}
+
+.deathscreen-actions {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.7rem;
+  top: 2.8%;
+  right: 0.4%;
+}
+
+.deathscreen-action {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 250px;
+  padding: 12px 20px;
+  background: hsla(240, 5%, 4%, 0.705);
+  transition: all 0.3s ease;
+  color: #fff;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.action-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 0.15vh;
+  background: radial-gradient(circle at 90% 10%, rgba(217, 217, 217, .1) 0%, rgba(217, 217, 217, .1) 30%, rgba(217, 217, 217, .1) 100%);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: xor;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  pointer-events: none;
+}
+
+.action-corners {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.deathscreen-action .corner {
+  position: absolute;
+  width: 0.6vh;
+  height: 0.6vh;
+  border-color: #D9D9D9;
+  border-style: solid;
+  border-width: 0;
+}
+
+.deathscreen-action .corner.top-left {
+  top: 0;
+  left: 0;
+  border-top-width: 0.2vh;
+  border-left-width: 0.2vh;
+}
+
+.deathscreen-action .corner.top-right {
+  top: 0;
+  right: 0;
+  border-top-width: 0.2vh;
+  border-right-width: 0.2vh;
+}
+
+.deathscreen-action .corner.bottom-right {
+  bottom: 0;
+  right: 0;
+  border-bottom-width: 0.2vh;
+  border-right-width: 0.2vh;
+}
+
+.deathscreen-action .corner.bottom-left {
+  bottom: 0;
+  left: 0;
+  border-bottom-width: 0.2vh;
+  border-left-width: 0.2vh;
+}
+
+.deathscreen-action:hover {
+  transform: translateY(-3px);
+  background: hsla(240, 5%, 6%, 0.805);
+}
+
+.deathscreen-action.disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.deathscreen-action-letter {
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 5px 10px;
+  border-radius: 4px;
+  width: 40px;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.deathscreen-action-text {
+  font-size: 14px;
+  font-weight: 500;
+  color: #fff;
+  position: relative;
+  z-index: 2;
+}
+
+@keyframes deathscreen_rightLinear {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+
+@keyframes deathscreen_glowPulse {
+  0% {
+    filter: drop-shadow(0px 0px 60px rgba(79, 181, 233, 0.8));
+  }
+  50% {
+    filter: drop-shadow(0px 0px 100px rgba(79, 181, 233, 1));
+  }
+  100% {
+    filter: drop-shadow(0px 0px 60px rgba(79, 181, 233, 0.8));
+  }
+}
+
+@keyframes deathscreen_slitdeout {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+}
+
+@keyframes deathscreen_slitdein {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes deathscreen_fade {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0.5;
+  }
+}
+
+
+.notification-container {
+  position: fixed;
+  bottom: 2.8%;
+  right: 0.4%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 10000;
+}
+
+.deathscreen-notification {
+  min-width: 300px;
+  padding: 15px 20px;
+  background: hsla(240, 5%, 4%, 0.705);
+  color: #fff;
+  font-size: 14px;
+  animation: fadeIn 0.3s ease forwards, fadeOut 0.3s ease 4.7s forwards;
+  overflow: hidden;
+  position: relative;
+}
+
+.deathscreen-notification .notification-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 0.15vh;
+  background: radial-gradient(circle at 90% 10%, rgba(217, 217, 217, .1) 0%, rgba(217, 217, 217, .1) 30%, rgba(217, 217, 217, .1) 100%);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: xor;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  pointer-events: none;
+}
+
+.deathscreen-notification .notification-corners {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.deathscreen-notification .corner {
+  position: absolute;
+  width: 0.6vh;
+  height: 0.6vh;
+  border-color: #D9D9D9;
+  border-style: solid;
+  border-width: 0;
+}
+
+.deathscreen-notification .corner.top-left {
+  top: 0;
+  left: 0;
+  border-top-width: 0.2vh;
+  border-left-width: 0.2vh;
+}
+
+.deathscreen-notification .corner.top-right {
+  top: 0;
+  right: 0;
+  border-top-width: 0.2vh;
+  border-right-width: 0.2vh;
+}
+
+.deathscreen-notification .corner.bottom-right {
+  bottom: 0;
+  right: 0;
+  border-bottom-width: 0.2vh;
+  border-right-width: 0.2vh;
+}
+
+.deathscreen-notification .corner.bottom-left {
+  bottom: 0;
+  left: 0;
+  border-bottom-width: 0.2vh;
+  border-left-width: 0.2vh;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+}
+
+.action-button {
+  display: none;
+}
+
+.deathscreen-container * {
+  pointer-events: auto;
+}

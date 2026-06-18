@@ -1,0 +1,118 @@
+//
+// Panic Button - BaseStyle Theme
+//
+
+@import '../../styles/_variables.scss';
+
+.panic-button {
+  position: relative;
+
+  &.is-active &__menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  &.is-active &__icon-inner {
+    transform: rotateX(180deg);
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    gap: vh(12);
+    padding: vh(10) vh(16);
+    background-color: $accent-red-bg;
+    color: $accent-red;
+    cursor: pointer;
+    transition: all 0.1s ease-in-out;
+
+    &:hover {
+      color: #121212;
+      background: $accent-red;
+    }
+
+    &:hover .panic-button__icon-inner {
+      color: #121212;
+    }
+  }
+
+  &__inner {
+    flex: 1;
+    display: flex;
+    align-items: center;
+  }
+
+  &__text {
+    font-size: vh(14);
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+
+  &__icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &-inner {
+      font-size: vh(18);
+      transition: transform 0.5s ease-in-out;
+    }
+  }
+
+  &__menu {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: calc(100% + vh(8));
+    width: 100%;
+    background: $button-inactive-bg-darker;
+    border: vh(1) solid rgba(255, 255, 255, 0.08);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(vh(8));
+    transition: all 0.4s ease-in-out;
+
+    &-item {
+      padding: vh(12) vh(16);
+      display: flex;
+      align-items: center;
+      gap: vh(10);
+      color: $text-secondary;
+      cursor: pointer;
+      transition: all 0.1s ease-in-out;
+
+      &:hover {
+        background: $button-hover-bg-darker;
+        color: $text-primary;
+      }
+
+      &:not(:last-child) {
+        border-bottom: vh(1) solid rgba(255, 255, 255, 0.05);
+      }
+    }
+
+    &-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &-img {
+        min-width: vh(18);
+        max-width: vh(18);
+        user-select: none;
+        -webkit-user-select: none;
+        pointer-events: none;
+      }
+    }
+
+    &-text {
+      font-size: vh(12);
+      font-weight: 600;
+      line-height: 1;
+    }
+  }
+}
